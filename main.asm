@@ -170,6 +170,7 @@ jmp		program_begin
 .include	"Timers.asm"
 .include	"UARTFunctions.asm"
 .include	"ADC.asm"
+.include	"TimeCorrect.asm"
 
 program_begin:
 

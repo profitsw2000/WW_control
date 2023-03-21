@@ -16,6 +16,7 @@
   <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE>
   <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE>
   <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE>
+  <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
   <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Debug\WW_control.obj</FILE>
@@ -36,7 +37,7 @@
   <TWI_int><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>47</LINE></TWI_int>
   <RX_HEAD><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>204</LINE></RX_HEAD>
   <RX_TAIL><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>206</LINE></RX_TAIL>
-  <program_begin><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>174</LINE></program_begin>
+  <program_begin><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>175</LINE></program_begin>
   <Start><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>33</LINE></Start>
   <tranceive><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>63</LINE></tranceive>
   <status_check_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>69</LINE></status_check_1>
@@ -56,84 +57,84 @@
   <TWI_BUFFER_IN><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>215</LINE></TWI_BUFFER_IN>
   <Read_packet><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>176</LINE></Read_packet>
   <Wait_TWI_finish><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>205</LINE></Wait_TWI_finish>
-  <Clock_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>33</LINE></Clock_mode_proc>
-  <exit_clock_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>162</LINE></exit_clock_mode_proc>
-  <do_not_clear_set_mode_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>54</LINE></do_not_clear_set_mode_counter>
+  <Clock_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>30</LINE></Clock_mode_proc>
+  <exit_clock_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>160</LINE></exit_clock_mode_proc>
+  <do_not_clear_set_mode_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>51</LINE></do_not_clear_set_mode_counter>
   <SET_MODE_COUNTER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>701</LINE></SET_MODE_COUNTER>
-  <write_set_mode_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>50</LINE></write_set_mode_counter>
-  <next_ds1307_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>62</LINE></next_ds1307_byte>
-  <data_bytes_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>81</LINE></data_bytes_format>
-  <TIME_DIGIT_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>699</LINE></TIME_DIGIT_CATHODE>
-  <set_XY_reg><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>93</LINE></set_XY_reg>
-  <data_letter_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>87</LINE></data_letter_format>
-  <DATA_DIGIT_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>711</LINE></DATA_DIGIT_CATHODE>
-  <DATA_LETTER_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>705</LINE></DATA_LETTER_CATHODE>
-  <TEMP_OUTPUT_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>691</LINE></TEMP_OUTPUT_BUFFER>
-  <Get_output><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>171</LINE></Get_output>
-  <copy_output_buffers><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>125</LINE></copy_output_buffers>
-  <OUTPUT_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>693</LINE></OUTPUT_BUFFER>
-  <start_copy_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>132</LINE></start_copy_bytes>
-  <Copy_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>226</LINE></Copy_output_bytes>
-  <next_data_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>141</LINE></next_data_byte>
-  <next_month_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>150</LINE></next_month_byte>
-  <check_set_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>183</LINE></check_set_mode>
-  <check_second_digit><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>179</LINE></check_second_digit>
-  <clr_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>190</LINE></clr_output_bytes>
-  <read_programm_memory><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>195</LINE></read_programm_memory>
-  <write_to_output_buffer><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>206</LINE></write_to_output_buffer>
-  <clear_sdbl_flag><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>215</LINE></clear_sdbl_flag>
-  <exit_get_output_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>218</LINE></exit_get_output_proc>
-  <Timer_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>236</LINE></Timer_mode_proc>
-  <Update_BT_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>249</LINE></Update_BT_counter>
-  <Get_output_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>435</LINE></Get_output_timer_mode>
-  <timer_is_off><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>358</LINE></timer_is_off>
-  <timer_pause><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>378</LINE></timer_pause>
-  <check_next_minute><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>267</LINE></check_next_minute>
-  <Sound_OFF><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>550</LINE></Sound_OFF>
-  <check_rest_work_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>274</LINE></check_rest_work_1>
-  <rest_time_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>300</LINE></rest_time_1>
-  <fill_buffer_var_1_temp><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>294</LINE></fill_buffer_var_1_temp>
-  <Sound_1000Hz_ON><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>560</LINE></Sound_1000Hz_ON>
-  <fill_buffer_var_2_temp><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>296</LINE></fill_buffer_var_2_temp>
-  <fill_buffer_var_3><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>407</LINE></fill_buffer_var_3>
-  <fill_buffer_var_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>385</LINE></fill_buffer_var_1>
-  <fill_buffer_var_2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>396</LINE></fill_buffer_var_2>
-  <rest_seconds_set_zero><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>312</LINE></rest_seconds_set_zero>
-  <check_400Hz_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>330</LINE></check_400Hz_on>
-  <set_sound_off><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>343</LINE></set_sound_off>
-  <set_sound_400Hz_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>350</LINE></set_sound_400Hz_on>
-  <Sound_400Hz_ON><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>572</LINE></Sound_400Hz_ON>
-  <timer_just_stopped><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>364</LINE></timer_just_stopped>
-  <check_timer_set_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>371</LINE></check_timer_set_mode>
-  <set_btrt_to_zero><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>369</LINE></set_btrt_to_zero>
-  <fill_buffer_var_4><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>418</LINE></fill_buffer_var_4>
-  <TIMER_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>695</LINE></TIMER_BUFFER>
-  <exit_bt_counter_procedure><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>428</LINE></exit_bt_counter_procedure>
-  <next_timer_digit_code><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>438</LINE></next_timer_digit_code>
-  <timer_subtract_ten><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>446</LINE></timer_subtract_ten>
-  <timer_check_digit_count><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>453</LINE></timer_check_digit_count>
-  <timer_small_digit_address><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>460</LINE></timer_small_digit_address>
-  <timer_copy_address><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>464</LINE></timer_copy_address>
-  <timer_get_ouput_data><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>481</LINE></timer_get_ouput_data>
-  <timer_first_byte_load><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>491</LINE></timer_first_byte_load>
-  <timer_clear_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>499</LINE></timer_clear_output_bytes>
-  <timer_load_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>504</LINE></timer_load_output_bytes>
-  <put_regs_to_output_buffer><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>519</LINE></put_regs_to_output_buffer>
-  <tm_get_output_set_point><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>512</LINE></tm_get_output_set_point>
-  <timer_clear_sdbl><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>533</LINE></timer_clear_sdbl>
-  <exit_get_output_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>540</LINE></exit_get_output_timer_mode>
-  <Write_byte_to_DS1307><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>584</LINE></Write_byte_to_DS1307>
-  <BCD_TO_HEX><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>605</LINE></BCD_TO_HEX>
-  <next_increment><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>610</LINE></next_increment>
-  <exit_bcd_to_hex><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>616</LINE></exit_bcd_to_hex>
-  <HEX_TO_BCD><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>623</LINE></HEX_TO_BCD>
-  <exit_change_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>636</LINE></exit_change_format>
-  <next_decrement><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>627</LINE></next_decrement>
-  <next_format_operation><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>633</LINE></next_format_operation>
-  <Set_default_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>643</LINE></Set_default_time>
-  <Start_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>670</LINE></Start_time>
-  <exit_start_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>678</LINE></exit_start_time>
-  <Correct_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>685</LINE></Correct_time>
+  <write_set_mode_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>47</LINE></write_set_mode_counter>
+  <Correct_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>13</LINE></Correct_time>
+  <next_ds1307_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>60</LINE></next_ds1307_byte>
+  <data_bytes_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>79</LINE></data_bytes_format>
+  <TIME_DIGIT_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>689</LINE></TIME_DIGIT_CATHODE>
+  <set_XY_reg><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>91</LINE></set_XY_reg>
+  <data_letter_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>85</LINE></data_letter_format>
+  <DATA_DIGIT_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>701</LINE></DATA_DIGIT_CATHODE>
+  <DATA_LETTER_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>695</LINE></DATA_LETTER_CATHODE>
+  <TEMP_OUTPUT_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>681</LINE></TEMP_OUTPUT_BUFFER>
+  <Get_output><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>169</LINE></Get_output>
+  <copy_output_buffers><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>123</LINE></copy_output_buffers>
+  <OUTPUT_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>683</LINE></OUTPUT_BUFFER>
+  <start_copy_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>130</LINE></start_copy_bytes>
+  <Copy_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>224</LINE></Copy_output_bytes>
+  <next_data_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>139</LINE></next_data_byte>
+  <next_month_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>148</LINE></next_month_byte>
+  <check_set_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>181</LINE></check_set_mode>
+  <check_second_digit><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>177</LINE></check_second_digit>
+  <clr_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>188</LINE></clr_output_bytes>
+  <read_programm_memory><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>193</LINE></read_programm_memory>
+  <write_to_output_buffer><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>204</LINE></write_to_output_buffer>
+  <clear_sdbl_flag><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>213</LINE></clear_sdbl_flag>
+  <exit_get_output_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>216</LINE></exit_get_output_proc>
+  <Timer_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>234</LINE></Timer_mode_proc>
+  <Update_BT_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>247</LINE></Update_BT_counter>
+  <Get_output_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>433</LINE></Get_output_timer_mode>
+  <timer_is_off><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>356</LINE></timer_is_off>
+  <timer_pause><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>376</LINE></timer_pause>
+  <check_next_minute><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>265</LINE></check_next_minute>
+  <Sound_OFF><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>548</LINE></Sound_OFF>
+  <check_rest_work_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>272</LINE></check_rest_work_1>
+  <rest_time_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>298</LINE></rest_time_1>
+  <fill_buffer_var_1_temp><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>292</LINE></fill_buffer_var_1_temp>
+  <Sound_1000Hz_ON><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>558</LINE></Sound_1000Hz_ON>
+  <fill_buffer_var_2_temp><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>294</LINE></fill_buffer_var_2_temp>
+  <fill_buffer_var_3><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>405</LINE></fill_buffer_var_3>
+  <fill_buffer_var_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>383</LINE></fill_buffer_var_1>
+  <fill_buffer_var_2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>394</LINE></fill_buffer_var_2>
+  <rest_seconds_set_zero><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>310</LINE></rest_seconds_set_zero>
+  <check_400Hz_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>328</LINE></check_400Hz_on>
+  <set_sound_off><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>341</LINE></set_sound_off>
+  <set_sound_400Hz_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>348</LINE></set_sound_400Hz_on>
+  <Sound_400Hz_ON><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>570</LINE></Sound_400Hz_ON>
+  <timer_just_stopped><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>362</LINE></timer_just_stopped>
+  <check_timer_set_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>369</LINE></check_timer_set_mode>
+  <set_btrt_to_zero><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>367</LINE></set_btrt_to_zero>
+  <fill_buffer_var_4><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>416</LINE></fill_buffer_var_4>
+  <TIMER_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>685</LINE></TIMER_BUFFER>
+  <exit_bt_counter_procedure><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>426</LINE></exit_bt_counter_procedure>
+  <next_timer_digit_code><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>436</LINE></next_timer_digit_code>
+  <timer_subtract_ten><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>444</LINE></timer_subtract_ten>
+  <timer_check_digit_count><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>451</LINE></timer_check_digit_count>
+  <timer_small_digit_address><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>458</LINE></timer_small_digit_address>
+  <timer_copy_address><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>462</LINE></timer_copy_address>
+  <timer_get_ouput_data><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>479</LINE></timer_get_ouput_data>
+  <timer_first_byte_load><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>489</LINE></timer_first_byte_load>
+  <timer_clear_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>497</LINE></timer_clear_output_bytes>
+  <timer_load_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>502</LINE></timer_load_output_bytes>
+  <put_regs_to_output_buffer><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>517</LINE></put_regs_to_output_buffer>
+  <tm_get_output_set_point><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>510</LINE></tm_get_output_set_point>
+  <timer_clear_sdbl><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>531</LINE></timer_clear_sdbl>
+  <exit_get_output_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>538</LINE></exit_get_output_timer_mode>
+  <Write_byte_to_DS1307><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>582</LINE></Write_byte_to_DS1307>
+  <BCD_TO_HEX><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>603</LINE></BCD_TO_HEX>
+  <next_increment><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>608</LINE></next_increment>
+  <exit_bcd_to_hex><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>614</LINE></exit_bcd_to_hex>
+  <HEX_TO_BCD><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>621</LINE></HEX_TO_BCD>
+  <exit_change_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>634</LINE></exit_change_format>
+  <next_decrement><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>625</LINE></next_decrement>
+  <next_format_operation><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>631</LINE></next_format_operation>
+  <Set_default_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>641</LINE></Set_default_time>
+  <Start_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>668</LINE></Start_time>
+  <exit_start_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>676</LINE></exit_start_time>
   <Encoder_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>21</LINE></Encoder_proc>
   <exit_enc_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>119</LINE></exit_enc_proc>
   <BUTTON_STATE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>697</LINE></BUTTON_STATE>
@@ -257,7 +258,7 @@
   <adc_res_num_low><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>48</LINE></adc_res_num_low>
   <Calculate_average><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>54</LINE></Calculate_average>
   <aver_calc_next_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>64</LINE></aver_calc_next_byte>
-  <main><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>178</LINE></main>
-  <read_next_packet_main><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>184</LINE></read_next_packet_main>
+  <main><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>179</LINE></main>
+  <read_next_packet_main><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>185</LINE></read_next_packet_main>
  </LABELS>
 </ASSEMBLER_INFO>
