@@ -1,24 +1,24 @@
 <ASSEMBLER_INFO>
- <VERSION>2.2.8</VERSION>
+ <VERSION>2.2.7</VERSION>
  <DEVICE>"ATmega16A"</DEVICE>
- <WORKING_DIR>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Debug</WORKING_DIR>
+ <WORKING_DIR>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Debug</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm</SOURCE_FILE>
+ <SOURCE_FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc</FILE>
-  <FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE>
-  <FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE>
-  <FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE>
-  <FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE>
-  <FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE>
-  <FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE>
+  <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE>
+  <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE>
+  <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE>
+  <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE>
+  <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE>
+  <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Debug\WW_control.obj</FILE>
+  <FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Debug\WW_control.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>WW_control.hex</FILE>
@@ -28,235 +28,236 @@
   <FILE>WW_control.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <reset><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm</FILE><LINE>94</LINE></reset>
-  <Timer2><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>51</LINE></Timer2>
-  <Timer1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>168</LINE></Timer1>
-  <UART_RX><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>60</LINE></UART_RX>
-  <UART_TX><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>31</LINE></UART_TX>
-  <TWI_int><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>47</LINE></TWI_int>
-  <RX_HEAD><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>204</LINE></RX_HEAD>
-  <RX_TAIL><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>206</LINE></RX_TAIL>
-  <program_begin><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm</FILE><LINE>174</LINE></program_begin>
-  <Start><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>33</LINE></Start>
-  <tranceive><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>63</LINE></tranceive>
-  <status_check_1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>69</LINE></status_check_1>
-  <Send_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>111</LINE></Send_byte>
-  <exit_twi_int><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>102</LINE></exit_twi_int>
-  <receive><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>74</LINE></receive>
-  <Read_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>138</LINE></Read_byte>
-  <status_check_2><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>81</LINE></status_check_2>
-  <status_check_3><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>87</LINE></status_check_3>
-  <status_check_4><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>95</LINE></status_check_4>
-  <last_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>127</LINE></last_byte>
-  <TWI_BUFFER_OUT><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>213</LINE></TWI_BUFFER_OUT>
-  <exit_send><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>130</LINE></exit_send>
-  <not_last_byte_in><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>145</LINE></not_last_byte_in>
-  <exit_read><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>156</LINE></exit_read>
-  <not_pre_last_byte_in><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>152</LINE></not_pre_last_byte_in>
-  <TWI_BUFFER_IN><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>215</LINE></TWI_BUFFER_IN>
-  <Read_packet><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>176</LINE></Read_packet>
-  <Wait_TWI_finish><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm</FILE><LINE>205</LINE></Wait_TWI_finish>
-  <Clock_mode_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>30</LINE></Clock_mode_proc>
-  <exit_clock_mode_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>159</LINE></exit_clock_mode_proc>
-  <do_not_clear_set_mode_counter><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>51</LINE></do_not_clear_set_mode_counter>
-  <SET_MODE_COUNTER><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>701</LINE></SET_MODE_COUNTER>
-  <write_set_mode_counter><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>47</LINE></write_set_mode_counter>
-  <next_ds1307_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>59</LINE></next_ds1307_byte>
-  <data_bytes_format><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>78</LINE></data_bytes_format>
-  <TIME_DIGIT_CATHODE><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>688</LINE></TIME_DIGIT_CATHODE>
-  <set_XY_reg><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>90</LINE></set_XY_reg>
-  <data_letter_format><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>84</LINE></data_letter_format>
-  <DATA_DIGIT_CATHODE><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>700</LINE></DATA_DIGIT_CATHODE>
-  <DATA_LETTER_CATHODE><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>694</LINE></DATA_LETTER_CATHODE>
-  <TEMP_OUTPUT_BUFFER><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>680</LINE></TEMP_OUTPUT_BUFFER>
-  <Get_output><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>168</LINE></Get_output>
-  <copy_output_buffers><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>122</LINE></copy_output_buffers>
-  <OUTPUT_BUFFER><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>682</LINE></OUTPUT_BUFFER>
-  <start_copy_bytes><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>129</LINE></start_copy_bytes>
-  <Copy_output_bytes><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>223</LINE></Copy_output_bytes>
-  <next_data_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>138</LINE></next_data_byte>
-  <next_month_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>147</LINE></next_month_byte>
-  <check_set_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>180</LINE></check_set_mode>
-  <check_second_digit><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>176</LINE></check_second_digit>
-  <clr_output_bytes><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>187</LINE></clr_output_bytes>
-  <read_programm_memory><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>192</LINE></read_programm_memory>
-  <write_to_output_buffer><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>203</LINE></write_to_output_buffer>
-  <clear_sdbl_flag><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>212</LINE></clear_sdbl_flag>
-  <exit_get_output_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>215</LINE></exit_get_output_proc>
-  <Timer_mode_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>233</LINE></Timer_mode_proc>
-  <Update_BT_counter><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>246</LINE></Update_BT_counter>
-  <Get_output_timer_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>432</LINE></Get_output_timer_mode>
-  <timer_is_off><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>355</LINE></timer_is_off>
-  <timer_pause><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>375</LINE></timer_pause>
-  <check_next_minute><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>264</LINE></check_next_minute>
-  <Sound_OFF><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>547</LINE></Sound_OFF>
-  <check_rest_work_1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>271</LINE></check_rest_work_1>
-  <rest_time_1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>297</LINE></rest_time_1>
-  <fill_buffer_var_1_temp><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>291</LINE></fill_buffer_var_1_temp>
-  <Sound_1000Hz_ON><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>557</LINE></Sound_1000Hz_ON>
-  <fill_buffer_var_2_temp><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>293</LINE></fill_buffer_var_2_temp>
-  <fill_buffer_var_3><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>404</LINE></fill_buffer_var_3>
-  <fill_buffer_var_1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>382</LINE></fill_buffer_var_1>
-  <fill_buffer_var_2><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>393</LINE></fill_buffer_var_2>
-  <rest_seconds_set_zero><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>309</LINE></rest_seconds_set_zero>
-  <check_400Hz_on><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>327</LINE></check_400Hz_on>
-  <set_sound_off><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>340</LINE></set_sound_off>
-  <set_sound_400Hz_on><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>347</LINE></set_sound_400Hz_on>
-  <Sound_400Hz_ON><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>569</LINE></Sound_400Hz_ON>
-  <timer_just_stopped><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>361</LINE></timer_just_stopped>
-  <check_timer_set_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>368</LINE></check_timer_set_mode>
-  <set_btrt_to_zero><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>366</LINE></set_btrt_to_zero>
-  <fill_buffer_var_4><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>415</LINE></fill_buffer_var_4>
-  <TIMER_BUFFER><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>684</LINE></TIMER_BUFFER>
-  <exit_bt_counter_procedure><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>425</LINE></exit_bt_counter_procedure>
-  <next_timer_digit_code><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>435</LINE></next_timer_digit_code>
-  <timer_subtract_ten><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>443</LINE></timer_subtract_ten>
-  <timer_check_digit_count><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>450</LINE></timer_check_digit_count>
-  <timer_small_digit_address><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>457</LINE></timer_small_digit_address>
-  <timer_copy_address><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>461</LINE></timer_copy_address>
-  <timer_get_ouput_data><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>478</LINE></timer_get_ouput_data>
-  <timer_first_byte_load><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>488</LINE></timer_first_byte_load>
-  <timer_clear_output_bytes><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>496</LINE></timer_clear_output_bytes>
-  <timer_load_output_bytes><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>501</LINE></timer_load_output_bytes>
-  <put_regs_to_output_buffer><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>516</LINE></put_regs_to_output_buffer>
-  <tm_get_output_set_point><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>509</LINE></tm_get_output_set_point>
-  <timer_clear_sdbl><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>530</LINE></timer_clear_sdbl>
-  <exit_get_output_timer_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>537</LINE></exit_get_output_timer_mode>
-  <Write_byte_to_DS1307><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>581</LINE></Write_byte_to_DS1307>
-  <BCD_TO_HEX><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>602</LINE></BCD_TO_HEX>
-  <next_increment><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>607</LINE></next_increment>
-  <exit_bcd_to_hex><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>613</LINE></exit_bcd_to_hex>
-  <HEX_TO_BCD><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>620</LINE></HEX_TO_BCD>
-  <exit_change_format><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>633</LINE></exit_change_format>
-  <next_decrement><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>624</LINE></next_decrement>
-  <next_format_operation><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>630</LINE></next_format_operation>
-  <Set_default_time><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>640</LINE></Set_default_time>
-  <Start_time><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>667</LINE></Start_time>
-  <exit_start_time><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm</FILE><LINE>675</LINE></exit_start_time>
-  <Encoder_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>21</LINE></Encoder_proc>
-  <exit_enc_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>119</LINE></exit_enc_proc>
-  <BUTTON_STATE><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>697</LINE></BUTTON_STATE>
-  <BUTTON_COUNT><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>699</LINE></BUTTON_COUNT>
-  <check_button_state_unpress><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>55</LINE></check_button_state_unpress>
-  <check_encoder_state><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>81</LINE></check_encoder_state>
-  <check_non_zero_counter><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>64</LINE></check_non_zero_counter>
-  <button_counter_more_than_512><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>70</LINE></button_counter_more_than_512>
-  <Button_short_press><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>127</LINE></Button_short_press>
-  <clear_button_counter><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>73</LINE></clear_button_counter>
-  <Button_long_press><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>214</LINE></Button_long_press>
-  <enc_A_B_not_3><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>104</LINE></enc_A_B_not_3>
-  <check_enc_state_3><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>93</LINE></check_enc_state_3>
-  <Change_parameter><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>271</LINE></Change_parameter>
-  <clear_logical_encoder_state><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>100</LINE></clear_logical_encoder_state>
-  <enc_A_B_not_1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>110</LINE></enc_A_B_not_1>
-  <enc_A_B_not_2><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>116</LINE></enc_A_B_not_2>
-  <bsp_timer_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>166</LINE></bsp_timer_mode>
-  <exit_bsp_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>206</LINE></exit_bsp_proc>
-  <bsp_clock_segment_4_5_0><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>145</LINE></bsp_clock_segment_4_5_0>
-  <bsp_clock_segment_4_0><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>152</LINE></bsp_clock_segment_4_0>
-  <bsp_clock_segment_4><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>159</LINE></bsp_clock_segment_4>
-  <bsp_timer_mode_check_bt_on><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>184</LINE></bsp_timer_mode_check_bt_on>
-  <bsp_timer_mode_clear_segm><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>179</LINE></bsp_timer_mode_clear_segm>
-  <bsp_chek_pause_on><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>197</LINE></bsp_chek_pause_on>
-  <bsp_pause_is_off><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>203</LINE></bsp_pause_is_off>
-  <blp_timer_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>240</LINE></blp_timer_mode>
-  <blp_clock_mode_set><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>232</LINE></blp_clock_mode_set>
-  <exit_blp_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>263</LINE></exit_blp_proc>
-  <blp_timer_not_set_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>248</LINE></blp_timer_not_set_mode>
-  <blp_timer_is_on><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>256</LINE></blp_timer_is_on>
-  <cp_timer_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>542</LINE></cp_timer_mode>
-  <exit_cp_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>690</LINE></exit_cp_proc>
-  <cp_clock_mode_segm_1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>302</LINE></cp_clock_mode_segm_1>
-  <cp_clock_mode_segm_2><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>332</LINE></cp_clock_mode_segm_2>
-  <blp_segm_1_enc_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>318</LINE></blp_segm_1_enc_plus>
-  <blp_segm_1_dec_min><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>314</LINE></blp_segm_1_dec_min>
-  <blp_segm_1_write_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>324</LINE></blp_segm_1_write_byte>
-  <cp_clock_mode_segm_3><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>362</LINE></cp_clock_mode_segm_3>
-  <blp_segm_2_enc_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>348</LINE></blp_segm_2_enc_plus>
-  <blp_segm_2_dec_hour><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>344</LINE></blp_segm_2_dec_hour>
-  <blp_segm_2_write_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>354</LINE></blp_segm_2_write_byte>
-  <cp_clock_mode_segm_5><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>390</LINE></cp_clock_mode_segm_5>
-  <blp_segm_3_enc_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>377</LINE></blp_segm_3_enc_plus>
-  <blp_segm_3_dec_day><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>373</LINE></blp_segm_3_dec_day>
-  <blp_segm_3_write_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>383</LINE></blp_segm_3_write_byte>
-  <cp_clock_mode_segm_5_intermed><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>395</LINE></cp_clock_mode_segm_5_intermed>
-  <cp_clock_mode_segm_4><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>505</LINE></cp_clock_mode_segm_4>
-  <month_31><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>421</LINE></month_31>
-  <month_2><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>441</LINE></month_2>
-  <blp_segm_5_month_31_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>433</LINE></blp_segm_5_month_31_plus>
-  <blp_segm_5_month_31_dec><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>429</LINE></blp_segm_5_month_31_dec>
-  <blp_segm_5_write_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>497</LINE></blp_segm_5_write_byte>
-  <month_30><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>479</LINE></month_30>
-  <blp_segm_5_month_2_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>462</LINE></blp_segm_5_month_2_plus>
-  <blp_segm_5_month_2_dec><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>458</LINE></blp_segm_5_month_2_dec>
-  <blp_segm_5_month_2_29><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>454</LINE></blp_segm_5_month_2_29>
-  <blp_segm_5_month_2_29_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>472</LINE></blp_segm_5_month_2_29_plus>
-  <blp_segm_5_month_30_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>491</LINE></blp_segm_5_month_30_plus>
-  <blp_segm_5_month_30_dec><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>487</LINE></blp_segm_5_month_30_dec>
-  <cp_clock_mode_segm_4_intermed><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>510</LINE></cp_clock_mode_segm_4_intermed>
-  <cp_clock_mode_segm_4_enc_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>527</LINE></cp_clock_mode_segm_4_enc_plus>
-  <cp_clock_mode_segm_4_dec><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>523</LINE></cp_clock_mode_segm_4_dec>
-  <blp_segm_4_write_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>533</LINE></blp_segm_4_write_byte>
-  <cp_timer_mode_segm_1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>576</LINE></cp_timer_mode_segm_1>
-  <cp_timer_mode_segm_0_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>563</LINE></cp_timer_mode_segm_0_plus>
-  <cp_timer_mode_segm_0_10><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>559</LINE></cp_timer_mode_segm_0_10>
-  <cp_timer_mode_segm_0_plus_60><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>571</LINE></cp_timer_mode_segm_0_plus_60>
-  <cp_timer_mode_segm_2><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>604</LINE></cp_timer_mode_segm_2>
-  <cp_timer_mode_segm_1_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>592</LINE></cp_timer_mode_segm_1_plus>
-  <cp_timer_mode_segm_1_not_zero><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>588</LINE></cp_timer_mode_segm_1_not_zero>
-  <cp_timer_mode_segm_1_plus_100><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>599</LINE></cp_timer_mode_segm_1_plus_100>
-  <cp_timer_mode_segm_4><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>634</LINE></cp_timer_mode_segm_4>
-  <cp_timer_mode_segm_2_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>621</LINE></cp_timer_mode_segm_2_plus>
-  <cp_timer_mode_segm_2_dec><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>617</LINE></cp_timer_mode_segm_2_dec>
-  <cp_timer_mode_segm_2_plus_100><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>628</LINE></cp_timer_mode_segm_2_plus_100>
-  <cp_timer_mode_segm_5><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>664</LINE></cp_timer_mode_segm_5>
-  <cp_timer_mode_segm_4_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>651</LINE></cp_timer_mode_segm_4_plus>
-  <cp_timer_mode_segm_4_10><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>647</LINE></cp_timer_mode_segm_4_10>
-  <cp_timer_mode_segm_4_plus_60><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>659</LINE></cp_timer_mode_segm_4_plus_60>
-  <cp_timer_mode_segm_5_plus><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>680</LINE></cp_timer_mode_segm_5_plus>
-  <cp_timer_mode_segm_5_not_zero><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>676</LINE></cp_timer_mode_segm_5_not_zero>
-  <cp_timer_mode_segm_5_plus_100><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm</FILE><LINE>687</LINE></cp_timer_mode_segm_5_plus_100>
-  <Timer1_ON><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>24</LINE></Timer1_ON>
-  <Timer1_OFF><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>41</LINE></Timer1_OFF>
-  <set_flicking_flag><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>66</LINE></set_flicking_flag>
-  <timer2_ww_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>70</LINE></timer2_ww_mode>
-  <timer2_clock_mode><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>83</LINE></timer2_clock_mode>
-  <read_encoder_state><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>91</LINE></read_encoder_state>
-  <change_digit_number><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>100</LINE></change_digit_number>
-  <exit_timer2><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>103</LINE></exit_timer2>
-  <Get_Next_Digit><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>116</LINE></Get_Next_Digit>
-  <digit_lower_six><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>122</LINE></digit_lower_six>
-  <data_latch_end><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>203</LINE></data_latch_end>
-  <set_clk_line><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>197</LINE></set_clk_line>
-  <exit_timer1><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>233</LINE></exit_timer1>
-  <line_le_oe><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>216</LINE></line_le_oe>
-  <set_le_line><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>212</LINE></set_le_line>
-  <clr_oe_line><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>221</LINE></clr_oe_line>
-  <ANODE_OUTPUT><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>267</LINE></ANODE_OUTPUT>
-  <Timer2_ON><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>247</LINE></Timer2_ON>
-  <Timer2_OFF><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm</FILE><LINE>260</LINE></Timer2_OFF>
-  <Send_UART><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>20</LINE></Send_UART>
-  <exit_uart_tx><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>49</LINE></exit_uart_tx>
-  <UART_IN><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>208</LINE></UART_IN>
-  <UART_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>103</LINE></UART_proc>
-  <uart_packet_income><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>122</LINE></uart_packet_income>
-  <exit_uart_proc><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>170</LINE></exit_uart_proc>
-  <packet_start_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>137</LINE></packet_start_byte>
-  <UART_TEMP><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>210</LINE></UART_TEMP>
-  <next_uart_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>142</LINE></next_uart_byte>
-  <crc_is_good><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>161</LINE></crc_is_good>
-  <Write_packet_to_TWI_buffer><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>178</LINE></Write_packet_to_TWI_buffer>
-  <write_next_byte_to_twi_buffer><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm</FILE><LINE>188</LINE></write_next_byte_to_twi_buffer>
-  <Set_brightness><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>12</LINE></Set_brightness>
-  <wait_conv><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>15</LINE></wait_conv>
-  <not_abs_dark><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>26</LINE></not_abs_dark>
-  <Average_measure><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>31</LINE></Average_measure>
-  <ADC_NUM><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>90</LINE></ADC_NUM>
-  <ADC_RES><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>92</LINE></ADC_RES>
-  <adc_res_num_low><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>48</LINE></adc_res_num_low>
-  <Calculate_average><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>54</LINE></Calculate_average>
-  <aver_calc_next_byte><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm</FILE><LINE>64</LINE></aver_calc_next_byte>
-  <main><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm</FILE><LINE>178</LINE></main>
-  <read_next_packet_main><FILE>C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm</FILE><LINE>184</LINE></read_next_packet_main>
+  <reset><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>94</LINE></reset>
+  <Timer2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>51</LINE></Timer2>
+  <Timer1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>168</LINE></Timer1>
+  <UART_RX><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>60</LINE></UART_RX>
+  <UART_TX><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>31</LINE></UART_TX>
+  <TWI_int><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>47</LINE></TWI_int>
+  <RX_HEAD><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>204</LINE></RX_HEAD>
+  <RX_TAIL><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>206</LINE></RX_TAIL>
+  <program_begin><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>174</LINE></program_begin>
+  <Start><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>33</LINE></Start>
+  <tranceive><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>63</LINE></tranceive>
+  <status_check_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>69</LINE></status_check_1>
+  <Send_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>111</LINE></Send_byte>
+  <exit_twi_int><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>102</LINE></exit_twi_int>
+  <receive><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>74</LINE></receive>
+  <Read_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>138</LINE></Read_byte>
+  <status_check_2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>81</LINE></status_check_2>
+  <status_check_3><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>87</LINE></status_check_3>
+  <status_check_4><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>95</LINE></status_check_4>
+  <last_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>127</LINE></last_byte>
+  <TWI_BUFFER_OUT><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>213</LINE></TWI_BUFFER_OUT>
+  <exit_send><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>130</LINE></exit_send>
+  <not_last_byte_in><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>145</LINE></not_last_byte_in>
+  <exit_read><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>156</LINE></exit_read>
+  <not_pre_last_byte_in><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>152</LINE></not_pre_last_byte_in>
+  <TWI_BUFFER_IN><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>215</LINE></TWI_BUFFER_IN>
+  <Read_packet><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>176</LINE></Read_packet>
+  <Wait_TWI_finish><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm</FILE><LINE>205</LINE></Wait_TWI_finish>
+  <Clock_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>33</LINE></Clock_mode_proc>
+  <exit_clock_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>162</LINE></exit_clock_mode_proc>
+  <do_not_clear_set_mode_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>54</LINE></do_not_clear_set_mode_counter>
+  <SET_MODE_COUNTER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>701</LINE></SET_MODE_COUNTER>
+  <write_set_mode_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>50</LINE></write_set_mode_counter>
+  <next_ds1307_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>62</LINE></next_ds1307_byte>
+  <data_bytes_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>81</LINE></data_bytes_format>
+  <TIME_DIGIT_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>699</LINE></TIME_DIGIT_CATHODE>
+  <set_XY_reg><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>93</LINE></set_XY_reg>
+  <data_letter_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>87</LINE></data_letter_format>
+  <DATA_DIGIT_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>711</LINE></DATA_DIGIT_CATHODE>
+  <DATA_LETTER_CATHODE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>705</LINE></DATA_LETTER_CATHODE>
+  <TEMP_OUTPUT_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>691</LINE></TEMP_OUTPUT_BUFFER>
+  <Get_output><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>171</LINE></Get_output>
+  <copy_output_buffers><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>125</LINE></copy_output_buffers>
+  <OUTPUT_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>693</LINE></OUTPUT_BUFFER>
+  <start_copy_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>132</LINE></start_copy_bytes>
+  <Copy_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>226</LINE></Copy_output_bytes>
+  <next_data_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>141</LINE></next_data_byte>
+  <next_month_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>150</LINE></next_month_byte>
+  <check_set_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>183</LINE></check_set_mode>
+  <check_second_digit><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>179</LINE></check_second_digit>
+  <clr_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>190</LINE></clr_output_bytes>
+  <read_programm_memory><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>195</LINE></read_programm_memory>
+  <write_to_output_buffer><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>206</LINE></write_to_output_buffer>
+  <clear_sdbl_flag><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>215</LINE></clear_sdbl_flag>
+  <exit_get_output_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>218</LINE></exit_get_output_proc>
+  <Timer_mode_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>236</LINE></Timer_mode_proc>
+  <Update_BT_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>249</LINE></Update_BT_counter>
+  <Get_output_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>435</LINE></Get_output_timer_mode>
+  <timer_is_off><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>358</LINE></timer_is_off>
+  <timer_pause><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>378</LINE></timer_pause>
+  <check_next_minute><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>267</LINE></check_next_minute>
+  <Sound_OFF><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>550</LINE></Sound_OFF>
+  <check_rest_work_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>274</LINE></check_rest_work_1>
+  <rest_time_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>300</LINE></rest_time_1>
+  <fill_buffer_var_1_temp><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>294</LINE></fill_buffer_var_1_temp>
+  <Sound_1000Hz_ON><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>560</LINE></Sound_1000Hz_ON>
+  <fill_buffer_var_2_temp><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>296</LINE></fill_buffer_var_2_temp>
+  <fill_buffer_var_3><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>407</LINE></fill_buffer_var_3>
+  <fill_buffer_var_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>385</LINE></fill_buffer_var_1>
+  <fill_buffer_var_2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>396</LINE></fill_buffer_var_2>
+  <rest_seconds_set_zero><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>312</LINE></rest_seconds_set_zero>
+  <check_400Hz_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>330</LINE></check_400Hz_on>
+  <set_sound_off><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>343</LINE></set_sound_off>
+  <set_sound_400Hz_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>350</LINE></set_sound_400Hz_on>
+  <Sound_400Hz_ON><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>572</LINE></Sound_400Hz_ON>
+  <timer_just_stopped><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>364</LINE></timer_just_stopped>
+  <check_timer_set_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>371</LINE></check_timer_set_mode>
+  <set_btrt_to_zero><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>369</LINE></set_btrt_to_zero>
+  <fill_buffer_var_4><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>418</LINE></fill_buffer_var_4>
+  <TIMER_BUFFER><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>695</LINE></TIMER_BUFFER>
+  <exit_bt_counter_procedure><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>428</LINE></exit_bt_counter_procedure>
+  <next_timer_digit_code><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>438</LINE></next_timer_digit_code>
+  <timer_subtract_ten><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>446</LINE></timer_subtract_ten>
+  <timer_check_digit_count><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>453</LINE></timer_check_digit_count>
+  <timer_small_digit_address><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>460</LINE></timer_small_digit_address>
+  <timer_copy_address><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>464</LINE></timer_copy_address>
+  <timer_get_ouput_data><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>481</LINE></timer_get_ouput_data>
+  <timer_first_byte_load><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>491</LINE></timer_first_byte_load>
+  <timer_clear_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>499</LINE></timer_clear_output_bytes>
+  <timer_load_output_bytes><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>504</LINE></timer_load_output_bytes>
+  <put_regs_to_output_buffer><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>519</LINE></put_regs_to_output_buffer>
+  <tm_get_output_set_point><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>512</LINE></tm_get_output_set_point>
+  <timer_clear_sdbl><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>533</LINE></timer_clear_sdbl>
+  <exit_get_output_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>540</LINE></exit_get_output_timer_mode>
+  <Write_byte_to_DS1307><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>584</LINE></Write_byte_to_DS1307>
+  <BCD_TO_HEX><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>605</LINE></BCD_TO_HEX>
+  <next_increment><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>610</LINE></next_increment>
+  <exit_bcd_to_hex><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>616</LINE></exit_bcd_to_hex>
+  <HEX_TO_BCD><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>623</LINE></HEX_TO_BCD>
+  <exit_change_format><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>636</LINE></exit_change_format>
+  <next_decrement><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>627</LINE></next_decrement>
+  <next_format_operation><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>633</LINE></next_format_operation>
+  <Set_default_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>643</LINE></Set_default_time>
+  <Start_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>670</LINE></Start_time>
+  <exit_start_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>678</LINE></exit_start_time>
+  <Correct_time><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm</FILE><LINE>685</LINE></Correct_time>
+  <Encoder_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>21</LINE></Encoder_proc>
+  <exit_enc_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>119</LINE></exit_enc_proc>
+  <BUTTON_STATE><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>697</LINE></BUTTON_STATE>
+  <BUTTON_COUNT><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>699</LINE></BUTTON_COUNT>
+  <check_button_state_unpress><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>55</LINE></check_button_state_unpress>
+  <check_encoder_state><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>81</LINE></check_encoder_state>
+  <check_non_zero_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>64</LINE></check_non_zero_counter>
+  <button_counter_more_than_512><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>70</LINE></button_counter_more_than_512>
+  <Button_short_press><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>127</LINE></Button_short_press>
+  <clear_button_counter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>73</LINE></clear_button_counter>
+  <Button_long_press><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>214</LINE></Button_long_press>
+  <enc_A_B_not_3><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>104</LINE></enc_A_B_not_3>
+  <check_enc_state_3><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>93</LINE></check_enc_state_3>
+  <Change_parameter><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>271</LINE></Change_parameter>
+  <clear_logical_encoder_state><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>100</LINE></clear_logical_encoder_state>
+  <enc_A_B_not_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>110</LINE></enc_A_B_not_1>
+  <enc_A_B_not_2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>116</LINE></enc_A_B_not_2>
+  <bsp_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>166</LINE></bsp_timer_mode>
+  <exit_bsp_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>206</LINE></exit_bsp_proc>
+  <bsp_clock_segment_4_5_0><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>145</LINE></bsp_clock_segment_4_5_0>
+  <bsp_clock_segment_4_0><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>152</LINE></bsp_clock_segment_4_0>
+  <bsp_clock_segment_4><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>159</LINE></bsp_clock_segment_4>
+  <bsp_timer_mode_check_bt_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>184</LINE></bsp_timer_mode_check_bt_on>
+  <bsp_timer_mode_clear_segm><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>179</LINE></bsp_timer_mode_clear_segm>
+  <bsp_chek_pause_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>197</LINE></bsp_chek_pause_on>
+  <bsp_pause_is_off><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>203</LINE></bsp_pause_is_off>
+  <blp_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>240</LINE></blp_timer_mode>
+  <blp_clock_mode_set><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>232</LINE></blp_clock_mode_set>
+  <exit_blp_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>263</LINE></exit_blp_proc>
+  <blp_timer_not_set_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>248</LINE></blp_timer_not_set_mode>
+  <blp_timer_is_on><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>256</LINE></blp_timer_is_on>
+  <cp_timer_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>542</LINE></cp_timer_mode>
+  <exit_cp_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>690</LINE></exit_cp_proc>
+  <cp_clock_mode_segm_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>302</LINE></cp_clock_mode_segm_1>
+  <cp_clock_mode_segm_2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>332</LINE></cp_clock_mode_segm_2>
+  <blp_segm_1_enc_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>318</LINE></blp_segm_1_enc_plus>
+  <blp_segm_1_dec_min><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>314</LINE></blp_segm_1_dec_min>
+  <blp_segm_1_write_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>324</LINE></blp_segm_1_write_byte>
+  <cp_clock_mode_segm_3><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>362</LINE></cp_clock_mode_segm_3>
+  <blp_segm_2_enc_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>348</LINE></blp_segm_2_enc_plus>
+  <blp_segm_2_dec_hour><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>344</LINE></blp_segm_2_dec_hour>
+  <blp_segm_2_write_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>354</LINE></blp_segm_2_write_byte>
+  <cp_clock_mode_segm_5><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>390</LINE></cp_clock_mode_segm_5>
+  <blp_segm_3_enc_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>377</LINE></blp_segm_3_enc_plus>
+  <blp_segm_3_dec_day><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>373</LINE></blp_segm_3_dec_day>
+  <blp_segm_3_write_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>383</LINE></blp_segm_3_write_byte>
+  <cp_clock_mode_segm_5_intermed><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>395</LINE></cp_clock_mode_segm_5_intermed>
+  <cp_clock_mode_segm_4><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>505</LINE></cp_clock_mode_segm_4>
+  <month_31><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>421</LINE></month_31>
+  <month_2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>441</LINE></month_2>
+  <blp_segm_5_month_31_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>433</LINE></blp_segm_5_month_31_plus>
+  <blp_segm_5_month_31_dec><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>429</LINE></blp_segm_5_month_31_dec>
+  <blp_segm_5_write_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>497</LINE></blp_segm_5_write_byte>
+  <month_30><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>479</LINE></month_30>
+  <blp_segm_5_month_2_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>462</LINE></blp_segm_5_month_2_plus>
+  <blp_segm_5_month_2_dec><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>458</LINE></blp_segm_5_month_2_dec>
+  <blp_segm_5_month_2_29><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>454</LINE></blp_segm_5_month_2_29>
+  <blp_segm_5_month_2_29_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>472</LINE></blp_segm_5_month_2_29_plus>
+  <blp_segm_5_month_30_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>491</LINE></blp_segm_5_month_30_plus>
+  <blp_segm_5_month_30_dec><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>487</LINE></blp_segm_5_month_30_dec>
+  <cp_clock_mode_segm_4_intermed><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>510</LINE></cp_clock_mode_segm_4_intermed>
+  <cp_clock_mode_segm_4_enc_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>527</LINE></cp_clock_mode_segm_4_enc_plus>
+  <cp_clock_mode_segm_4_dec><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>523</LINE></cp_clock_mode_segm_4_dec>
+  <blp_segm_4_write_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>533</LINE></blp_segm_4_write_byte>
+  <cp_timer_mode_segm_1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>576</LINE></cp_timer_mode_segm_1>
+  <cp_timer_mode_segm_0_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>563</LINE></cp_timer_mode_segm_0_plus>
+  <cp_timer_mode_segm_0_10><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>559</LINE></cp_timer_mode_segm_0_10>
+  <cp_timer_mode_segm_0_plus_60><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>571</LINE></cp_timer_mode_segm_0_plus_60>
+  <cp_timer_mode_segm_2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>604</LINE></cp_timer_mode_segm_2>
+  <cp_timer_mode_segm_1_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>592</LINE></cp_timer_mode_segm_1_plus>
+  <cp_timer_mode_segm_1_not_zero><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>588</LINE></cp_timer_mode_segm_1_not_zero>
+  <cp_timer_mode_segm_1_plus_100><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>599</LINE></cp_timer_mode_segm_1_plus_100>
+  <cp_timer_mode_segm_4><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>634</LINE></cp_timer_mode_segm_4>
+  <cp_timer_mode_segm_2_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>621</LINE></cp_timer_mode_segm_2_plus>
+  <cp_timer_mode_segm_2_dec><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>617</LINE></cp_timer_mode_segm_2_dec>
+  <cp_timer_mode_segm_2_plus_100><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>628</LINE></cp_timer_mode_segm_2_plus_100>
+  <cp_timer_mode_segm_5><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>664</LINE></cp_timer_mode_segm_5>
+  <cp_timer_mode_segm_4_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>651</LINE></cp_timer_mode_segm_4_plus>
+  <cp_timer_mode_segm_4_10><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>647</LINE></cp_timer_mode_segm_4_10>
+  <cp_timer_mode_segm_4_plus_60><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>659</LINE></cp_timer_mode_segm_4_plus_60>
+  <cp_timer_mode_segm_5_plus><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>680</LINE></cp_timer_mode_segm_5_plus>
+  <cp_timer_mode_segm_5_not_zero><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>676</LINE></cp_timer_mode_segm_5_not_zero>
+  <cp_timer_mode_segm_5_plus_100><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm</FILE><LINE>687</LINE></cp_timer_mode_segm_5_plus_100>
+  <Timer1_ON><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>24</LINE></Timer1_ON>
+  <Timer1_OFF><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>41</LINE></Timer1_OFF>
+  <set_flicking_flag><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>66</LINE></set_flicking_flag>
+  <timer2_ww_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>70</LINE></timer2_ww_mode>
+  <timer2_clock_mode><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>83</LINE></timer2_clock_mode>
+  <read_encoder_state><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>91</LINE></read_encoder_state>
+  <change_digit_number><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>100</LINE></change_digit_number>
+  <exit_timer2><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>103</LINE></exit_timer2>
+  <Get_Next_Digit><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>116</LINE></Get_Next_Digit>
+  <digit_lower_six><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>122</LINE></digit_lower_six>
+  <data_latch_end><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>203</LINE></data_latch_end>
+  <set_clk_line><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>197</LINE></set_clk_line>
+  <exit_timer1><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>233</LINE></exit_timer1>
+  <line_le_oe><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>216</LINE></line_le_oe>
+  <set_le_line><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>212</LINE></set_le_line>
+  <clr_oe_line><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>221</LINE></clr_oe_line>
+  <ANODE_OUTPUT><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>267</LINE></ANODE_OUTPUT>
+  <Timer2_ON><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>247</LINE></Timer2_ON>
+  <Timer2_OFF><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm</FILE><LINE>260</LINE></Timer2_OFF>
+  <Send_UART><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>20</LINE></Send_UART>
+  <exit_uart_tx><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>49</LINE></exit_uart_tx>
+  <UART_IN><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>208</LINE></UART_IN>
+  <UART_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>103</LINE></UART_proc>
+  <uart_packet_income><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>122</LINE></uart_packet_income>
+  <exit_uart_proc><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>170</LINE></exit_uart_proc>
+  <packet_start_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>137</LINE></packet_start_byte>
+  <UART_TEMP><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>210</LINE></UART_TEMP>
+  <next_uart_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>142</LINE></next_uart_byte>
+  <crc_is_good><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>161</LINE></crc_is_good>
+  <Write_packet_to_TWI_buffer><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>178</LINE></Write_packet_to_TWI_buffer>
+  <write_next_byte_to_twi_buffer><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm</FILE><LINE>188</LINE></write_next_byte_to_twi_buffer>
+  <Set_brightness><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>12</LINE></Set_brightness>
+  <wait_conv><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>15</LINE></wait_conv>
+  <not_abs_dark><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>26</LINE></not_abs_dark>
+  <Average_measure><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>31</LINE></Average_measure>
+  <ADC_NUM><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>90</LINE></ADC_NUM>
+  <ADC_RES><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>92</LINE></ADC_RES>
+  <adc_res_num_low><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>48</LINE></adc_res_num_low>
+  <Calculate_average><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>54</LINE></Calculate_average>
+  <aver_calc_next_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>64</LINE></aver_calc_next_byte>
+  <main><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>178</LINE></main>
+  <read_next_packet_main><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>184</LINE></read_next_packet_main>
  </LABELS>
 </ASSEMBLER_INFO>
