@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Tue Mar 21 11:56:49 2023
+AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Fri Mar 24 16:44:30 2023
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc'
 D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(167): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm'
@@ -1047,7 +1047,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
 00005f e0d0                      ldi		YH,HIGH(RX_TAIL)
 000060 8308                      st		Y,templ
                                  
-000061 940c 0686                 jmp		program_begin
+000061 940c 0692                 jmp		program_begin
                                  
                                  .include	"TWI_functions.asm"
                                  
@@ -3301,7 +3301,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  нужно самостоятельно определить значение ухода времени в секундах за сутки для каждой конкретной модели часов.
                                  
                                  2. Считывание из памяти программ поправочного коэффициента (уход времени в секундах за сутки) и запись полученного значения в оперативную
-                                 память.
+                                 память. Производится сразу после включения часов и начала работы программы.
                                  */
                                  
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3309,55 +3309,75 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Correct_time:
+00067d e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
+00067e e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
+00067f 910c                      	ld		templ,X
+                                 	//проверка значения ошибки часов - если значение отрицательное - отстают, иначе - спешат
+000680 ff07                      	sbrs	templ,7														
+000681 c000                      	rjmp	clock_ahead
                                  	
-00067d 9508                      ret
+                                 	
+                                 	clock_ahead:
+                                 	//считывание текущего времени
+000682 e011                      	ldi		temph,1
+000683 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
+000684 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
+000685 0fa7                      	add		XL,count
+000686 1fb0                      	adc		XH,templ
+000687 910c                      	ld		templ,X		
+000688 9508                      ret
                                  
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////							2
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Read_write_time_inaccuracy:	
-00067e e0ea                      	ldi		ZL,LOW(2*TIME_INACCURACY_SEC_PER_DAY_CONST)					;адрес хранения значения ухода времени во флеш-памяти
-00067f e0fd                      	ldi		ZH,HIGH(2*TIME_INACCURACY_SEC_PER_DAY_CONST)
-000680 9104                      	lpm		templ,Z
+000689 e2e0                      	ldi		ZL,LOW(2*TIME_INACCURACY_SEC_PER_DAY_CONST)					;адрес хранения значения ухода времени во флеш-памяти
+00068a e0fd                      	ldi		ZH,HIGH(2*TIME_INACCURACY_SEC_PER_DAY_CONST)
+00068b 9104                      	lpm		templ,Z
                                  	
-000681 e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
-000682 e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
-000683 930c                      	st		X,templ
-000684 9508                      ret
+00068c e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
+00068d e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
+00068e 930c                      	st		X,templ
+00068f 9508                      ret
                                  
                                  .dseg 
                                  
 000124                           TIME_INACCURACY_SEC_PER_DAY_TEMP:	.byte	1
                                  
+000125                           CORRECTION_FLAG:	.byte	1
+                                 
                                  .cseg
                                  
                                  TIME_INACCURACY_SEC_PER_DAY_CONST:
-000685 0006                      		.db		0x06,	0x00
+000690 0006                      		.db		0x06,	0x00
+                                 
+                                 TIME_INACCURACY_MIN_PER_DAY_CONST:
+000691 0006                      		.db		0x06,	0x00
                                  
                                  program_begin:
                                  
-000686 940e 02c7                 call	Start_time
-000688 940e 067e                 call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
+000692 940e 02c7                 call	Start_time
+000694 940e 0689                 call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
                                  
                                  main:
                                  //после срабатывания таймера первой запускается процедура загрузки данных для вывода на индикатор
-00068a ff97                      	sbrs	enc_state,T2IF
-00068b 940c 0691                 	jmp		read_next_packet_main
-00068d 940e 0568                 	call	Get_Next_Digit
-00068f 940e 02f7                 	call	Encoder_proc
+000696 ff97                      	sbrs	enc_state,T2IF
+000697 940c 069d                 	jmp		read_next_packet_main
+000699 940e 0568                 	call	Get_Next_Digit
+00069b 940e 02f7                 	call	Encoder_proc
                                  read_next_packet_main:
-000691 ff44                      	sbrs	state_flag,RPTF
-000692 940c 068a                 	jmp		main
+00069d ff44                      	sbrs	state_flag,RPTF
+00069e 940c 0696                 	jmp		main
                                  //определить режим работы настенных часов
-000694 ff40                      	sbrs	state_flag,WWVM
-000695 940e 00d8                 	call	Clock_mode_proc							//режим часов
-000697 fd40                      	sbrc	state_flag,WWVM
-000698 940e 016f                 	call	Timer_mode_proc							//режим таймера
-00069a 940e 05fd                 	call	UART_proc
-00069c 940e 0649                 	call	Set_brightness
+0006a0 ff40                      	sbrs	state_flag,WWVM
+0006a1 940e 00d8                 	call	Clock_mode_proc							//режим часов
+0006a3 fd40                      	sbrc	state_flag,WWVM
+0006a4 940e 016f                 	call	Timer_mode_proc							//режим таймера
+0006a6 940e 05fd                 	call	UART_proc
+0006a8 940e 0649                 	call	Set_brightness
                                  
-00069e 940c 068a                 jmp	main
+0006aa 940c 0696                 jmp	main
                                  
                                  
                                  
@@ -3379,15 +3399,15 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega16A" register use summary:
-x  :  54 y  :  42 z  :   6 r0 :  21 r1 :  13 r2 :  13 r3 :  11 r4 :  11 
+x  :  56 y  :  42 z  :   6 r0 :  21 r1 :  13 r2 :  13 r3 :  11 r4 :  11 
 r5 :  13 r6 :  12 r7 :  11 r8 :   4 r9 :   2 r10:   4 r11:   2 r12:   8 
-r13:   5 r14:  29 r15:  17 r16: 351 r17: 130 r18:  63 r19:  35 r20:  69 
-r21:  10 r22:  10 r23:  33 r24:   6 r25:  27 r26:  44 r27:  42 r28:  36 
+r13:   5 r14:  29 r15:  17 r16: 355 r17: 131 r18:  63 r19:  35 r20:  69 
+r21:  10 r22:  10 r23:  34 r24:   6 r25:  27 r26:  47 r27:  45 r28:  36 
 r29:  36 r30:  19 r31:  18 
 Registers used: 35 out of 35 (100.0%)
 
 "ATmega16A" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :  21 add   :  24 adiw  :   4 and   :   0 
+.lds  :   0 .sts  :   0 adc   :  22 add   :  25 adiw  :   4 and   :   0 
 andi  :  19 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :  30 brge  :   3 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :  21 brlt  :   0 brmi  :   0 
@@ -3397,12 +3417,12 @@ clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :  87 cls   :   0
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :  44 cpc   :   0 
 cpi   :  78 cpse  :   0 dec   :  15 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :  15 inc   :  40 jmp   : 156 
-ld    :  28 ldd   :   0 ldi   : 229 lds   :   0 lpm   :  11 lsl   :  14 
+ld    :  30 ldd   :   0 ldi   : 234 lds   :   0 lpm   :  11 lsl   :  14 
 lsr   :   3 mov   :  43 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   0 or    :   3 ori   :   2 out   :  46 pop   :  25 
-push  :  25 rcall :   0 ret   :  36 reti  :   5 rjmp  :  21 rol   :   7 
+push  :  25 rcall :   0 ret   :  36 reti  :   5 rjmp  :  22 rol   :   7 
 ror   :   0 sbc   :   1 sbci  :   0 sbi   :  17 sbic  :   1 sbis  :   1 
-sbiw  :   0 sbr   :  15 sbrc  :  36 sbrs  :  27 sec   :   0 seh   :   0 
+sbiw  :   0 sbr   :  15 sbrc  :  36 sbrs  :  28 sec   :   0 seh   :   0 
 sei   :   2 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :  68 std   :   0 sts   :   0 
 sub   :   4 subi  :   8 swap  :   3 tst   :   6 wdr   :   0 
@@ -3411,8 +3431,8 @@ Instructions used: 48 out of 113 (42.5%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000d40   3260     84   3344   16384  20.4%
-[.dseg] 0x000060 0x000125      0    197    197    1024  19.2%
+[.cseg] 0x000000 0x000d58   3282     86   3368   16384  20.6%
+[.dseg] 0x000060 0x000126      0    198    198    1024  19.3%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
 Assembly complete, 0 errors, 0 warnings

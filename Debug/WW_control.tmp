@@ -258,9 +258,12 @@
   <adc_res_num_low><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>48</LINE></adc_res_num_low>
   <Calculate_average><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>54</LINE></Calculate_average>
   <aver_calc_next_byte><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm</FILE><LINE>64</LINE></aver_calc_next_byte>
-  <Read_write_time_inaccuracy><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>24</LINE></Read_write_time_inaccuracy>
-  <TIME_INACCURACY_SEC_PER_DAY_CONST><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>40</LINE></TIME_INACCURACY_SEC_PER_DAY_CONST>
-  <TIME_INACCURACY_SEC_PER_DAY_TEMP><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>36</LINE></TIME_INACCURACY_SEC_PER_DAY_TEMP>
+  <TIME_INACCURACY_SEC_PER_DAY_TEMP><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>51</LINE></TIME_INACCURACY_SEC_PER_DAY_TEMP>
+  <clock_ahead><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>25</LINE></clock_ahead>
+  <Read_write_time_inaccuracy><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>39</LINE></Read_write_time_inaccuracy>
+  <TIME_INACCURACY_SEC_PER_DAY_CONST><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>57</LINE></TIME_INACCURACY_SEC_PER_DAY_CONST>
+  <CORRECTION_FLAG><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>53</LINE></CORRECTION_FLAG>
+  <TIME_INACCURACY_MIN_PER_DAY_CONST><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm</FILE><LINE>60</LINE></TIME_INACCURACY_MIN_PER_DAY_CONST>
   <main><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>180</LINE></main>
   <read_next_packet_main><FILE>D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm</FILE><LINE>186</LINE></read_next_packet_main>
  </LABELS>
