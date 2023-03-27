@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Fri Mar 24 16:44:30 2023
+AVRASM ver. 2.2.8  C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm Mon Mar 27 22:12:57 2023
 
 
 EQU  SIGNATURE_000 0000001e
@@ -675,7 +675,7 @@ CSEG UART_TX      000005c7
 CSEG TWI_int      00000069
 DSEG RX_HEAD      000000ba
 DSEG RX_TAIL      000000bb
-CSEG program_begin 00000692
+CSEG program_begin 000006a0
 EQU  DS1307_ADDRESS 00000068
 EQU  write        00000000
 EQU  read         00000001
@@ -914,10 +914,12 @@ CSEG adc_res_num_low 00000664
 CSEG Calculate_average 00000666
 CSEG aver_calc_next_byte 0000066d
 DSEG TIME_INACCURACY_SEC_PER_DAY_TEMP 00000124
-CSEG clock_ahead  00000682
-CSEG Read_write_time_inaccuracy 00000689
-CSEG TIME_INACCURACY_SEC_PER_DAY_CONST 00000690
+CSEG exit_correct_time_proc 00000696
+CSEG check_stop_correction_time 00000696
+CSEG clock_ahead  00000695
+CSEG Read_write_time_inaccuracy 00000697
+CSEG TIME_INACCURACY_SEC_PER_DAY_CONST 0000069e
 DSEG CORRECTION_FLAG 00000125
-CSEG TIME_INACCURACY_MIN_PER_DAY_CONST 00000691
-CSEG main         00000696
-CSEG read_next_packet_main 0000069d
+CSEG TIME_INACCURACY_MIN_PER_DAY_CONST 0000069f
+CSEG main         000006a4
+CSEG read_next_packet_main 000006ab

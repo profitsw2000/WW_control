@@ -16,20 +16,39 @@
 Correct_time:
 	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
 	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
-	ld		templ,X
-	//проверка значения ошибки часов - если значение отрицательное - отстают, иначе - спешат
-	sbrs	templ,7														
-	rjmp	clock_ahead
-	
-	
-	clock_ahead:
-	//считывание текущего времени
-	ldi		temph,1
+	ld		temph,X
+
+	//считывание текущего времени - сначала часы
 	ldi		XL,LOW(TWI_BUFFER_IN)
 	ldi		XH,HIGH(TWI_BUFFER_IN)
-	add		XL,count
-	adc		XH,templ
-	ld		templ,X		
+	adiw	XL,2
+	ld		templ,X
+	//проверка значения часов, минут и секунд
+	cpi		templ, 1
+	brne	exit_correct_time_proc
+	ld		templ,-X													;минуты
+	cpi		templ,0
+	brne	exit_correct_time_proc
+	ld		templ,-X													;секунды
+	cpi		templ,0
+	brne	check_stop_correction_time	
+	//проверка значения ошибки часов - если значение отрицательное - отстают, иначе - спешат
+	sbrs	temph,7														
+	rjmp	clock_ahead
+	//если отстают - записать в датчик значение секунд и выйти
+	neg		temph														;модуль отрицательного числа
+	call	HEX_TO_BCD													;перевести в формат bcd для записи в датчик
+	clr		byte_address
+	call	Write_byte_to_DS1307
+	rjmp	exit_correct_time_proc
+
+	//если часы спешат
+	clock_ahead:
+	sbr		state_flag,WWSM												;установка флага, который сигнализирует, что будет производится коррекция времени
+	
+check_stop_correction_time:
+
+exit_correct_time_proc:
 ret
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
