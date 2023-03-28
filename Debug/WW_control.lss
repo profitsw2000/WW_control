@@ -1,22 +1,22 @@
 
-AVRASM ver. 2.2.8  C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm Mon Mar 27 22:12:57 2023
+AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Tue Mar 28 14:50:43 2023
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(167): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(168): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(169): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(170): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(171): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(172): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TimeCorrect.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(167): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(168): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(169): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(170): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(171): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(172): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(173): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(167): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(168): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(169): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(170): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(171): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(172): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm'
-C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TimeCorrect.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(167): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(168): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(169): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(170): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(171): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(172): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm'
+D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(173): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm'
                                  
                                  ;
                                  
@@ -1047,7 +1047,7 @@ C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): 
 00005f e0d0                      ldi		YH,HIGH(RX_TAIL)
 000060 8308                      st		Y,templ
                                  
-000061 940c 06a0                 jmp		program_begin
+000061 940c 06b3                 jmp		program_begin
                                  
                                  .include	"TWI_functions.asm"
                                  
@@ -3298,10 +3298,12 @@ C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): 
                                  
                                  1. Корректировка времени часов. В связи с тем, что в процессе работы часов в течении определенного времени, из-за неидеальной точности работы кварцевого 
                                  резонатора, возникает погрешность определения времени микросхемой DS1307. Поэтому каждые сутки, в определённое время, происходит корректировка часов. Для этого
-                                 нужно самостоятельно определить значение ухода времени в секундах за сутки для каждой конкретной модели часов.
+                                 нужно самостоятельно определить значение ухода времени в секундах за сутки для каждой конкретной модели часов и записать во флэш-память.
                                  
                                  2. Считывание из памяти программ поправочного коэффициента (уход времени в секундах за сутки) и запись полученного значения в оперативную
                                  память. Производится сразу после включения часов и начала работы программы.
+                                 
+                                 3. Считывание из оперативной памяти значения поправки (уход времени в секундах за сутки). Результат - в регистре temph.
                                  */
                                  
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3309,94 +3311,113 @@ C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): 
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Correct_time:
-00067d e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
-00067e e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
-00067f 911c                      	ld		temph,X
                                  
                                  	//считывание текущего времени - сначала часы
-000680 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
-000681 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
-000682 9612                      	adiw	XL,2
-000683 910c                      	ld		templ,X
-                                 	//проверка значения часов, минут и секунд
-000684 3001                      	cpi		templ, 1
-000685 f481                      	brne	exit_correct_time_proc
-000686 910e                      	ld		templ,-X													;минуты
+00067d e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
+00067e e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
+00067f 9612                      	adiw	XL,2
+000680 910c                      	ld		templ,X
+                                 	//проверка значения часов, минут и секунд (корректировка производится ежедневно в 01:00:00)
+000681 3001                      	cpi		templ, 1
+000682 f519                      	brne	exit_correct_time_proc
+000683 910e                      	ld		templ,-X													;минуты
+000684 3000                      	cpi		templ,0
+000685 f501                      	brne	exit_correct_time_proc
+000686 910e                      	ld		templ,-X													;секунды
 000687 3000                      	cpi		templ,0
-000688 f469                      	brne	exit_correct_time_proc
-000689 910e                      	ld		templ,-X													;секунды
-00068a 3000                      	cpi		templ,0
-00068b f451                      	brne	check_stop_correction_time	
-                                 	//проверка значения ошибки часов - если значение отрицательное - отстают, иначе - спешат
-00068c ff17                      	sbrs	temph,7														
-00068d c007                      	rjmp	clock_ahead
+000688 f469                      	brne	check_stop_correction_time	
+000689 940e 06ae                 	call	Read_time_inaccuracy_from_RAM
+                                 	//проверка значения ошибки часов - если значение отрицательное (старший бит = 1) - отстают, иначе - спешат
+00068b ff17                      	sbrs	temph,7														
+00068c c007                      	rjmp	clock_ahead
                                  	//если отстают - записать в датчик значение секунд и выйти
-00068e 9511                      	neg		temph														;модуль отрицательного числа
-00068f 940e 02a0                 	call	HEX_TO_BCD													;перевести в формат bcd для записи в датчик
-000691 24ff                      	clr		byte_address
-000692 940e 0284                 	call	Write_byte_to_DS1307
-000694 c001                      	rjmp	exit_correct_time_proc
+00068d 9511                      	neg		temph														;модуль отрицательного числа
+00068e 940e 02a0                 	call	HEX_TO_BCD													;перевести в формат bcd для записи в датчик
+000690 24ff                      	clr		byte_address
+000691 940e 0284                 	call	Write_byte_to_DS1307
+000693 c012                      	rjmp	exit_correct_time_proc
                                  
                                  	//если часы спешат
-                                 	clock_ahead:
-000695 6041                      	sbr		state_flag,WWSM												;установка флага, который сигнализирует, что будет производится коррекция времени
-                                 	
+                                 clock_ahead:
+000694 6041                      	sbr		state_flag,WWSM												;установка флага, который сигнализирует, что будет производится коррекция времени
+000695 c010                      	rjmp	exit_correct_time_proc
+                                 
+                                 //для случая, если часы спешат корректировка времени будет происходить в 1 час 00 минут, а значение секунд = значение поправки + 1
+                                 //будет произведён сброс до значения = 1:00:01 и сброс флага WWSM
                                  check_stop_correction_time:
+000696 ff41                      	sbrs	state_flag,WWSM
+000697 c00e                      	rjmp	exit_correct_time_proc
+000698 2f10                      	mov		temph,templ
+000699 940e 0295                 	call	BCD_TO_HEX
+00069b 2f01                      	mov		templ,temph													;перевод значения секунд из BCD формата
+00069c 940e 06ae                 	call	Read_time_inaccuracy_from_RAM								;значение поправки - в temph
+00069e 9513                      	inc		temph
+00069f 1710                      	cp		temph,templ													;проверка на равенство текущего значения секунд и значения поправки + 1
+0006a0 f429                      	brne	exit_correct_time_proc
+0006a1 7f4e                      	cbr		state_flag,WWSM												;сброс флага
+0006a2 e011                      	ldi		temph,1
+0006a3 24ff                      	clr		byte_address
+0006a4 940e 0284                 	call	Write_byte_to_DS1307										;запись в датчик значения секунд = 1
                                  
                                  exit_correct_time_proc:
-000696 9508                      ret
+0006a6 9508                      ret
                                  
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////							2
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Read_write_time_inaccuracy:	
-000697 e3ec                      	ldi		ZL,LOW(2*TIME_INACCURACY_SEC_PER_DAY_CONST)					;адрес хранения значения ухода времени во флеш-памяти
-000698 e0fd                      	ldi		ZH,HIGH(2*TIME_INACCURACY_SEC_PER_DAY_CONST)
-000699 9104                      	lpm		templ,Z
+0006a7 e6e4                      	ldi		ZL,LOW(2*TIME_INACCURACY_SEC_PER_DAY_CONST)					;адрес хранения значения ухода времени во флеш-памяти
+0006a8 e0fd                      	ldi		ZH,HIGH(2*TIME_INACCURACY_SEC_PER_DAY_CONST)
+0006a9 9104                      	lpm		templ,Z
                                  	
-00069a e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
-00069b e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
-00069c 930c                      	st		X,templ
-00069d 9508                      ret
+0006aa e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
+0006ab e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
+0006ac 930c                      	st		X,templ
+0006ad 9508                      ret
+                                 
+                                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 //////////							3
+                                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 
+                                 Read_time_inaccuracy_from_RAM:
+0006ae e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
+0006af e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
+0006b0 911c                      	ld		temph,X
+0006b1 9508                      ret
                                  
                                  .dseg 
                                  
 000124                           TIME_INACCURACY_SEC_PER_DAY_TEMP:	.byte	1
                                  
-000125                           CORRECTION_FLAG:	.byte	1
-                                 
                                  .cseg
                                  
                                  TIME_INACCURACY_SEC_PER_DAY_CONST:
-00069e 0006                      		.db		0x06,	0x00
-                                 
-                                 TIME_INACCURACY_MIN_PER_DAY_CONST:
-00069f 0006                      		.db		0x06,	0x00
+0006b2 0006                      		.db		0x06,	0x00
                                  
                                  program_begin:
                                  
-0006a0 940e 02c7                 call	Start_time
-0006a2 940e 0697                 call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
+0006b3 940e 02c7                 call	Start_time
+0006b5 940e 06a7                 call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
                                  
                                  main:
                                  //после срабатывания таймера первой запускается процедура загрузки данных для вывода на индикатор
-0006a4 ff97                      	sbrs	enc_state,T2IF
-0006a5 940c 06ab                 	jmp		read_next_packet_main
-0006a7 940e 0568                 	call	Get_Next_Digit
-0006a9 940e 02f7                 	call	Encoder_proc
+0006b7 ff97                      	sbrs	enc_state,T2IF
+0006b8 940c 06be                 	jmp		read_next_packet_main
+0006ba 940e 0568                 	call	Get_Next_Digit
+0006bc 940e 02f7                 	call	Encoder_proc
                                  read_next_packet_main:
-0006ab ff44                      	sbrs	state_flag,RPTF
-0006ac 940c 06a4                 	jmp		main
+0006be ff44                      	sbrs	state_flag,RPTF
+0006bf 940c 06b7                 	jmp		main
                                  //определить режим работы настенных часов
-0006ae ff40                      	sbrs	state_flag,WWVM
-0006af 940e 00d8                 	call	Clock_mode_proc							//режим часов
-0006b1 fd40                      	sbrc	state_flag,WWVM
-0006b2 940e 016f                 	call	Timer_mode_proc							//режим таймера
-0006b4 940e 05fd                 	call	UART_proc
-0006b6 940e 0649                 	call	Set_brightness
+0006c1 ff40                      	sbrs	state_flag,WWVM
+0006c2 940e 00d8                 	call	Clock_mode_proc							//режим часов
+0006c4 fd40                      	sbrc	state_flag,WWVM
+0006c5 940e 016f                 	call	Timer_mode_proc							//режим таймера
+0006c7 940e 05fd                 	call	UART_proc
+0006c9 940e 0649                 	call	Set_brightness
                                  
-0006b8 940c 06a4                 jmp	main
+0006cb 940c 06b7                 jmp	main
                                  
                                  
                                  
@@ -3420,7 +3441,7 @@ counted separately from r26..r31 here.
 "ATmega16A" register use summary:
 x  :  58 y  :  42 z  :   6 r0 :  21 r1 :  13 r2 :  13 r3 :  11 r4 :  11 
 r5 :  13 r6 :  12 r7 :  11 r8 :   4 r9 :   2 r10:   4 r11:   2 r12:   8 
-r13:   5 r14:  29 r15:  18 r16: 357 r17: 133 r18:  63 r19:  35 r20:  70 
+r13:   5 r14:  29 r15:  19 r16: 360 r17: 138 r18:  63 r19:  35 r20:  72 
 r21:  10 r22:  10 r23:  33 r24:   6 r25:  27 r26:  47 r27:  44 r28:  36 
 r29:  36 r30:  19 r31:  18 
 Registers used: 35 out of 35 (100.0%)
@@ -3430,18 +3451,18 @@ Registers used: 35 out of 35 (100.0%)
 andi  :  19 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :  30 brge  :   3 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :  21 brlt  :   0 brmi  :   0 
-brne  :  63 brpl  :   0 brsh  :  14 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  67 cbi   :  11 cbr   :  19 
-clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :  88 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :  44 cpc   :   0 
+brne  :  64 brpl  :   0 brsh  :  14 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  71 cbi   :  11 cbr   :  20 
+clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :  89 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :  45 cpc   :   0 
 cpi   :  81 cpse  :   0 dec   :  15 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :  15 inc   :  40 jmp   : 156 
-ld    :  32 ldd   :   0 ldi   : 233 lds   :   0 lpm   :  11 lsl   :  14 
-lsr   :   3 mov   :  43 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :  15 inc   :  41 jmp   : 156 
+ld    :  32 ldd   :   0 ldi   : 234 lds   :   0 lpm   :  11 lsl   :  14 
+lsr   :   3 mov   :  45 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   1 nop   :   0 or    :   3 ori   :   2 out   :  46 pop   :  25 
-push  :  25 rcall :   0 ret   :  36 reti  :   5 rjmp  :  23 rol   :   7 
+push  :  25 rcall :   0 ret   :  37 reti  :   5 rjmp  :  25 rol   :   7 
 ror   :   0 sbc   :   1 sbci  :   0 sbi   :  17 sbic  :   1 sbis  :   1 
-sbiw  :   0 sbr   :  16 sbrc  :  36 sbrs  :  28 sec   :   0 seh   :   0 
+sbiw  :   0 sbr   :  16 sbrc  :  36 sbrs  :  29 sec   :   0 seh   :   0 
 sei   :   2 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :  68 std   :   0 sts   :   0 
 sub   :   4 subi  :   8 swap  :   3 tst   :   6 wdr   :   0 
@@ -3450,8 +3471,8 @@ Instructions used: 49 out of 113 (43.4%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000d74   3310     86   3396   16384  20.7%
-[.dseg] 0x000060 0x000126      0    198    198    1024  19.3%
+[.cseg] 0x000000 0x000d9a   3350     84   3434   16384  21.0%
+[.dseg] 0x000060 0x000125      0    197    197    1024  19.2%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
 Assembly complete, 0 errors, 0 warnings
