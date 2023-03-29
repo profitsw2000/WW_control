@@ -44,7 +44,7 @@ Correct_time:
 
 	//если часы спешат
 clock_ahead:
-	sbr		state_flag,WWSM												;установка флага, который сигнализирует, что будет производится коррекция времени
+	sbr		state_flag,(1<<WWSM)										;установка флага, который сигнализирует, что будет производится коррекция времени
 	rjmp	exit_correct_time_proc
 
 //для случая, если часы спешат корректировка времени будет происходить в 1 час 00 минут, а значение секунд = значение поправки + 1
@@ -59,7 +59,7 @@ check_stop_correction_time:
 	inc		temph
 	cp		temph,templ													;проверка на равенство текущего значения секунд и значения поправки + 1
 	brne	exit_correct_time_proc
-	cbr		state_flag,WWSM												;сброс флага
+	cbr		state_flag,(1<<WWSM)										;сброс флага
 	ldi		temph,1
 	clr		byte_address
 	call	Write_byte_to_DS1307										;запись в датчик значения секунд = 1

@@ -1,22 +1,22 @@
 
-AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Tue Mar 28 14:50:43 2023
+AVRASM ver. 2.2.8  C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm Wed Mar 29 20:20:21 2023
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(167): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(168): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(169): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(170): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(171): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(172): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(173): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(167): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(168): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(169): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(170): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(171): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(172): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TimeCorrect.asm'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(167): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(168): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(169): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(170): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(171): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(172): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(173): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(167): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(168): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(169): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(170): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(171): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(172): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TimeCorrect.asm'
                                  
                                  ;
                                  
@@ -3339,7 +3339,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  
                                  	//если часы спешат
                                  clock_ahead:
-000694 6041                      	sbr		state_flag,WWSM												;установка флага, который сигнализирует, что будет производится коррекция времени
+000694 6042                      	sbr		state_flag,(1<<WWSM)										;установка флага, который сигнализирует, что будет производится коррекция времени
 000695 c010                      	rjmp	exit_correct_time_proc
                                  
                                  //для случая, если часы спешат корректировка времени будет происходить в 1 час 00 минут, а значение секунд = значение поправки + 1
@@ -3354,7 +3354,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
 00069e 9513                      	inc		temph
 00069f 1710                      	cp		temph,templ													;проверка на равенство текущего значения секунд и значения поправки + 1
 0006a0 f429                      	brne	exit_correct_time_proc
-0006a1 7f4e                      	cbr		state_flag,WWSM												;сброс флага
+0006a1 7f4d                      	cbr		state_flag,(1<<WWSM)										;сброс флага
 0006a2 e011                      	ldi		temph,1
 0006a3 24ff                      	clr		byte_address
 0006a4 940e 0284                 	call	Write_byte_to_DS1307										;запись в датчик значения секунд = 1
