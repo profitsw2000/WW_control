@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Thu Mar 30 16:01:35 2023
+AVRASM ver. 2.2.8  C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm Thu Mar 30 22:11:44 2023
 
 
 EQU  SIGNATURE_000 0000001e
@@ -667,6 +667,9 @@ EQU  CLK          00000003
 EQU  LE           00000004
 EQU  SDI_TIME     00000002
 EQU  SDI_DATA     00000005
+EQU  FIRST_PAGE_BEGIN 00000000
+EQU  SECOND_PAGE_BEGIN 00000010
+EQU  THIRD_PAGE_BEGIN 00000020
 CSEG reset        00000024
 CSEG Timer2       00000544
 CSEG Timer1       00000586
@@ -676,7 +679,7 @@ CSEG TWI_int      0000006b
 CSEG Read_timer_parameters_from_eeprom 000006b5
 DSEG RX_HEAD      000000ba
 DSEG RX_TAIL      000000bb
-CSEG program_begin 000006b6
+CSEG program_begin 000006d6
 EQU  DS1307_ADDRESS 00000068
 EQU  write        00000000
 EQU  read         00000001
@@ -921,5 +924,11 @@ CSEG clock_ahead  00000696
 CSEG Read_write_time_inaccuracy 000006a9
 CSEG TIME_INACCURACY_SEC_PER_DAY_CONST 000006b4
 DSEG TIME_INACCURACY_SEC_PER_DAY_TEMP 00000124
-CSEG main         000006ba
-CSEG read_next_packet_main 000006c1
+CSEG next_param_from_eeprom 000006b6
+CSEG Read_byte_from_eeprom 000006cf
+CSEG exit_read_timer_parameters_from_eeprom 000006ce
+CSEG check_minutes_or_rounds 000006cc
+CSEG check_param_number 000006ce
+DSEG TIMER_PARAMETERS_TEMP 00000125
+CSEG main         000006da
+CSEG read_next_packet_main 000006e1

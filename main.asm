@@ -75,6 +75,10 @@
 .equ	SDI_TIME				=	2
 .equ	SDI_DATA				=	5
 
+//адреса памяти в eeprom
+.equ	FIRST_PAGE_BEGIN		=	0
+.equ	SECOND_PAGE_BEGIN		=	16
+.equ	THIRD_PAGE_BEGIN		=	32
 
 
 .org	0

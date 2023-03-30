@@ -1,24 +1,24 @@
 
-AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Thu Mar 30 16:01:35 2023
+AVRASM ver. 2.2.8  C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm Thu Mar 30 22:11:44 2023
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(168): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(169): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(170): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(171): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(172): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(173): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(174): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(175): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EEPROMFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(172): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(174): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(175): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(176): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(177): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(178): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TimeCorrect.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(179): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EEPROMFunctions.asm'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(168): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(169): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\MainFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(170): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EncoderFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(171): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\Timers.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(172): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\UARTFunctions.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(173): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\ADC.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(174): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TimeCorrect.asm'
-D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(175): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\EEPROMFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(172): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TWI_functions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(173): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\MainFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(174): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EncoderFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(175): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\Timers.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(176): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\UARTFunctions.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(177): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\ADC.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(178): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\TimeCorrect.asm'
+C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm(179): Including file 'C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\EEPROMFunctions.asm'
                                  
                                  ;
                                  
@@ -962,6 +962,10 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  .equ	SDI_TIME				=	2
                                  .equ	SDI_DATA				=	5
                                  
+                                 //адреса памяти в eeprom
+                                 .equ	FIRST_PAGE_BEGIN		=	0
+                                 .equ	SECOND_PAGE_BEGIN		=	16
+                                 .equ	THIRD_PAGE_BEGIN		=	32
                                  
                                  
                                  .org	0
@@ -1050,7 +1054,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
 000061 e0d0                      ldi		YH,HIGH(RX_TAIL)
 000062 8308                      st		Y,templ
                                  
-000063 940c 06b6                 jmp		program_begin
+000063 940c 06d6                 jmp		program_begin
                                  
                                  .include	"TWI_functions.asm"
                                  
@@ -3402,40 +3406,107 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  Основные процедуры для работы с eeprom
                                  1. Считывание основных параметров таймера (5 параметров - продолжительность раунда (секунды и минуты), продолжительность отдыха (секунды и минуты)
                                  и количество раундов) из eeprom и запись их в соответствующие регистры. Данные в eeprom храняться с двойным резервированием. Соответственно считывание
-                                 производится с трёх разных адресов памяти и сравнение полученных данных. 
+                                 производится с трёх разных адресов памяти и сравнение полученных данных.
+                                 В templ содержится номер считываемого параметра (5 штук). Для каждого параметра считывается из eeprom 3 байта, проверяется, что все они равны. 
+                                 Если равны: 
+                                 - считанное из eeprom значение записвается в ОЗУ;
+                                 - считывается и проверяется следующий параметр;
+                                 - при успешном окончании данные из ОЗУ по адресу TIMER_PARAMETERS_TEMP переписываются в соответствующие регистры
+                                 если не равны или содержат неверное значение (например значение секунд > 59):
+                                 -выход из процедуры без записи в соответствующие регистры. Таким образом, параметры таймера останутся по умолчанию.
                                  
-                                 2. 
+                                 
+                                 2. Чтение байта двнных из eeprom. В XH:XL - адрес считываемого байта. В YL - считанный байт
                                  
                                  3. 
                                  */
                                  
+                                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 //////////	1
+                                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 
                                  Read_timer_parameters_from_eeprom:
+0006b5 e000                      	ldi		templ,FIRST_PAGE_BEGIN
+                                 	
+                                 next_param_from_eeprom:
+0006b6 2fa0                      	mov		XL,templ										;считывание первого байта
+0006b7 27bb                      	clr		XH
+0006b8 940e 06cf                 	call	Read_byte_from_eeprom
+0006ba 2f1c                      	mov		temph,YL
+0006bb 9650                      	adiw	XL,SECOND_PAGE_BEGIN							;считывание второго байта
+0006bc 940e 06cf                 	call	Read_byte_from_eeprom
+0006be 2f2c                      	mov		temp_2,YL
+0006bf 9690                      	adiw	XL,THIRD_PAGE_BEGIN								;считывание третьего байта
+0006c0 940e 06cf                 	call	Read_byte_from_eeprom
+0006c2 2f3c                      	mov		temp_3,YL
+                                 
+                                 	//проверка считанного байта - если битый или содержит неверное значение
+0006c3 1712                      	cp		temph,temp_2
+0006c4 f449                      	brne	exit_read_timer_parameters_from_eeprom
+0006c5 1723                      	cp		temp_2,temp_3
+0006c6 f439                      	brne	exit_read_timer_parameters_from_eeprom
+0006c7 ff00                      	sbrs	templ,0											;если нулевой бит=1, то были считаны секунды 
+0006c8 c003                      	rjmp	check_minutes_or_rounds							;если нулевой бит=1, то были считаны минуты или раунды
+0006c9 331c                      	cpi		temph,60										;секунд д.б. меньше 60
+0006ca f418                      	brsh	exit_read_timer_parameters_from_eeprom
+0006cb c002                      	rjmp	check_param_number
+                                 check_minutes_or_rounds:
+0006cc 3614                      	cpi		temph,100										;минут или раундов д.б. меньше 100
+0006cd f400                      	brsh	exit_read_timer_parameters_from_eeprom
+                                 			
+                                 check_param_number:
+                                 	
+                                 			
+                                 exit_read_timer_parameters_from_eeprom:
+0006ce 9508                      ret
+                                 
+                                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 //////////	2
+                                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 
+                                 Read_byte_from_eeprom:
+                                 
+0006cf 99e1                      	sbic	EECR,EEWE
+0006d0 cffe                      	rjmp	Read_byte_from_eeprom
+                                 
+0006d1 bbbf                      	out		EEARH,XH
+0006d2 bbae                      	out		EEARL,XL
+                                 
+0006d3 9ae0                      	sbi		EECR,EERE
+                                 
+0006d4 b3cd                      	in		YL,EEDR
+                                 
+0006d5 9508                      ret
                                  
                                  
-0006b5 9508                      
+                                 .dseg 
+                                 
+000125                           TIMER_PARAMETERS_TEMP:	.byte	5
+                                 
+                                 
                                  program_begin:
                                  
-0006b6 940e 02c9                 call	Start_time
-0006b8 940e 06a9                 call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
+0006d6 940e 02c9                 call	Start_time
+0006d8 940e 06a9                 call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
                                  
                                  main:
                                  //после срабатывания таймера первой запускается процедура загрузки данных для вывода на индикатор
-0006ba ff97                      	sbrs	enc_state,T2IF
-0006bb 940c 06c1                 	jmp		read_next_packet_main
-0006bd 940e 056a                 	call	Get_Next_Digit
-0006bf 940e 02f9                 	call	Encoder_proc
+0006da ff97                      	sbrs	enc_state,T2IF
+0006db 940c 06e1                 	jmp		read_next_packet_main
+0006dd 940e 056a                 	call	Get_Next_Digit
+0006df 940e 02f9                 	call	Encoder_proc
                                  read_next_packet_main:
-0006c1 ff44                      	sbrs	state_flag,RPTF
-0006c2 940c 06ba                 	jmp		main
+0006e1 ff44                      	sbrs	state_flag,RPTF
+0006e2 940c 06da                 	jmp		main
                                  //определить режим работы настенных часов
-0006c4 ff40                      	sbrs	state_flag,WWVM
-0006c5 940e 00da                 	call	Clock_mode_proc							//режим часов
-0006c7 fd40                      	sbrc	state_flag,WWVM
-0006c8 940e 0171                 	call	Timer_mode_proc							//режим таймера
-0006ca 940e 05ff                 	call	UART_proc
-0006cc 940e 064b                 	call	Set_brightness
+0006e4 ff40                      	sbrs	state_flag,WWVM
+0006e5 940e 00da                 	call	Clock_mode_proc							//режим часов
+0006e7 fd40                      	sbrc	state_flag,WWVM
+0006e8 940e 0171                 	call	Timer_mode_proc							//режим таймера
+0006ea 940e 05ff                 	call	UART_proc
+0006ec 940e 064b                 	call	Set_brightness
                                  
-0006ce 940c 06ba                 jmp	main
+0006ee 940c 06da                 jmp	main
                                  
                                  
                                  
@@ -3459,28 +3530,28 @@ counted separately from r26..r31 here.
 "ATmega16A" register use summary:
 x  :  58 y  :  42 z  :   6 r0 :  21 r1 :  13 r2 :  13 r3 :  11 r4 :  11 
 r5 :  13 r6 :  12 r7 :  11 r8 :   4 r9 :   2 r10:   4 r11:   2 r12:   8 
-r13:   5 r14:  29 r15:  19 r16: 360 r17: 138 r18:  63 r19:  35 r20:  72 
-r21:  10 r22:  10 r23:  33 r24:   6 r25:  27 r26:  47 r27:  44 r28:  36 
+r13:   5 r14:  29 r15:  19 r16: 363 r17: 142 r18:  66 r19:  37 r20:  72 
+r21:  10 r22:  10 r23:  33 r24:   6 r25:  27 r26:  51 r27:  46 r28:  40 
 r29:  36 r30:  19 r31:  18 
 Registers used: 35 out of 35 (100.0%)
 
 "ATmega16A" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :  21 add   :  24 adiw  :   5 and   :   0 
+.lds  :   0 .sts  :   0 adc   :  21 add   :  24 adiw  :   7 and   :   0 
 andi  :  19 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :  30 brge  :   3 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :  21 brlt  :   0 brmi  :   0 
-brne  :  64 brpl  :   0 brsh  :  14 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  72 cbi   :  11 cbr   :  20 
-clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :  89 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :  45 cpc   :   0 
-cpi   :  81 cpse  :   0 dec   :  15 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :  15 inc   :  41 jmp   : 156 
-ld    :  32 ldd   :   0 ldi   : 234 lds   :   0 lpm   :  11 lsl   :  14 
-lsr   :   3 mov   :  45 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   1 nop   :   0 or    :   3 ori   :   2 out   :  46 pop   :  25 
-push  :  25 rcall :   0 ret   :  38 reti  :   5 rjmp  :  25 rol   :   7 
-ror   :   0 sbc   :   1 sbci  :   0 sbi   :  17 sbic  :   1 sbis  :   1 
-sbiw  :   0 sbr   :  16 sbrc  :  36 sbrs  :  29 sec   :   0 seh   :   0 
+brne  :  66 brpl  :   0 brsh  :  16 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  75 cbi   :  11 cbr   :  20 
+clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :  90 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :  47 cpc   :   0 
+cpi   :  83 cpse  :   0 dec   :  15 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :  16 inc   :  41 jmp   : 156 
+ld    :  32 ldd   :   0 ldi   : 235 lds   :   0 lpm   :  11 lsl   :  14 
+lsr   :   3 mov   :  49 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   1 nop   :   0 or    :   3 ori   :   2 out   :  48 pop   :  25 
+push  :  25 rcall :   0 ret   :  39 reti  :   5 rjmp  :  28 rol   :   7 
+ror   :   0 sbc   :   1 sbci  :   0 sbi   :  18 sbic  :   2 sbis  :   1 
+sbiw  :   0 sbr   :  16 sbrc  :  36 sbrs  :  30 sec   :   0 seh   :   0 
 sei   :   2 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :  68 std   :   0 sts   :   0 
 sub   :   4 subi  :   8 swap  :   3 tst   :   6 wdr   :   0 
@@ -3489,8 +3560,8 @@ Instructions used: 49 out of 113 (43.4%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000da0   3356     84   3440   16384  21.0%
-[.dseg] 0x000060 0x000125      0    197    197    1024  19.2%
+[.cseg] 0x000000 0x000de0   3420     84   3504   16384  21.4%
+[.dseg] 0x000060 0x00012a      0    202    202    1024  19.7%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
 Assembly complete, 0 errors, 0 warnings
