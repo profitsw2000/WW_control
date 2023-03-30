@@ -154,6 +154,7 @@ ldi		templ,1
 mov		min_rest,templ
 ldi		templ,12
 mov		round_work,templ
+call	Read_timer_parameters_from_eeprom				;считать основные параметры таймера
 clr		templ
 ldi		XL,LOW(RX_HEAD)							;указатель головы
 ldi		XH,HIGH(RX_HEAD)
@@ -171,6 +172,7 @@ jmp		program_begin
 .include	"UARTFunctions.asm"
 .include	"ADC.asm"
 .include	"TimeCorrect.asm"
+.include	"EEPROMFunctions.asm"
 
 program_begin:
 
