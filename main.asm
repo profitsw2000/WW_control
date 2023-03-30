@@ -170,10 +170,12 @@ jmp		program_begin
 .include	"Timers.asm"
 .include	"UARTFunctions.asm"
 .include	"ADC.asm"
+.include	"TimeCorrect.asm"
 
 program_begin:
 
 call	Start_time
+call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
 
 main:
 //после срабатывания таймера первой запускается процедура загрузки данных для вывода на индикатор
