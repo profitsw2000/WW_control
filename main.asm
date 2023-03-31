@@ -75,7 +75,7 @@
 .equ	SDI_TIME				=	2
 .equ	SDI_DATA				=	5
 
-//адреса памяти в eeprom
+//eeprom
 .equ	EEPROM_PAGE_SIZE		=	64
 
 .org	0

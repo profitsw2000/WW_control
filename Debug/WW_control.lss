@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Fri Mar 31 14:34:37 2023
+AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Fri Mar 31 16:46:59 2023
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16adef.inc'
 D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm(169): Including file 'D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\TWI_functions.asm'
@@ -962,19 +962,19 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  .equ	SDI_TIME				=	2
                                  .equ	SDI_DATA				=	5
                                  
-                                 //адреса памяти в eeprom
+                                 //eeprom
                                  .equ	EEPROM_PAGE_SIZE		=	64
                                  
                                  .org	0
 000000 940c 0024                 jmp		reset
                                  .org	OVF2addr
-000008 940c 0544                 jmp		Timer2
+000008 940c 0546                 jmp		Timer2
                                  .org	OC1Aaddr
-00000c 940c 0586                 jmp		Timer1
+00000c 940c 0588                 jmp		Timer1
                                  .org	URXCaddr
-000016 940c 05dd                 jmp		UART_RX
+000016 940c 05df                 jmp		UART_RX
                                  .org	UTXCaddr
-00001a 940c 05c9                 jmp		UART_TX
+00001a 940c 05cb                 jmp		UART_TX
                                  .org	TWIaddr
 000022 940c 006b                 jmp		TWI_int
                                  
@@ -1042,7 +1042,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
 000057 2e70                      mov		min_rest,templ
 000058 e00c                      ldi		templ,12
 000059 2e50                      mov		round_work,templ
-00005a 940e 06b5                 call	Read_timer_parameters_from_eeprom				;считать основные параметры таймера
+00005a 940e 06b7                 call	Read_timer_parameters_from_eeprom				;считать основные параметры таймера
 00005c 2700                      clr		templ
 00005d ebaa                      ldi		XL,LOW(RX_HEAD)							;указатель головы
 00005e e0b0                      ldi		XH,HIGH(RX_HEAD)
@@ -1051,7 +1051,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
 000061 e0d0                      ldi		YH,HIGH(RX_TAIL)
 000062 8308                      st		Y,templ
                                  
-000063 940c 06ec                 jmp		program_begin
+000063 940c 071b                 jmp		program_begin
                                  
                                  .include	"TWI_functions.asm"
                                  
@@ -1327,7 +1327,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 0000ec 7e4f                      	cbr		state_flag,(1<<RPTF)
 0000ed 940e 00bd                 	call	Read_packet								;чтение данных из DS1307, данные записываются по адресу TWI_BUFFER_IN
-0000ef 940e 067f                 	call	Correct_time
+0000ef 940e 0681                 	call	Correct_time
                                  
 0000f1 2777                      	clr		count									;отсчет считываемых байтов
                                  
@@ -2024,7 +2024,8 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  входных линий в исходное состояние - высокий уровень на обоих линиях), определяется направление вращение и запускается процедура обработки события.
                                  Определение направления вращения энкодера и момент завершения шага вращения определяется по состоянию входов контроллера и состоянию регистра
                                  enc_state (логическое состояние энкодера).
-                                 2. Процедура обработки короткого нажатия кнопки. 
+                                 2. Процедура обработки короткого нажатия кнопки. При выходе из состояния установки параметров таймера последним коротким нажатием кнопки, установленные
+                                 параметры записываются в eeprom. 
                                  3. Процедура обработки длительного нажатия кнопки. 
                                  4. Процедура изменения параметра при вращении кнопки энкодера.
                                  */
@@ -2083,7 +2084,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
 000323 940c 0327                 	jmp		clear_button_counter
                                  
                                  button_counter_more_than_512:	
-000325 940e 0398                 	call	Button_long_press
+000325 940e 039a                 	call	Button_long_press
                                  
                                  clear_button_counter:
 000327 27aa                      	clr		XL
@@ -2102,14 +2103,14 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
 000331 3091                      	cpi		enc_state,1
 000332 f429                      	brne	check_enc_state_3
 000333 7b9f                      	cbr		enc_state,(1<<EMPF)
-000334 940e 03c6                 	call	Change_parameter
+000334 940e 03c8                 	call	Change_parameter
 000336 940c 033d                 	jmp		clear_logical_encoder_state
                                  
                                  check_enc_state_3:
 000338 3093                      	cpi		enc_state,3
 000339 f489                      	brne	exit_enc_proc
 00033a 6490                      	sbr		enc_state,(1<<EMPF)
-00033b 940e 03c6                 	call	Change_parameter
+00033b 940e 03c8                 	call	Change_parameter
                                  
                                  
                                  clear_logical_encoder_state:
@@ -2151,75 +2152,76 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
 000352 fd40                      	sbrc	state_flag,WWVM
 000353 940c 0371                 	jmp		bsp_timer_mode
 000355 ff41                      	sbrs	state_flag,WWSM
-000356 940c 0397                 	jmp		exit_bsp_proc							;в режиме установки часов при коротком нажатии изменить номер устанавливаемого сегмента
+000356 940c 0399                 	jmp		exit_bsp_proc							;в режиме установки часов при коротком нажатии изменить номер устанавливаемого сегмента
 000358 e023                      	ldi		temp_2,3
 000359 16e2                      	cp		set_segm,temp_2
 00035a f418                      	brsh	bsp_clock_segment_4_5_0					;изменение номера устанавливаемого сегмента идет по порядку, кроме сегментов 4 и 5
 00035b 94e3                      	inc		set_segm
-00035c 940c 0397                 	jmp		exit_bsp_proc
+00035c 940c 0399                 	jmp		exit_bsp_proc
                                  bsp_clock_segment_4_5_0:
 00035e e025                      	ldi		temp_2,5
 00035f 16e2                      	cp		set_segm,temp_2
 000360 f421                      	brne	bsp_clock_segment_4_0
 000361 e024                      	ldi		temp_2,4
 000362 2ee2                      	mov		set_segm,temp_2
-000363 940c 0397                 	jmp		exit_bsp_proc
+000363 940c 0399                 	jmp		exit_bsp_proc
                                  bsp_clock_segment_4_0:
 000365 e024                      	ldi		temp_2,4
 000366 16e2                      	cp		set_segm,temp_2
 000367 f021                      	breq	bsp_clock_segment_4
 000368 e025                      	ldi		temp_2,5
 000369 2ee2                      	mov		set_segm,temp_2
-00036a 940c 0397                 	jmp		exit_bsp_proc
+00036a 940c 0399                 	jmp		exit_bsp_proc
                                  bsp_clock_segment_4:
 00036c 24ee                      	clr		set_segm
 00036d 7f4d                      	cbr		state_flag,(1<<WWSM)
 00036e 9ac0                      	sbi		PORTB,0												;выключить 12 вольт
-00036f 940c 0397                 	jmp		exit_bsp_proc
+00036f 940c 0399                 	jmp		exit_bsp_proc
                                  
                                  //////////////////////////////////////////////////////////////////////////
                                  bsp_timer_mode:
 000371 ff41                      	sbrs	state_flag,WWSM
-000372 940c 0382                 	jmp		bsp_timer_mode_check_bt_on				;в режиме установки таймера при коротком нажатии изменить номер устанавливаемого сегмента
+000372 940c 0384                 	jmp		bsp_timer_mode_check_bt_on				;в режиме установки таймера при коротком нажатии изменить номер устанавливаемого сегмента
 000374 94e3                      	inc		set_segm
 000375 e026                      	ldi		temp_2,6
 000376 16e2                      	cp		set_segm,temp_2
 000377 f430                      	brsh	bsp_timer_mode_clear_segm
 000378 e023                      	ldi		temp_2,3
 000379 16e2                      	cp		set_segm,temp_2
-00037a f4e1                      	brne	exit_bsp_proc
+00037a f4f1                      	brne	exit_bsp_proc
 00037b 94e3                      	inc		set_segm
-00037c 940c 0397                 	jmp		exit_bsp_proc
+00037c 940c 0399                 	jmp		exit_bsp_proc
                                  
                                  bsp_timer_mode_clear_segm:
 00037e 24ee                      	clr		set_segm
 00037f 7f4d                      	cbr		state_flag,(1<<WWSM)
-000380 940c 0397                 	jmp		exit_bsp_proc
+000380 940e 06ee                 	call	Write_timer_parameters_to_eeprom		;записать параметры таймера в eeprom
+000382 940c 0399                 	jmp		exit_bsp_proc
                                  
                                  bsp_timer_mode_check_bt_on:
-000382 fd45                      	sbrc	state_flag,BTON
-000383 940c 0390                 	jmp		bsp_chek_pause_on
-000385 6240                      	sbr		state_flag,(1<<BTON)								;запуск таймера	
-000386 ff47                      	sbrs	state_flag,BTPS
-000387 940e 027a                 	call	Sound_1000Hz_ON
-000389 734f                      	cbr		state_flag,(1<<BTRT) | (1<<BTPS)
-00038a 2400                      	clr		seconds
-00038b 2411                      	clr		minutes
-00038c 2422                      	clr		round
-00038d 9423                      	inc		round
-00038e 940c 0397                 	jmp		exit_bsp_proc
+000384 fd45                      	sbrc	state_flag,BTON
+000385 940c 0392                 	jmp		bsp_chek_pause_on
+000387 6240                      	sbr		state_flag,(1<<BTON)								;запуск таймера	
+000388 ff47                      	sbrs	state_flag,BTPS
+000389 940e 027a                 	call	Sound_1000Hz_ON
+00038b 734f                      	cbr		state_flag,(1<<BTRT) | (1<<BTPS)
+00038c 2400                      	clr		seconds
+00038d 2411                      	clr		minutes
+00038e 2422                      	clr		round
+00038f 9423                      	inc		round
+000390 940c 0399                 	jmp		exit_bsp_proc
                                  
                                  bsp_chek_pause_on:
-000390 ff47                      	sbrs	state_flag,BTPS										;постановка на паузу или снятие с паузы
-000391 940c 0396                 	jmp		bsp_pause_is_off
-000393 774f                      	cbr		state_flag,(1<<BTPS)
-000394 940c 0397                 	jmp		exit_bsp_proc
+000392 ff47                      	sbrs	state_flag,BTPS										;постановка на паузу или снятие с паузы
+000393 940c 0398                 	jmp		bsp_pause_is_off
+000395 774f                      	cbr		state_flag,(1<<BTPS)
+000396 940c 0399                 	jmp		exit_bsp_proc
                                  
                                  bsp_pause_is_off:
-000396 6840                      	sbr		state_flag,(1<<BTPS)
+000398 6840                      	sbr		state_flag,(1<<BTPS)
                                  
                                  exit_bsp_proc:
-000397 9508                      ret
+000399 9508                      ret
                                  
                                  
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2228,55 +2230,55 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  
                                  Button_long_press:
                                  	//сюда надо записать процедуру обнуления счетчика времени установки времени и запись его в регистр SET_MODE_COUNTER
-000398 930f                      	push	templ
-000399 2700                      	clr		templ
-00039a eba9                      	ldi		XL,LOW(SET_MODE_COUNTER)				
-00039b e0b0                      	ldi		XH,HIGH(SET_MODE_COUNTER)
-00039c 930c                      	st		X,templ
-00039d 910f                      	pop		templ
+00039a 930f                      	push	templ
+00039b 2700                      	clr		templ
+00039c eba9                      	ldi		XL,LOW(SET_MODE_COUNTER)				
+00039d e0b0                      	ldi		XH,HIGH(SET_MODE_COUNTER)
+00039e 930c                      	st		X,templ
+00039f 910f                      	pop		templ
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-00039e fd40                      	sbrc	state_flag,WWVM
-00039f 940c 03b0                 	jmp		blp_timer_mode
-0003a1 fd41                      	sbrc	state_flag,WWSM
-0003a2 940c 03a9                 	jmp		blp_clock_mode_set
-0003a4 6042                      	sbr		state_flag,(1<<WWSM)				;перевод в режим установки времени
-0003a5 24ee                      	clr		set_segm							
-0003a6 98c0                      	cbi		PORTB,0								;включить 12 вольт
-0003a7 940c 03c5                 	jmp		exit_blp_proc
+0003a0 fd40                      	sbrc	state_flag,WWVM
+0003a1 940c 03b2                 	jmp		blp_timer_mode
+0003a3 fd41                      	sbrc	state_flag,WWSM
+0003a4 940c 03ab                 	jmp		blp_clock_mode_set
+0003a6 6042                      	sbr		state_flag,(1<<WWSM)				;перевод в режим установки времени
+0003a7 24ee                      	clr		set_segm							
+0003a8 98c0                      	cbi		PORTB,0								;включить 12 вольт
+0003a9 940c 03c7                 	jmp		exit_blp_proc
                                  	
                                  blp_clock_mode_set:								;перевод в режим таймера + выключить 12 вольт
-0003a9 e70e                      	ldi		templ,(1<<COM21) | (1<<COM20) | (1<<WGM21) | (1<<WGM20) | PRESCALER_2_BT							;также изменить частоту таймера 2
-0003aa bd05                      	out		TCCR2,templ	
-0003ab 6041                      	sbr		state_flag,(1<<WWVM)
-0003ac 714d                      	cbr		state_flag,(1<<WWSM) | (1<<BTON) | (1<<BTRT) | (1<<BTPS) 
-0003ad 9ac0                      	sbi		PORTB,0
-0003ae 940c 03c5                 	jmp		exit_blp_proc
+0003ab e70e                      	ldi		templ,(1<<COM21) | (1<<COM20) | (1<<WGM21) | (1<<WGM20) | PRESCALER_2_BT							;также изменить частоту таймера 2
+0003ac bd05                      	out		TCCR2,templ	
+0003ad 6041                      	sbr		state_flag,(1<<WWVM)
+0003ae 714d                      	cbr		state_flag,(1<<WWSM) | (1<<BTON) | (1<<BTRT) | (1<<BTPS) 
+0003af 9ac0                      	sbi		PORTB,0
+0003b0 940c 03c7                 	jmp		exit_blp_proc
                                  
                                  blp_timer_mode:
-0003b0 ff41                      	sbrs	state_flag,WWSM
-0003b1 940c 03b8                 	jmp		blp_timer_not_set_mode	
-0003b3 e70e                      	ldi		templ,(1<<COM21) | (1<<COM20) | (1<<WGM21) | (1<<WGM20) | PRESCALER_2_CLK							;также изменить частоту таймера 2
-0003b4 bd05                      	out		TCCR2,templ			
-0003b5 714c                      	cbr		state_flag,(1<<WWVM) | (1<<WWSM) | (1<<BTON) | (1<<BTRT) | (1<<BTPS) 								;перевод в режим времени и даты
-0003b6 940c 03c5                 	jmp		exit_blp_proc
+0003b2 ff41                      	sbrs	state_flag,WWSM
+0003b3 940c 03ba                 	jmp		blp_timer_not_set_mode	
+0003b5 e70e                      	ldi		templ,(1<<COM21) | (1<<COM20) | (1<<WGM21) | (1<<WGM20) | PRESCALER_2_CLK							;также изменить частоту таймера 2
+0003b6 bd05                      	out		TCCR2,templ			
+0003b7 714c                      	cbr		state_flag,(1<<WWVM) | (1<<WWSM) | (1<<BTON) | (1<<BTRT) | (1<<BTPS) 								;перевод в режим времени и даты
+0003b8 940c 03c7                 	jmp		exit_blp_proc
                                  
                                  blp_timer_not_set_mode:
-0003b8 fd45                      	sbrc	state_flag,BTON
-0003b9 940c 03c0                 	jmp		blp_timer_is_on
-0003bb 6042                      	sbr		state_flag,(1<<WWSM)											;перевод в режим установки параметров таймера
-0003bc 714f                      	cbr		state_flag,(1<<BTON) | (1<<BTRT) | (1<<BTPS)
-0003bd 24ee                      	clr		set_segm
-0003be 940c 03c5                 	jmp		exit_blp_proc
+0003ba fd45                      	sbrc	state_flag,BTON
+0003bb 940c 03c2                 	jmp		blp_timer_is_on
+0003bd 6042                      	sbr		state_flag,(1<<WWSM)											;перевод в режим установки параметров таймера
+0003be 714f                      	cbr		state_flag,(1<<BTON) | (1<<BTRT) | (1<<BTPS)
+0003bf 24ee                      	clr		set_segm
+0003c0 940c 03c7                 	jmp		exit_blp_proc
                                  
                                  blp_timer_is_on:
-0003c0 714d                      	cbr		state_flag,(1<<WWSM) | (1<<BTON) | (1<<BTRT) | (1<<BTPS)		;перевод в режим остановленного таймера
-0003c1 2400                      	clr		seconds
-0003c2 2411                      	clr		minutes
-0003c3 2422                      	clr		round
-0003c4 9423                      	inc		round
+0003c2 714d                      	cbr		state_flag,(1<<WWSM) | (1<<BTON) | (1<<BTRT) | (1<<BTPS)		;перевод в режим остановленного таймера
+0003c3 2400                      	clr		seconds
+0003c4 2411                      	clr		minutes
+0003c5 2422                      	clr		round
+0003c6 9423                      	inc		round
                                  
                                  exit_blp_proc:
-0003c5 9508                      ret
+0003c7 9508                      ret
                                  
                                  
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2285,425 +2287,425 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  
                                  Change_parameter:
                                  	//сюда надо записать процедуру обнуления счетчика времени установки времени и запись его в регистр SET_MODE_COUNTER
-0003c6 930f                      	push	templ
-0003c7 2700                      	clr		templ
-0003c8 eba9                      	ldi		XL,LOW(SET_MODE_COUNTER)				
-0003c9 e0b0                      	ldi		XH,HIGH(SET_MODE_COUNTER)
-0003ca 930c                      	st		X,templ
-0003cb 910f                      	pop		templ
+0003c8 930f                      	push	templ
+0003c9 2700                      	clr		templ
+0003ca eba9                      	ldi		XL,LOW(SET_MODE_COUNTER)				
+0003cb e0b0                      	ldi		XH,HIGH(SET_MODE_COUNTER)
+0003cc 930c                      	st		X,templ
+0003cd 910f                      	pop		templ
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-0003cc fd40                      	sbrc	state_flag,WWVM		
-0003cd 940c 04b6                 	jmp		cp_timer_mode
-0003cf ff41                      	sbrs	state_flag,WWSM
-0003d0 940c 0535                 	jmp		exit_cp_proc
+0003ce fd40                      	sbrc	state_flag,WWVM		
+0003cf 940c 04b8                 	jmp		cp_timer_mode
+0003d1 ff41                      	sbrs	state_flag,WWSM
+0003d2 940c 0537                 	jmp		exit_cp_proc
                                  
-0003d2 2700                      	clr		templ
-0003d3 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
-0003d4 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
-0003d5 0dae                      	add		XL,set_segm
-0003d6 1fb0                      	adc		XH,templ
-0003d7 911c                      	ld		temph,X
+0003d4 2700                      	clr		templ
+0003d5 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
+0003d6 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
+0003d7 0dae                      	add		XL,set_segm
+0003d8 1fb0                      	adc		XH,templ
+0003d9 911c                      	ld		temph,X
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  ////////////////////////////////////////////////////////////////////в режиме установки времени и даты
-0003d8 16e0                      	cp		set_segm,templ							
-0003d9 f431                      	brne	cp_clock_mode_segm_1
-0003da 2711                      	clr		temph												;обнулить секунды		
-0003db 24ff                      	clr		byte_address
-0003dc 940e 0286                 	call	Write_byte_to_DS1307
-0003de 940c 0535                 	jmp		exit_cp_proc
+0003da 16e0                      	cp		set_segm,templ							
+0003db f431                      	brne	cp_clock_mode_segm_1
+0003dc 2711                      	clr		temph												;обнулить секунды		
+0003dd 24ff                      	clr		byte_address
+0003de 940e 0286                 	call	Write_byte_to_DS1307
+0003e0 940c 0537                 	jmp		exit_cp_proc
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  cp_clock_mode_segm_1:
-0003e0 e001                      	ldi		templ,1												
-0003e1 16e0                      	cp		set_segm,templ										;изменить минуты
-0003e2 f4c9                      	brne	cp_clock_mode_segm_2
-0003e3 940e 0297                 	call	BCD_TO_HEX
-0003e5 fd96                      	sbrc	enc_state,EMPF
-0003e6 940c 03f0                 	jmp		blp_segm_1_enc_plus
-0003e8 3010                      	cpi		temph,0
-0003e9 f419                      	brne	blp_segm_1_dec_min
-0003ea e31b                      	ldi		temph,59
-0003eb 940c 03f4                 	jmp		blp_segm_1_write_byte
+0003e2 e001                      	ldi		templ,1												
+0003e3 16e0                      	cp		set_segm,templ										;изменить минуты
+0003e4 f4c9                      	brne	cp_clock_mode_segm_2
+0003e5 940e 0297                 	call	BCD_TO_HEX
+0003e7 fd96                      	sbrc	enc_state,EMPF
+0003e8 940c 03f2                 	jmp		blp_segm_1_enc_plus
+0003ea 3010                      	cpi		temph,0
+0003eb f419                      	brne	blp_segm_1_dec_min
+0003ec e31b                      	ldi		temph,59
+0003ed 940c 03f6                 	jmp		blp_segm_1_write_byte
                                  
                                  blp_segm_1_dec_min:
-0003ed 951a                      	dec		temph
-0003ee 940c 03f4                 	jmp		blp_segm_1_write_byte
+0003ef 951a                      	dec		temph
+0003f0 940c 03f6                 	jmp		blp_segm_1_write_byte
                                  
                                  blp_segm_1_enc_plus:
-0003f0 9513                      	inc		temph
-0003f1 331c                      	cpi		temph,60
-0003f2 f008                      	brlo	blp_segm_1_write_byte
-0003f3 2711                      	clr		temph	
+0003f2 9513                      	inc		temph
+0003f3 331c                      	cpi		temph,60
+0003f4 f008                      	brlo	blp_segm_1_write_byte
+0003f5 2711                      	clr		temph	
                                  
                                  blp_segm_1_write_byte:
-0003f4 940e 02a2                 	call	HEX_TO_BCD
-0003f6 e001                      	ldi		templ,1
-0003f7 2ef0                      	mov		byte_address,templ
-0003f8 940e 0286                 	call	Write_byte_to_DS1307
-0003fa 940c 0535                 	jmp		exit_cp_proc
+0003f6 940e 02a2                 	call	HEX_TO_BCD
+0003f8 e001                      	ldi		templ,1
+0003f9 2ef0                      	mov		byte_address,templ
+0003fa 940e 0286                 	call	Write_byte_to_DS1307
+0003fc 940c 0537                 	jmp		exit_cp_proc
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  cp_clock_mode_segm_2:
-0003fc e002                      	ldi		templ,2											
-0003fd 16e0                      	cp		set_segm,templ	
-0003fe f4c9                      	brne	cp_clock_mode_segm_3
-0003ff 940e 0297                 	call	BCD_TO_HEX												;изменить часы
-000401 fd96                      	sbrc	enc_state,EMPF
-000402 940c 040c                 	jmp		blp_segm_2_enc_plus
-000404 3010                      	cpi		temph,0
-000405 f419                      	brne	blp_segm_2_dec_hour
-000406 e117                      	ldi		temph,23
-000407 940c 0410                 	jmp		blp_segm_2_write_byte
+0003fe e002                      	ldi		templ,2											
+0003ff 16e0                      	cp		set_segm,templ	
+000400 f4c9                      	brne	cp_clock_mode_segm_3
+000401 940e 0297                 	call	BCD_TO_HEX												;изменить часы
+000403 fd96                      	sbrc	enc_state,EMPF
+000404 940c 040e                 	jmp		blp_segm_2_enc_plus
+000406 3010                      	cpi		temph,0
+000407 f419                      	brne	blp_segm_2_dec_hour
+000408 e117                      	ldi		temph,23
+000409 940c 0412                 	jmp		blp_segm_2_write_byte
                                  	
                                  blp_segm_2_dec_hour:
-000409 951a                      	dec		temph
-00040a 940c 0410                 	jmp		blp_segm_2_write_byte
+00040b 951a                      	dec		temph
+00040c 940c 0412                 	jmp		blp_segm_2_write_byte
                                  
                                  blp_segm_2_enc_plus:
-00040c 9513                      	inc		temph
-00040d 3118                      	cpi		temph,24
-00040e f008                      	brlo	blp_segm_2_write_byte
-00040f 2711                      	clr		temph
+00040e 9513                      	inc		temph
+00040f 3118                      	cpi		temph,24
+000410 f008                      	brlo	blp_segm_2_write_byte
+000411 2711                      	clr		temph
                                  
                                  blp_segm_2_write_byte:
-000410 940e 02a2                 	call	HEX_TO_BCD
-000412 e002                      	ldi		templ,2
-000413 2ef0                      	mov		byte_address,templ
-000414 940e 0286                 	call	Write_byte_to_DS1307
-000416 940c 0535                 	jmp		exit_cp_proc
+000412 940e 02a2                 	call	HEX_TO_BCD
+000414 e002                      	ldi		templ,2
+000415 2ef0                      	mov		byte_address,templ
+000416 940e 0286                 	call	Write_byte_to_DS1307
+000418 940c 0537                 	jmp		exit_cp_proc
                                  	
                                  ////////////////////////////////////////////////////////////////////
                                  cp_clock_mode_segm_3:
-000418 e003                      	ldi		templ,3										
-000419 16e0                      	cp		set_segm,templ	
-00041a f4a9                      	brne	cp_clock_mode_segm_5											;изменить день недели
-00041b fd96                      	sbrc	enc_state,EMPF
-00041c 940c 0426                 	jmp		blp_segm_3_enc_plus
-00041e 3011                      	cpi		temph,1
-00041f f419                      	brne	blp_segm_3_dec_day
-000420 e017                      	ldi		temph,7
-000421 940c 042a                 	jmp		blp_segm_3_write_byte
+00041a e003                      	ldi		templ,3										
+00041b 16e0                      	cp		set_segm,templ	
+00041c f4a9                      	brne	cp_clock_mode_segm_5											;изменить день недели
+00041d fd96                      	sbrc	enc_state,EMPF
+00041e 940c 0428                 	jmp		blp_segm_3_enc_plus
+000420 3011                      	cpi		temph,1
+000421 f419                      	brne	blp_segm_3_dec_day
+000422 e017                      	ldi		temph,7
+000423 940c 042c                 	jmp		blp_segm_3_write_byte
                                  
                                  blp_segm_3_dec_day:
-000423 951a                      	dec		temph
-000424 940c 042a                 	jmp		blp_segm_3_write_byte
+000425 951a                      	dec		temph
+000426 940c 042c                 	jmp		blp_segm_3_write_byte
                                  
                                  blp_segm_3_enc_plus:	
-000426 9513                      	inc		temph
-000427 3018                      	cpi		temph,8
-000428 f008                      	brlo	blp_segm_3_write_byte
-000429 e011                      	ldi		temph,1
+000428 9513                      	inc		temph
+000429 3018                      	cpi		temph,8
+00042a f008                      	brlo	blp_segm_3_write_byte
+00042b e011                      	ldi		temph,1
                                  
                                  blp_segm_3_write_byte:
-00042a e003                      	ldi		templ,3
-00042b 2ef0                      	mov		byte_address,templ
-00042c 940e 0286                 	call	Write_byte_to_DS1307
-00042e 940c 0535                 	jmp		exit_cp_proc	
+00042c e003                      	ldi		templ,3
+00042d 2ef0                      	mov		byte_address,templ
+00042e 940e 0286                 	call	Write_byte_to_DS1307
+000430 940c 0537                 	jmp		exit_cp_proc	
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  cp_clock_mode_segm_5:
-000430 e004                      	ldi		templ,4									
-000431 16e0                      	cp		set_segm,templ	
-000432 f011                      	breq	cp_clock_mode_segm_5_intermed
-000433 940c 0494                 	jmp		cp_clock_mode_segm_4
+000432 e004                      	ldi		templ,4									
+000433 16e0                      	cp		set_segm,templ	
+000434 f011                      	breq	cp_clock_mode_segm_5_intermed
+000435 940c 0496                 	jmp		cp_clock_mode_segm_4
                                  cp_clock_mode_segm_5_intermed:													;изменить число	
-000435 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
-000436 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
-000437 9614                      	adiw	XL,4
-000438 911d                      	ld		temph,X+
-000439 912d                      	ld		temp_2,X+
-00043a 913c                      	ld		temp_3,X
-00043b 940e 0297                 	call	BCD_TO_HEX	
+000437 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
+000438 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
+000439 9614                      	adiw	XL,4
+00043a 911d                      	ld		temph,X+
+00043b 912d                      	ld		temp_2,X+
+00043c 913c                      	ld		temp_3,X
+00043d 940e 0297                 	call	BCD_TO_HEX	
                                  
                                  
-00043d 3021                      	cpi		temp_2,1
-00043e f061                      	breq	month_31
-00043f 3023                      	cpi		temp_2,3
-000440 f051                      	breq	month_31
-000441 3025                      	cpi		temp_2,5
-000442 f041                      	breq	month_31
-000443 3027                      	cpi		temp_2,7
-000444 f031                      	breq	month_31
-000445 3028                      	cpi		temp_2,8
-000446 f021                      	breq	month_31
-000447 3120                      	cpi		temp_2,0x10
-000448 f011                      	breq	month_31
-000449 3122                      	cpi		temp_2,0x12
-00044a f089                      	breq	month_2	
+00043f 3021                      	cpi		temp_2,1
+000440 f061                      	breq	month_31
+000441 3023                      	cpi		temp_2,3
+000442 f051                      	breq	month_31
+000443 3025                      	cpi		temp_2,5
+000444 f041                      	breq	month_31
+000445 3027                      	cpi		temp_2,7
+000446 f031                      	breq	month_31
+000447 3028                      	cpi		temp_2,8
+000448 f021                      	breq	month_31
+000449 3120                      	cpi		temp_2,0x10
+00044a f011                      	breq	month_31
+00044b 3122                      	cpi		temp_2,0x12
+00044c f089                      	breq	month_2	
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;если в месяце 31 день
                                  month_31:
-00044b fd96                      	sbrc	enc_state,EMPF
-00044c 940c 0456                 	jmp		blp_segm_5_month_31_plus
-00044e 3011                      	cpi		temph,1
-00044f f419                      	brne	blp_segm_5_month_31_dec
-000450 e11f                      	ldi		temph,31
-000451 940c 048c                 	jmp		blp_segm_5_write_byte
+00044d fd96                      	sbrc	enc_state,EMPF
+00044e 940c 0458                 	jmp		blp_segm_5_month_31_plus
+000450 3011                      	cpi		temph,1
+000451 f419                      	brne	blp_segm_5_month_31_dec
+000452 e11f                      	ldi		temph,31
+000453 940c 048e                 	jmp		blp_segm_5_write_byte
                                  	
                                  blp_segm_5_month_31_dec:
-000453 951a                      	dec		temph
-000454 940c 048c                 	jmp		blp_segm_5_write_byte
+000455 951a                      	dec		temph
+000456 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  blp_segm_5_month_31_plus:
-000456 9513                      	inc		temph
-000457 3210                      	cpi		temph,32
-000458 f198                      	brlo	blp_segm_5_write_byte
-000459 e011                      	ldi		temph,1
-00045a 940c 048c                 	jmp		blp_segm_5_write_byte
+000458 9513                      	inc		temph
+000459 3210                      	cpi		temph,32
+00045a f198                      	brlo	blp_segm_5_write_byte
+00045b e011                      	ldi		temph,1
+00045c 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;для февраля месяца определить високосность года
                                  month_2:
-00045c 3022                      	cpi		temp_2,2
-00045d f4f9                      	brne	month_30
-00045e fd96                      	sbrc	enc_state,EMPF
-00045f 940c 046f                 	jmp		blp_segm_5_month_2_plus
-000461 3011                      	cpi		temph,1
-000462 f449                      	brne	blp_segm_5_month_2_dec
-000463 7033                      	andi	temp_3,3
-000464 3030                      	cpi		temp_3,0
-000465 f419                      	brne	blp_segm_5_month_2_29
-000466 e11c                      	ldi		temph,28
-000467 940c 048c                 	jmp		blp_segm_5_write_byte
+00045e 3022                      	cpi		temp_2,2
+00045f f4f9                      	brne	month_30
+000460 fd96                      	sbrc	enc_state,EMPF
+000461 940c 0471                 	jmp		blp_segm_5_month_2_plus
+000463 3011                      	cpi		temph,1
+000464 f449                      	brne	blp_segm_5_month_2_dec
+000465 7033                      	andi	temp_3,3
+000466 3030                      	cpi		temp_3,0
+000467 f419                      	brne	blp_segm_5_month_2_29
+000468 e11c                      	ldi		temph,28
+000469 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  blp_segm_5_month_2_29:
-000469 e11d                      	ldi		temph,29
-00046a 940c 048c                 	jmp		blp_segm_5_write_byte
+00046b e11d                      	ldi		temph,29
+00046c 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  blp_segm_5_month_2_dec:
-00046c 951a                      	dec		temph
-00046d 940c 048c                 	jmp		blp_segm_5_write_byte
+00046e 951a                      	dec		temph
+00046f 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  blp_segm_5_month_2_plus:
-00046f 9513                      	inc		temph
-000470 7033                      	andi	temp_3,3
-000471 3030                      	cpi		temp_3,0
-000472 f429                      	brne	blp_segm_5_month_2_29_plus
-000473 311d                      	cpi		temph,29
-000474 f0b8                      	brlo	blp_segm_5_write_byte
-000475 e011                      	ldi		temph,1
-000476 940c 048c                 	jmp		blp_segm_5_write_byte
+000471 9513                      	inc		temph
+000472 7033                      	andi	temp_3,3
+000473 3030                      	cpi		temp_3,0
+000474 f429                      	brne	blp_segm_5_month_2_29_plus
+000475 311d                      	cpi		temph,29
+000476 f0b8                      	brlo	blp_segm_5_write_byte
+000477 e011                      	ldi		temph,1
+000478 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  blp_segm_5_month_2_29_plus:
-000478 311e                      	cpi		temph,30
-000479 f090                      	brlo	blp_segm_5_write_byte
-00047a e011                      	ldi		temph,1
-00047b 940c 048c                 	jmp		blp_segm_5_write_byte
+00047a 311e                      	cpi		temph,30
+00047b f090                      	brlo	blp_segm_5_write_byte
+00047c e011                      	ldi		temph,1
+00047d 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;если в месяце 30 дней
                                  month_30:
-00047d fd96                      	sbrc	enc_state,EMPF
-00047e 940c 0488                 	jmp		blp_segm_5_month_30_plus
-000480 3011                      	cpi		temph,1
-000481 f419                      	brne	blp_segm_5_month_30_dec
-000482 e11e                      	ldi		temph,30
-000483 940c 048c                 	jmp		blp_segm_5_write_byte
+00047f fd96                      	sbrc	enc_state,EMPF
+000480 940c 048a                 	jmp		blp_segm_5_month_30_plus
+000482 3011                      	cpi		temph,1
+000483 f419                      	brne	blp_segm_5_month_30_dec
+000484 e11e                      	ldi		temph,30
+000485 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  blp_segm_5_month_30_dec:
-000485 951a                      	dec		temph
-000486 940c 048c                 	jmp		blp_segm_5_write_byte
+000487 951a                      	dec		temph
+000488 940c 048e                 	jmp		blp_segm_5_write_byte
                                  
                                  blp_segm_5_month_30_plus:
-000488 9513                      	inc		temph
-000489 311f                      	cpi		temph,31
-00048a f008                      	brlo	blp_segm_5_write_byte
-00048b e011                      	ldi		temph,1
+00048a 9513                      	inc		temph
+00048b 311f                      	cpi		temph,31
+00048c f008                      	brlo	blp_segm_5_write_byte
+00048d e011                      	ldi		temph,1
                                  
                                  blp_segm_5_write_byte:
-00048c 940e 02a2                 	call	HEX_TO_BCD
-00048e e004                      	ldi		templ,4
-00048f 2ef0                      	mov		byte_address,templ
-000490 940e 0286                 	call	Write_byte_to_DS1307
-000492 940c 0535                 	jmp		exit_cp_proc
+00048e 940e 02a2                 	call	HEX_TO_BCD
+000490 e004                      	ldi		templ,4
+000491 2ef0                      	mov		byte_address,templ
+000492 940e 0286                 	call	Write_byte_to_DS1307
+000494 940c 0537                 	jmp		exit_cp_proc
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  cp_clock_mode_segm_4:
-000494 e005                      	ldi		templ,5									
-000495 16e0                      	cp		set_segm,templ	
-000496 f011                      	breq	cp_clock_mode_segm_4_intermed
-000497 940c 0535                 	jmp		exit_cp_proc	
+000496 e005                      	ldi		templ,5									
+000497 16e0                      	cp		set_segm,templ	
+000498 f011                      	breq	cp_clock_mode_segm_4_intermed
+000499 940c 0537                 	jmp		exit_cp_proc	
                                  cp_clock_mode_segm_4_intermed:													;изменить месяц	
-000499 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
-00049a e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
-00049b 9615                      	adiw	XL,5
-00049c 911c                      	ld		temph,X
-00049d 940e 0297                 	call	BCD_TO_HEX
-00049f fd96                      	sbrc	enc_state,EMPF
-0004a0 940c 04aa                 	jmp		cp_clock_mode_segm_4_enc_plus
-0004a2 3011                      	cpi		temph,1
-0004a3 f419                      	brne	cp_clock_mode_segm_4_dec
-0004a4 e01c                      	ldi		temph,12
-0004a5 940c 04ae                 	jmp		blp_segm_4_write_byte
+00049b e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
+00049c e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
+00049d 9615                      	adiw	XL,5
+00049e 911c                      	ld		temph,X
+00049f 940e 0297                 	call	BCD_TO_HEX
+0004a1 fd96                      	sbrc	enc_state,EMPF
+0004a2 940c 04ac                 	jmp		cp_clock_mode_segm_4_enc_plus
+0004a4 3011                      	cpi		temph,1
+0004a5 f419                      	brne	cp_clock_mode_segm_4_dec
+0004a6 e01c                      	ldi		temph,12
+0004a7 940c 04b0                 	jmp		blp_segm_4_write_byte
                                  
                                  cp_clock_mode_segm_4_dec:
-0004a7 951a                      	dec		temph
-0004a8 940c 04ae                 	jmp		blp_segm_4_write_byte
+0004a9 951a                      	dec		temph
+0004aa 940c 04b0                 	jmp		blp_segm_4_write_byte
                                  
                                  cp_clock_mode_segm_4_enc_plus:
-0004aa 9513                      	inc		temph
-0004ab 301d                      	cpi		temph,13
-0004ac f008                      	brlo	blp_segm_4_write_byte
-0004ad e011                      	ldi		temph,1
+0004ac 9513                      	inc		temph
+0004ad 301d                      	cpi		temph,13
+0004ae f008                      	brlo	blp_segm_4_write_byte
+0004af e011                      	ldi		temph,1
                                  
                                  blp_segm_4_write_byte:
-0004ae 940e 02a2                 	call	HEX_TO_BCD
-0004b0 e005                      	ldi		templ,5
-0004b1 2ef0                      	mov		byte_address,templ
-0004b2 940e 0286                 	call	Write_byte_to_DS1307
-0004b4 940c 0535                 	jmp		exit_cp_proc	
+0004b0 940e 02a2                 	call	HEX_TO_BCD
+0004b2 e005                      	ldi		templ,5
+0004b3 2ef0                      	mov		byte_address,templ
+0004b4 940e 0286                 	call	Write_byte_to_DS1307
+0004b6 940c 0537                 	jmp		exit_cp_proc	
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  ////////////////////////////////////////////////////////////////////в режиме установки параметров таймера
                                  cp_timer_mode:
-0004b6 ff41                      	sbrs	state_flag,WWSM
-0004b7 940c 0535                 	jmp		exit_cp_proc
+0004b8 ff41                      	sbrs	state_flag,WWSM
+0004b9 940c 0537                 	jmp		exit_cp_proc
                                  
                                  ////////////////////////////////////////////////////////////////////
-0004b9 e000                      	ldi		templ,0
-0004ba 16e0                      	cp		set_segm,templ
-0004bb f4b9                      	brne	cp_timer_mode_segm_1
-0004bc fd96                      	sbrc	enc_state,EMPF											;изменить секунды работы бокс. таймера
-0004bd 940c 04c9                 	jmp		cp_timer_mode_segm_0_plus
-0004bf e00a                      	ldi		templ,10
-0004c0 1630                      	cp		sec_work,templ
-0004c1 f420                      	brsh	cp_timer_mode_segm_0_10
-0004c2 e302                      	ldi		templ,50
-0004c3 2e30                      	mov		sec_work,templ
-0004c4 940c 0535                 	jmp		exit_cp_proc
+0004bb e000                      	ldi		templ,0
+0004bc 16e0                      	cp		set_segm,templ
+0004bd f4b9                      	brne	cp_timer_mode_segm_1
+0004be fd96                      	sbrc	enc_state,EMPF											;изменить секунды работы бокс. таймера
+0004bf 940c 04cb                 	jmp		cp_timer_mode_segm_0_plus
+0004c1 e00a                      	ldi		templ,10
+0004c2 1630                      	cp		sec_work,templ
+0004c3 f420                      	brsh	cp_timer_mode_segm_0_10
+0004c4 e302                      	ldi		templ,50
+0004c5 2e30                      	mov		sec_work,templ
+0004c6 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_0_10:
-0004c6 1a30                      	sub		sec_work,templ
-0004c7 940c 0535                 	jmp		exit_cp_proc
+0004c8 1a30                      	sub		sec_work,templ
+0004c9 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_0_plus:
-0004c9 e00a                      	ldi		templ,10
-0004ca 0e30                      	add		sec_work,templ
-0004cb e30c                      	ldi		templ,60
-0004cc 1630                      	cp		sec_work,templ
-0004cd f410                      	brsh	cp_timer_mode_segm_0_plus_60
-0004ce 940c 0535                 	jmp		exit_cp_proc
+0004cb e00a                      	ldi		templ,10
+0004cc 0e30                      	add		sec_work,templ
+0004cd e30c                      	ldi		templ,60
+0004ce 1630                      	cp		sec_work,templ
+0004cf f410                      	brsh	cp_timer_mode_segm_0_plus_60
+0004d0 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_0_plus_60:
-0004d0 2433                      	clr		sec_work
-0004d1 940c 0535                 	jmp		exit_cp_proc
+0004d2 2433                      	clr		sec_work
+0004d3 940c 0537                 	jmp		exit_cp_proc
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  cp_timer_mode_segm_1:
-0004d3 e001                      	ldi		templ,1
-0004d4 16e0                      	cp		set_segm,templ
-0004d5 f4a9                      	brne	cp_timer_mode_segm_2
-0004d6 fd96                      	sbrc	enc_state,EMPF											;изменить минуты работы бокс. таймера
-0004d7 940c 04e2                 	jmp		cp_timer_mode_segm_1_plus
-0004d9 2044                      	tst		min_work
-0004da f421                      	brne	cp_timer_mode_segm_1_not_zero
-0004db e603                      	ldi		templ,99
-0004dc 2e40                      	mov		min_work,templ
-0004dd 940c 0535                 	jmp		exit_cp_proc
+0004d5 e001                      	ldi		templ,1
+0004d6 16e0                      	cp		set_segm,templ
+0004d7 f4a9                      	brne	cp_timer_mode_segm_2
+0004d8 fd96                      	sbrc	enc_state,EMPF											;изменить минуты работы бокс. таймера
+0004d9 940c 04e4                 	jmp		cp_timer_mode_segm_1_plus
+0004db 2044                      	tst		min_work
+0004dc f421                      	brne	cp_timer_mode_segm_1_not_zero
+0004dd e603                      	ldi		templ,99
+0004de 2e40                      	mov		min_work,templ
+0004df 940c 0537                 	jmp		exit_cp_proc
                                  	
                                  cp_timer_mode_segm_1_not_zero:
-0004df 944a                      	dec		min_work
-0004e0 940c 0535                 	jmp		exit_cp_proc
+0004e1 944a                      	dec		min_work
+0004e2 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_1_plus:	
-0004e2 9443                      	inc		min_work
-0004e3 e604                      	ldi		templ,100
-0004e4 1640                      	cp		min_work,templ
-0004e5 f410                      	brsh	cp_timer_mode_segm_1_plus_100
-0004e6 940c 0535                 	jmp		exit_cp_proc
+0004e4 9443                      	inc		min_work
+0004e5 e604                      	ldi		templ,100
+0004e6 1640                      	cp		min_work,templ
+0004e7 f410                      	brsh	cp_timer_mode_segm_1_plus_100
+0004e8 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_1_plus_100:
-0004e8 2444                      	clr		min_work
-0004e9 940c 0535                 	jmp		exit_cp_proc
+0004ea 2444                      	clr		min_work
+0004eb 940c 0537                 	jmp		exit_cp_proc
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  cp_timer_mode_segm_2:
-0004eb e002                      	ldi		templ,2
-0004ec 16e0                      	cp		set_segm,templ
-0004ed f4b9                      	brne	cp_timer_mode_segm_4
-0004ee fd96                      	sbrc	enc_state,EMPF											;изменить раунды работы бокс. таймера
-0004ef 940c 04fb                 	jmp		cp_timer_mode_segm_2_plus
-0004f1 e001                      	ldi		templ,1
-0004f2 1650                      	cp		round_work,templ
-0004f3 f421                      	brne	cp_timer_mode_segm_2_dec
-0004f4 e603                      	ldi		templ,99
-0004f5 2e50                      	mov		round_work,templ
-0004f6 940c 0535                 	jmp		exit_cp_proc
+0004ed e002                      	ldi		templ,2
+0004ee 16e0                      	cp		set_segm,templ
+0004ef f4b9                      	brne	cp_timer_mode_segm_4
+0004f0 fd96                      	sbrc	enc_state,EMPF											;изменить раунды работы бокс. таймера
+0004f1 940c 04fd                 	jmp		cp_timer_mode_segm_2_plus
+0004f3 e001                      	ldi		templ,1
+0004f4 1650                      	cp		round_work,templ
+0004f5 f421                      	brne	cp_timer_mode_segm_2_dec
+0004f6 e603                      	ldi		templ,99
+0004f7 2e50                      	mov		round_work,templ
+0004f8 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_2_dec:
-0004f8 945a                      	dec		round_work
-0004f9 940c 0535                 	jmp		exit_cp_proc
+0004fa 945a                      	dec		round_work
+0004fb 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_2_plus:
-0004fb 9453                      	inc		round_work
-0004fc e604                      	ldi		templ,100
-0004fd 1650                      	cp		round_work,templ
-0004fe f410                      	brsh	cp_timer_mode_segm_2_plus_100
-0004ff 940c 0535                 	jmp		exit_cp_proc
+0004fd 9453                      	inc		round_work
+0004fe e604                      	ldi		templ,100
+0004ff 1650                      	cp		round_work,templ
+000500 f410                      	brsh	cp_timer_mode_segm_2_plus_100
+000501 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_2_plus_100:
-000501 e001                      	ldi		templ,1
-000502 2e50                      	mov		round_work,templ
-000503 940c 0535                 	jmp		exit_cp_proc
+000503 e001                      	ldi		templ,1
+000504 2e50                      	mov		round_work,templ
+000505 940c 0537                 	jmp		exit_cp_proc
                                  	
                                  ////////////////////////////////////////////////////////////////////
                                  cp_timer_mode_segm_4:
-000505 e004                      	ldi		templ,4
-000506 16e0                      	cp		set_segm,templ
-000507 f4b9                      	brne	cp_timer_mode_segm_5
-000508 fd96                      	sbrc	enc_state,EMPF											;изменить секунды отдыха бокс. таймера
-000509 940c 0515                 	jmp		cp_timer_mode_segm_4_plus
-00050b e00a                      	ldi		templ,10
-00050c 1660                      	cp		sec_rest,templ
-00050d f420                      	brsh	cp_timer_mode_segm_4_10
-00050e e302                      	ldi		templ,50
-00050f 2e60                      	mov		sec_rest,templ
-000510 940c 0535                 	jmp		exit_cp_proc
+000507 e004                      	ldi		templ,4
+000508 16e0                      	cp		set_segm,templ
+000509 f4b9                      	brne	cp_timer_mode_segm_5
+00050a fd96                      	sbrc	enc_state,EMPF											;изменить секунды отдыха бокс. таймера
+00050b 940c 0517                 	jmp		cp_timer_mode_segm_4_plus
+00050d e00a                      	ldi		templ,10
+00050e 1660                      	cp		sec_rest,templ
+00050f f420                      	brsh	cp_timer_mode_segm_4_10
+000510 e302                      	ldi		templ,50
+000511 2e60                      	mov		sec_rest,templ
+000512 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_4_10:
-000512 1a60                      	sub		sec_rest,templ
-000513 940c 0535                 	jmp		exit_cp_proc
+000514 1a60                      	sub		sec_rest,templ
+000515 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_4_plus:
-000515 e00a                      	ldi		templ,10
-000516 0e60                      	add		sec_rest,templ
-000517 e30c                      	ldi		templ,60
-000518 1660                      	cp		sec_rest,templ
-000519 f410                      	brsh	cp_timer_mode_segm_4_plus_60
-00051a 940c 0535                 	jmp		exit_cp_proc
+000517 e00a                      	ldi		templ,10
+000518 0e60                      	add		sec_rest,templ
+000519 e30c                      	ldi		templ,60
+00051a 1660                      	cp		sec_rest,templ
+00051b f410                      	brsh	cp_timer_mode_segm_4_plus_60
+00051c 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_4_plus_60:
-00051c 2466                      	clr		sec_rest
-00051d 940c 0535                 	jmp		exit_cp_proc
+00051e 2466                      	clr		sec_rest
+00051f 940c 0537                 	jmp		exit_cp_proc
                                  
                                  ////////////////////////////////////////////////////////////////////
                                  cp_timer_mode_segm_5:
-00051f e005                      	ldi		templ,5
-000520 16e0                      	cp		set_segm,templ
-000521 f499                      	brne	exit_cp_proc
-000522 fd96                      	sbrc	enc_state,EMPF											;изменить минуты отдыха бокс. таймера
-000523 940c 052e                 	jmp		cp_timer_mode_segm_5_plus
-000525 2077                      	tst		min_rest
-000526 f421                      	brne	cp_timer_mode_segm_5_not_zero
-000527 e603                      	ldi		templ,99
-000528 2e70                      	mov		min_rest,templ
-000529 940c 0535                 	jmp		exit_cp_proc
+000521 e005                      	ldi		templ,5
+000522 16e0                      	cp		set_segm,templ
+000523 f499                      	brne	exit_cp_proc
+000524 fd96                      	sbrc	enc_state,EMPF											;изменить минуты отдыха бокс. таймера
+000525 940c 0530                 	jmp		cp_timer_mode_segm_5_plus
+000527 2077                      	tst		min_rest
+000528 f421                      	brne	cp_timer_mode_segm_5_not_zero
+000529 e603                      	ldi		templ,99
+00052a 2e70                      	mov		min_rest,templ
+00052b 940c 0537                 	jmp		exit_cp_proc
                                  	
                                  cp_timer_mode_segm_5_not_zero:
-00052b 947a                      	dec		min_rest
-00052c 940c 0535                 	jmp		exit_cp_proc
+00052d 947a                      	dec		min_rest
+00052e 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_5_plus:	
-00052e 9473                      	inc		min_rest
-00052f e604                      	ldi		templ,100
-000530 1670                      	cp		min_rest,templ
-000531 f410                      	brsh	cp_timer_mode_segm_5_plus_100
-000532 940c 0535                 	jmp		exit_cp_proc
+000530 9473                      	inc		min_rest
+000531 e604                      	ldi		templ,100
+000532 1670                      	cp		min_rest,templ
+000533 f410                      	brsh	cp_timer_mode_segm_5_plus_100
+000534 940c 0537                 	jmp		exit_cp_proc
                                  
                                  cp_timer_mode_segm_5_plus_100:
-000534 2477                      	clr		min_rest
+000536 2477                      	clr		min_rest
                                  		
                                  exit_cp_proc:
-000535 9508                      ret
+000537 9508                      ret
                                  
                                  
                                  
@@ -2741,26 +2743,26 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                   Timer1_ON:
-000536 e009                      	ldi		templ,(1<<CS10) | (1<<WGM12)
-000537 bd0e                      	out		TCCR1B,templ
-000538 e90f                      	ldi		templ,LOW(OCR1_REG)
-000539 e010                      	ldi		temph,HIGH(OCR1_REG)	
-00053a bd0a                      	out		OCR1AL,templ
-00053b bd1b                      	out		OCR1AH,temph
-00053c b709                      	in		templ,TIMSK
-00053d 6100                      	sbr		templ,(1<<OCIE1A)
-00053e bf09                      	out		TIMSK,templ
-00053f 24cc                      	clr		mbi_clk_counter
-000540 9508                       ret
+000538 e009                      	ldi		templ,(1<<CS10) | (1<<WGM12)
+000539 bd0e                      	out		TCCR1B,templ
+00053a e90f                      	ldi		templ,LOW(OCR1_REG)
+00053b e010                      	ldi		temph,HIGH(OCR1_REG)	
+00053c bd0a                      	out		OCR1AL,templ
+00053d bd1b                      	out		OCR1AH,temph
+00053e b709                      	in		templ,TIMSK
+00053f 6100                      	sbr		templ,(1<<OCIE1A)
+000540 bf09                      	out		TIMSK,templ
+000541 24cc                      	clr		mbi_clk_counter
+000542 9508                       ret
                                  
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////////////////////////////////								2
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                   Timer1_OFF:
-000541 2700                      	clr		templ
-000542 bd0e                      	out		TCCR1B,templ	
-000543 9508                       ret
+000543 2700                      	clr		templ
+000544 bd0e                      	out		TCCR1B,templ	
+000545 9508                       ret
                                  
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////////////////////////////////								3
@@ -2769,50 +2771,50 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  //прерывание таймера 2
                                  Timer2:
                                  //сохранение регистров в стеке	
-000544 930f                      	push	templ
-000545 931f                      	push	temph
-000546 b70f                      	in		templ,SREG
-000547 930f                      	push	templ												//7
+000546 930f                      	push	templ
+000547 931f                      	push	temph
+000548 b70f                      	in		templ,SREG
+000549 930f                      	push	templ												//7
                                  	
                                  //увеличить счетчик программного таймера	
-000548 9583                      	inc		t_count												//8
+00054a 9583                      	inc		t_count												//8
                                  
                                  //для морагания в режиме установки	
-000549 3880                      	cpi		t_count,0x80
-00054a f018                      	brlo	set_flicking_flag
-00054b 7f4b                      	cbr		state_flag,(1<<WWFF)
-00054c 940c 054f                 	jmp		timer2_ww_mode
+00054b 3880                      	cpi		t_count,0x80
+00054c f018                      	brlo	set_flicking_flag
+00054d 7f4b                      	cbr		state_flag,(1<<WWFF)
+00054e 940c 0551                 	jmp		timer2_ww_mode
                                  set_flicking_flag:
-00054e 6044                      	sbr		state_flag,(1<<WWFF)
+000550 6044                      	sbr		state_flag,(1<<WWFF)
                                  
                                  //определение режима работы
                                  timer2_ww_mode:	
-00054f ff40                      	sbrs	state_flag,WWVM
-000550 940c 055b                 	jmp		timer2_clock_mode
-000552 fd41                      	sbrc	state_flag,WWSM
-000553 940c 055b                 	jmp		timer2_clock_mode
+000551 ff40                      	sbrs	state_flag,WWVM
+000552 940c 055d                 	jmp		timer2_clock_mode
+000554 fd41                      	sbrc	state_flag,WWSM
+000555 940c 055d                 	jmp		timer2_clock_mode
                                  //режим таймера	
-000555 3f84                      	cpi		t_count,F_TIMER2_BT
-000556 f048                      	brlo	read_encoder_state
-000557 2788                      	clr		t_count
-000558 6140                      	sbr		state_flag,(1<<RPTF)	
-000559 940c 0560                 	jmp		read_encoder_state
+000557 3f84                      	cpi		t_count,F_TIMER2_BT
+000558 f048                      	brlo	read_encoder_state
+000559 2788                      	clr		t_count
+00055a 6140                      	sbr		state_flag,(1<<RPTF)	
+00055b 940c 0562                 	jmp		read_encoder_state
                                  
                                  //режим часов
                                  timer2_clock_mode:
-00055b 2f08                      	mov		templ,t_count
-00055c 730e                      	andi	templ,0x3E
-00055d 330e                      	cpi		templ,0x3E
-00055e f409                      	brne	read_encoder_state
-00055f 6140                      	sbr		state_flag,(1<<RPTF)	
+00055d 2f08                      	mov		templ,t_count
+00055e 730e                      	andi	templ,0x3E
+00055f 330e                      	cpi		templ,0x3E
+000560 f409                      	brne	read_encoder_state
+000561 6140                      	sbr		state_flag,(1<<RPTF)	
                                  
                                  //обработка сигналов энкодера
                                  read_encoder_state:
-000560 b300                      	in		templ,PIND											;считать состояние порта, к которому подключён энкодер
-000561 710c                      	andi	templ,0x1C
-000562 6800                      	sbr		templ,(1<<T2IF)
-000563 7093                      	andi	enc_state,3
-000564 2b90                      	or		enc_state,templ
+000562 b300                      	in		templ,PIND											;считать состояние порта, к которому подключён энкодер
+000563 710c                      	andi	templ,0x1C
+000564 6800                      	sbr		templ,(1<<T2IF)
+000565 7093                      	andi	enc_state,3
+000566 2b90                      	or		enc_state,templ
                                  	
                                  
                                  //изменить номер активной цифры
@@ -2821,11 +2823,11 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  
                                  exit_timer2:
                                  //выровнять стек		
-000565 910f                      	pop		templ
-000566 bf0f                      	out		SREG,templ
-000567 911f                      	pop		temph
-000568 910f                      	pop		templ
-000569 9518                      reti
+000567 910f                      	pop		templ
+000568 bf0f                      	out		SREG,templ
+000569 911f                      	pop		temph
+00056a 910f                      	pop		templ
+00056b 9518                      reti
                                  
                                  
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2833,34 +2835,34 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                   Get_Next_Digit:
-00056a e006                      	ldi		templ,6
-00056b 94d3                      	inc		digit_count
-00056c 16d0                      	cp		digit_count,templ
-00056d f008                      	brlo	digit_lower_six
-00056e 24dd                      	clr		digit_count
+00056c e006                      	ldi		templ,6
+00056d 94d3                      	inc		digit_count
+00056e 16d0                      	cp		digit_count,templ
+00056f f008                      	brlo	digit_lower_six
+000570 24dd                      	clr		digit_count
                                  digit_lower_six:
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-00056f 2d1d                      	mov		temph,digit_count							;чтобы не портить регистр отсчитывающий номер выводимой цифры
-000570 0f11                      	lsl		temph										;умножить на 2
-000571 2700                      	clr		templ
-000572 e9c8                      	ldi		YL,LOW(OUTPUT_BUFFER)
-000573 e0d0                      	ldi		YH,HIGH(OUTPUT_BUFFER)
-000574 0fc1                      	add		YL,temph
-000575 1fd0                      	adc		YH,templ
-000576 9099                      	ld		sdi_low_time,Y+
-000577 8088                      	ld		sdi_high_time,Y
-000578 5f14                      	subi	temph,-12
-000579 2700                      	clr		templ
-00057a e9c8                      	ldi		YL,LOW(OUTPUT_BUFFER)
-00057b e0d0                      	ldi		YH,HIGH(OUTPUT_BUFFER)
-00057c 0fc1                      	add		YL,temph
-00057d 1fd0                      	adc		YH,templ
-00057e 90b9                      	ld		sdi_low_data,Y+
-00057f 80a8                      	ld		sdi_high_data,Y
+000571 2d1d                      	mov		temph,digit_count							;чтобы не портить регистр отсчитывающий номер выводимой цифры
+000572 0f11                      	lsl		temph										;умножить на 2
+000573 2700                      	clr		templ
+000574 e9c8                      	ldi		YL,LOW(OUTPUT_BUFFER)
+000575 e0d0                      	ldi		YH,HIGH(OUTPUT_BUFFER)
+000576 0fc1                      	add		YL,temph
+000577 1fd0                      	adc		YH,templ
+000578 9099                      	ld		sdi_low_time,Y+
+000579 8088                      	ld		sdi_high_time,Y
+00057a 5f14                      	subi	temph,-12
+00057b 2700                      	clr		templ
+00057c e9c8                      	ldi		YL,LOW(OUTPUT_BUFFER)
+00057d e0d0                      	ldi		YH,HIGH(OUTPUT_BUFFER)
+00057e 0fc1                      	add		YL,temph
+00057f 1fd0                      	adc		YH,templ
+000580 90b9                      	ld		sdi_low_data,Y+
+000581 80a8                      	ld		sdi_high_data,Y
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-000580 bb05                      	out		PORT_ANODE,templ							;избавиться от эффекта тени
-000581 9ad9                      	sbi		PORT_CATHODE,OE
-000582 24cc                      	clr		mbi_clk_counter
+000582 bb05                      	out		PORT_ANODE,templ							;избавиться от эффекта тени
+000583 9ad9                      	sbi		PORT_CATHODE,OE
+000584 24cc                      	clr		mbi_clk_counter
                                  
                                  	
                                  /*	ldi		templ,0xAA
@@ -2876,88 +2878,88 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  	mov		templ,sdi_high_data
                                  	call	Send_UART*/
                                  
-000583 940e 0536                 	call	Timer1_ON									;включить таймер 1 (работа с м/сх MBI5026)
+000585 940e 0538                 	call	Timer1_ON									;включить таймер 1 (работа с м/сх MBI5026)
                                  
-000585 9508                      ret
+000587 9508                      ret
                                  
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////////////////////////////////								5
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                   Timer1:
-000586 93ef                      	push	ZL
-000587 93ff                      	push	ZH	
-000588 930f                      	push	templ
-000589 931f                      	push	temph
-00058a b70f                      	in		templ,SREG
-00058b 930f                      	push	templ	
+000588 93ef                      	push	ZL
+000589 93ff                      	push	ZH	
+00058a 930f                      	push	templ
+00058b 931f                      	push	temph
+00058c b70f                      	in		templ,SREG
+00058d 930f                      	push	templ	
                                  		
-00058c fcc5                      	sbrc	mbi_clk_counter,5
-00058d c012                      	rjmp	data_latch_end								//число счетчика достигло 32
-00058e fcc0                      	sbrc	mbi_clk_counter,0				
-00058f c00e                      	rjmp	set_clk_line								//текущее значение четное
+00058e fcc5                      	sbrc	mbi_clk_counter,5
+00058f c012                      	rjmp	data_latch_end								//число счетчика достигло 32
+000590 fcc0                      	sbrc	mbi_clk_counter,0				
+000591 c00e                      	rjmp	set_clk_line								//текущее значение четное
                                   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-000590 fe87                      	sbrs	sdi_high_time,7								//установить линию sdi в соответствии со значением самого старшего бита sdi_high
-000591 98da                      	cbi		PORT_CATHODE,SDI_TIME
-000592 fc87                      	sbrc	sdi_high_time,7
-000593 9ada                      	sbi		PORT_CATHODE,SDI_TIME
-000594 fea7                      	sbrs	sdi_high_data,7							
-000595 98dd                      	cbi		PORT_CATHODE,SDI_DATA
-000596 fca7                      	sbrc	sdi_high_data,7
-000597 9add                      	sbi		PORT_CATHODE,SDI_DATA
+000592 fe87                      	sbrs	sdi_high_time,7								//установить линию sdi в соответствии со значением самого старшего бита sdi_high
+000593 98da                      	cbi		PORT_CATHODE,SDI_TIME
+000594 fc87                      	sbrc	sdi_high_time,7
+000595 9ada                      	sbi		PORT_CATHODE,SDI_TIME
+000596 fea7                      	sbrs	sdi_high_data,7							
+000597 98dd                      	cbi		PORT_CATHODE,SDI_DATA
+000598 fca7                      	sbrc	sdi_high_data,7
+000599 9add                      	sbi		PORT_CATHODE,SDI_DATA
                                   
-000598 1c99                       	rol		sdi_low_time								//сдвинуть на 1 бит значения регистров sdi
-000599 1c88                      	rol		sdi_high_time 
-00059a 1cbb                      	rol		sdi_low_data
-00059b 1caa                      	rol		sdi_high_data 
+00059a 1c99                       	rol		sdi_low_time								//сдвинуть на 1 бит значения регистров sdi
+00059b 1c88                      	rol		sdi_high_time 
+00059c 1cbb                      	rol		sdi_low_data
+00059d 1caa                      	rol		sdi_high_data 
                                  
-00059c 98db                      	cbi		PORT_CATHODE,CLK						//установить в 0 линию clk и выйти
-00059d c01a                      	rjmp	exit_timer1
+00059e 98db                      	cbi		PORT_CATHODE,CLK						//установить в 0 линию clk и выйти
+00059f c01a                      	rjmp	exit_timer1
                                   set_clk_line:
-00059e 9adb                      	sbi		PORT_CATHODE,CLK						//установить в 1 линию clk и выйти
-00059f c018                      	rjmp	exit_timer1	
+0005a0 9adb                      	sbi		PORT_CATHODE,CLK						//установить в 1 линию clk и выйти
+0005a1 c018                      	rjmp	exit_timer1	
                                   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                   //сдвиг данных завершен, после этого происходит установка на короткое время линии LE в 1
                                   //а потом линию OE в 0
                                   data_latch_end:
-0005a0 fcc1                       	sbrc	mbi_clk_counter,1							//если счетчик равен 32(bit0=0, bit1=0) - установить 0 на clk, если 33(bit0=1, bit1=0) установить LE 1				
-0005a1 c008                      	rjmp	line_le_oe
-0005a2 fcc0                      	sbrc	mbi_clk_counter,0	
-0005a3 c004                      	rjmp	set_le_line
-0005a4 98db                      	cbi		PORT_CATHODE,CLK
-0005a5 98da                      	cbi		PORT_CATHODE,SDI_TIME
-0005a6 98dd                      	cbi		PORT_CATHODE,SDI_DATA
-0005a7 c010                      	rjmp	exit_timer1
+0005a2 fcc1                       	sbrc	mbi_clk_counter,1							//если счетчик равен 32(bit0=0, bit1=0) - установить 0 на clk, если 33(bit0=1, bit1=0) установить LE 1				
+0005a3 c008                      	rjmp	line_le_oe
+0005a4 fcc0                      	sbrc	mbi_clk_counter,0	
+0005a5 c004                      	rjmp	set_le_line
+0005a6 98db                      	cbi		PORT_CATHODE,CLK
+0005a7 98da                      	cbi		PORT_CATHODE,SDI_TIME
+0005a8 98dd                      	cbi		PORT_CATHODE,SDI_DATA
+0005a9 c010                      	rjmp	exit_timer1
                                   set_le_line:
-0005a8 9adc                      	sbi		PORT_CATHODE,LE
-0005a9 c00e                      	rjmp	exit_timer1
+0005aa 9adc                      	sbi		PORT_CATHODE,LE
+0005ab c00e                      	rjmp	exit_timer1
                                   //если счетчик равен 34(bit0=0, bit1=1) - установить 0 на LE, если 35(bit0=1, bit1=1) установить 0 на OE
                                   line_le_oe:
-0005aa fcc0                      	sbrc	mbi_clk_counter,0	
-0005ab c002                      	rjmp	clr_oe_line
-0005ac 98dc                      	cbi		PORT_CATHODE,LE
-0005ad c00a                      	rjmp	exit_timer1
+0005ac fcc0                      	sbrc	mbi_clk_counter,0	
+0005ad c002                      	rjmp	clr_oe_line
+0005ae 98dc                      	cbi		PORT_CATHODE,LE
+0005af c00a                      	rjmp	exit_timer1
                                   clr_oe_line:
-0005ae 98d9                      	cbi		PORT_CATHODE,OE
-0005af 2700                      	clr		templ
-0005b0 e8e4                      	ldi		ZL,LOW(2*ANODE_OUTPUT)						;загрузить данные для вывода на анод
-0005b1 e0fb                      	ldi		ZH,HIGH(2*ANODE_OUTPUT)
-0005b2 0ded                      	add		ZL,digit_count
-0005b3 1ff0                      	adc		ZH,templ
-0005b4 9104                      	lpm		templ,Z
-0005b5 bb05                      	out		PORT_ANODE,templ
-0005b6 940e 0541                 	call	Timer1_OFF
+0005b0 98d9                      	cbi		PORT_CATHODE,OE
+0005b1 2700                      	clr		templ
+0005b2 e8e8                      	ldi		ZL,LOW(2*ANODE_OUTPUT)						;загрузить данные для вывода на анод
+0005b3 e0fb                      	ldi		ZH,HIGH(2*ANODE_OUTPUT)
+0005b4 0ded                      	add		ZL,digit_count
+0005b5 1ff0                      	adc		ZH,templ
+0005b6 9104                      	lpm		templ,Z
+0005b7 bb05                      	out		PORT_ANODE,templ
+0005b8 940e 0543                 	call	Timer1_OFF
                                  
                                   //выйти, предварительно инкрементировав счетчик
                                   exit_timer1:
-0005b8 94c3                      	inc		mbi_clk_counter	
-0005b9 910f                      	pop		templ
-0005ba bf0f                      	out		SREG,templ
-0005bb 911f                      	pop		temph
-0005bc 910f                      	pop		templ
-0005bd 91ff                      	pop		ZH
-0005be 91ef                      	pop		ZL
-0005bf 9518                       reti
+0005ba 94c3                      	inc		mbi_clk_counter	
+0005bb 910f                      	pop		templ
+0005bc bf0f                      	out		SREG,templ
+0005bd 911f                      	pop		temph
+0005be 910f                      	pop		templ
+0005bf 91ff                      	pop		ZH
+0005c0 91ef                      	pop		ZL
+0005c1 9518                       reti
                                  
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////////////////////////////////						6		
@@ -2970,7 +2972,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  	out		OCR2,templ
                                  	ldi		templ,(1<<TOIE2)
                                  	out		TIMSK,templ*/
-0005c0 9508                      ret
+0005c2 9508                      ret
                                  
                                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////////////////////////////////						7		
@@ -2979,14 +2981,14 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  Timer2_OFF:
                                  /*	clr		templ
                                  	out		TCCR2,templ*/
-0005c1 9508                      ret
+0005c3 9508                      ret
                                  
                                  
                                  
                                   ANODE_OUTPUT:
-0005c2 0804
-0005c3 2010
-0005c4 8040                      	.db		0x04,	0x08,	0x10,	0x20,	0x40,	0x80
+0005c4 0804
+0005c5 2010
+0005c6 8040                      	.db		0x04,	0x08,	0x10,	0x20,	0x40,	0x80
                                  
                                  .include	"UARTFunctions.asm"
                                  
@@ -3009,10 +3011,10 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Send_UART:
-0005c5 9b5d                      	sbis	UCSRA,UDRE
-0005c6 cffe                      	rjmp	Send_UART
-0005c7 b90c                      	out		UDR,templ
-0005c8 9508                      ret
+0005c7 9b5d                      	sbis	UCSRA,UDRE
+0005c8 cffe                      	rjmp	Send_UART
+0005c9 b90c                      	out		UDR,templ
+0005ca 9508                      ret
                                  
                                  
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3020,146 +3022,146 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  UART_TX:
-0005c9 930f                      	push	templ
-0005ca 931f                      	push	temph
-0005cb b70f                      	in		templ,SREG
-0005cc 930f                      	push	templ
+0005cb 930f                      	push	templ
+0005cc 931f                      	push	temph
+0005cd b70f                      	in		templ,SREG
+0005ce 930f                      	push	templ
                                  
-0005cd 3077                      	cpi		count,7
-0005ce f448                      	brsh	exit_uart_tx
-0005cf 2711                      	clr		temph
-0005d0 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
-0005d1 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
-0005d2 0fa7                      	add		XL,count
-0005d3 1fb1                      	adc		XH,temph
-0005d4 910c                      	ld		templ,X
-0005d5 940e 05c5                 	call	Send_UART	
+0005cf 3077                      	cpi		count,7
+0005d0 f448                      	brsh	exit_uart_tx
+0005d1 2711                      	clr		temph
+0005d2 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
+0005d3 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
+0005d4 0fa7                      	add		XL,count
+0005d5 1fb1                      	adc		XH,temph
+0005d6 910c                      	ld		templ,X
+0005d7 940e 05c7                 	call	Send_UART	
                                  
-0005d7 9573                      	inc		count
+0005d9 9573                      	inc		count
                                  
                                  exit_uart_tx:	
-0005d8 910f                      	pop		templ
-0005d9 bf0f                      	out		SREG,templ
-0005da 911f                      	pop		temph
-0005db 910f                      	pop		templ
-0005dc 9518                      reti
+0005da 910f                      	pop		templ
+0005db bf0f                      	out		SREG,templ
+0005dc 911f                      	pop		temph
+0005dd 910f                      	pop		templ
+0005de 9518                      reti
                                  
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////	3
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  UART_RX:
-0005dd 932f                      	push	temp_2
-0005de 930f                      	push	templ
-0005df 931f                      	push	temph
-0005e0 93af                      	push	XL
-0005e1 93bf                      	push	XH
-0005e2 93cf                      	push	YL
-0005e3 93df                      	push	YH
-0005e4 b70f                      	in		templ,SREG
-0005e5 930f                      	push	templ
+0005df 932f                      	push	temp_2
+0005e0 930f                      	push	templ
+0005e1 931f                      	push	temph
+0005e2 93af                      	push	XL
+0005e3 93bf                      	push	XH
+0005e4 93cf                      	push	YL
+0005e5 93df                      	push	YH
+0005e6 b70f                      	in		templ,SREG
+0005e7 930f                      	push	templ
                                  
-0005e6 b10c                      	in		templ,UDR
-0005e7 940e 05c5                 	call	Send_UART
-0005e9 2722                      	clr		temp_2
-0005ea ebaa                      	ldi		XL,LOW(RX_HEAD)
-0005eb e0b0                      	ldi		XH,HIGH(RX_HEAD)
-0005ec 911c                      	ld		temph,X
+0005e8 b10c                      	in		templ,UDR
+0005e9 940e 05c7                 	call	Send_UART
+0005eb 2722                      	clr		temp_2
+0005ec ebaa                      	ldi		XL,LOW(RX_HEAD)
+0005ed e0b0                      	ldi		XH,HIGH(RX_HEAD)
+0005ee 911c                      	ld		temph,X
                                  		
-0005ed ebcc                      	ldi		YL,LOW(UART_IN)
-0005ee e0d0                      	ldi		YH,HIGH(UART_IN)
-0005ef 0fc1                      	add		YL,temph
-0005f0 1fd2                      	adc		YH,temp_2
-0005f1 8308                      	st		Y,templ
+0005ef ebcc                      	ldi		YL,LOW(UART_IN)
+0005f0 e0d0                      	ldi		YH,HIGH(UART_IN)
+0005f1 0fc1                      	add		YL,temph
+0005f2 1fd2                      	adc		YH,temp_2
+0005f3 8308                      	st		Y,templ
                                  
-0005f2 9513                      	inc		temph
-0005f3 731f                      	andi	temph,0x3F
-0005f4 931c                      	st		X,temph
+0005f4 9513                      	inc		temph
+0005f5 731f                      	andi	temph,0x3F
+0005f6 931c                      	st		X,temph
                                  
-0005f5 910f                      	pop		templ
-0005f6 bf0f                      	out		SREG,templ
-0005f7 91df                      	pop		YH
-0005f8 91cf                      	pop		YL
-0005f9 91bf                      	pop		XH
-0005fa 91af                      	pop		XL
-0005fb 911f                      	pop		temph
-0005fc 910f                      	pop		templ
-0005fd 912f                      	pop		temp_2
-0005fe 9518                      reti
+0005f7 910f                      	pop		templ
+0005f8 bf0f                      	out		SREG,templ
+0005f9 91df                      	pop		YH
+0005fa 91cf                      	pop		YL
+0005fb 91bf                      	pop		XH
+0005fc 91af                      	pop		XL
+0005fd 911f                      	pop		temph
+0005fe 910f                      	pop		templ
+0005ff 912f                      	pop		temp_2
+000600 9518                      reti
                                  
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////	4
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  UART_proc:
-0005ff ebaa                      	ldi		XL,LOW(RX_HEAD)							;указатель головы
-000600 e0b0                      	ldi		XH,HIGH(RX_HEAD)
-000601 911c                      	ld		temph,X
+000601 ebaa                      	ldi		XL,LOW(RX_HEAD)							;указатель головы
+000602 e0b0                      	ldi		XH,HIGH(RX_HEAD)
+000603 911c                      	ld		temph,X
                                  
-000602 ebcb                      	ldi		YL,LOW(RX_TAIL)							;указатель хвоста
-000603 e0d0                      	ldi		YH,HIGH(RX_TAIL)
-000604 8108                      	ld		templ,Y
+000604 ebcb                      	ldi		YL,LOW(RX_TAIL)							;указатель хвоста
+000605 e0d0                      	ldi		YH,HIGH(RX_TAIL)
+000606 8108                      	ld		templ,Y
                                  
-000605 2f20                      	mov		temp_2,templ
-000606 2f31                      	mov		temp_3,temph
+000607 2f20                      	mov		temp_2,templ
+000608 2f31                      	mov		temp_3,temph
                                  
-000607 1b32                      	sub		temp_3,temp_2							;проверка количества несчитанных байтов в кольцевом буфере
-000608 733f                      	andi	temp_3,0x3F									
+000609 1b32                      	sub		temp_3,temp_2							;проверка количества несчитанных байтов в кольцевом буфере
+00060a 733f                      	andi	temp_3,0x3F									
                                  
-000609 3039                      	cpi		temp_3,9								;обработка данных будет происходить если накопилось не менее 9 несчитанных байтов (размер посылки)
-00060a f410                      	brsh	uart_packet_income
-00060b 940c 0634                 	jmp		exit_uart_proc
+00060b 3039                      	cpi		temp_3,9								;обработка данных будет происходить если накопилось не менее 9 несчитанных байтов (размер посылки)
+00060c f410                      	brsh	uart_packet_income
+00060d 940c 0636                 	jmp		exit_uart_proc
                                  
                                  uart_packet_income:
-00060d 2733                      	clr		temp_3									;считывается байт данных
-00060e ebac                      	ldi		XL,LOW(UART_IN)							
-00060f e0b0                      	ldi		XH,HIGH(UART_IN)
-000610 0fa0                      	add		XL,templ
-000611 1fb3                      	adc		XH,temp_3
-000612 912d                      	ld		temp_2,X+
+00060f 2733                      	clr		temp_3									;считывается байт данных
+000610 ebac                      	ldi		XL,LOW(UART_IN)							
+000611 e0b0                      	ldi		XH,HIGH(UART_IN)
+000612 0fa0                      	add		XL,templ
+000613 1fb3                      	adc		XH,temp_3
+000614 912d                      	ld		temp_2,X+
                                  
-000613 3c2c                      	cpi		temp_2,0xCC								;определить, является ли считанный байт стартовым
-000614 f029                      	breq	packet_start_byte
-000615 9503                      	inc		templ									;если нет, повторить процедуру сначала
-000616 730f                      	andi	templ,0x3F
-000617 8308                      	st		Y,templ
-000618 940c 05ff                 	jmp		UART_proc
+000615 3c2c                      	cpi		temp_2,0xCC								;определить, является ли считанный байт стартовым
+000616 f029                      	breq	packet_start_byte
+000617 9503                      	inc		templ									;если нет, повторить процедуру сначала
+000618 730f                      	andi	templ,0x3F
+000619 8308                      	st		Y,templ
+00061a 940c 0601                 	jmp		UART_proc
                                  
                                  packet_start_byte:									;если считанный байт стартовый, обрабатываем последующие 8 байтов кольцевого буфера
-00061a efcc                      	ldi		YL,LOW(UART_TEMP)							
-00061b e0d0                      	ldi		YH,HIGH(UART_TEMP)						;байты времени и даты поместить во временный буфер, после проверки контрольной суммы
-00061c 2711                      	clr		temph									;в случае её правильности данные записать в датчик (через буфер TWI_BUFFER_OUT)
+00061c efcc                      	ldi		YL,LOW(UART_TEMP)							
+00061d e0d0                      	ldi		YH,HIGH(UART_TEMP)						;байты времени и даты поместить во временный буфер, после проверки контрольной суммы
+00061e 2711                      	clr		temph									;в случае её правильности данные записать в датчик (через буфер TWI_BUFFER_OUT)
                                  
                                  next_uart_byte:
-00061d 913d                      	ld		temp_3,X+
-00061e 9339                      	st		Y+,temp_3
-00061f 0f23                      	add		temp_2,temp_3
-000620 9513                      	inc		temph
-000621 3017                      	cpi		temph,7
-000622 f3d0                      	brlo	next_uart_byte
+00061f 913d                      	ld		temp_3,X+
+000620 9339                      	st		Y+,temp_3
+000621 0f23                      	add		temp_2,temp_3
+000622 9513                      	inc		temph
+000623 3017                      	cpi		temph,7
+000624 f3d0                      	brlo	next_uart_byte
                                  
-000623 913c                      	ld		temp_3,X
-000624 1723                      	cp		temp_2,temp_3
-000625 f039                      	breq	crc_is_good
-000626 9503                      	inc		templ
-000627 730f                      	andi	templ,0x3F
-000628 ebcb                      	ldi		YL,LOW(RX_TAIL)							;указатель хвоста
-000629 e0d0                      	ldi		YH,HIGH(RX_TAIL)
-00062a 8308                      	st		Y,templ
+000625 913c                      	ld		temp_3,X
+000626 1723                      	cp		temp_2,temp_3
+000627 f039                      	breq	crc_is_good
+000628 9503                      	inc		templ
+000629 730f                      	andi	templ,0x3F
+00062a ebcb                      	ldi		YL,LOW(RX_TAIL)							;указатель хвоста
+00062b e0d0                      	ldi		YH,HIGH(RX_TAIL)
+00062c 8308                      	st		Y,templ
                                  
-00062b 940c 05ff                 	jmp		UART_proc
+00062d 940c 0601                 	jmp		UART_proc
                                  
                                  crc_is_good:
-00062d 5f07                      	subi	templ,-9
-00062e 730f                      	andi	templ,0x3F
-00062f ebcb                      	ldi		YL,LOW(RX_TAIL)							;контрольная сумма в норме, увеличить указатель хвоста на 9 и записать в память
-000630 e0d0                      	ldi		YH,HIGH(RX_TAIL)
-000631 8308                      	st		Y,templ									
+00062f 5f07                      	subi	templ,-9
+000630 730f                      	andi	templ,0x3F
+000631 ebcb                      	ldi		YL,LOW(RX_TAIL)							;контрольная сумма в норме, увеличить указатель хвоста на 9 и записать в память
+000632 e0d0                      	ldi		YH,HIGH(RX_TAIL)
+000633 8308                      	st		Y,templ									
                                  	
-000632 940e 0635                 	call	Write_packet_to_TWI_buffer				;переписать данные из временного буфера в буфер отправки данных
+000634 940e 0637                 	call	Write_packet_to_TWI_buffer				;переписать данные из временного буфера в буфер отправки данных
                                  	
                                  exit_uart_proc:
-000634 9508                      ret
+000636 9508                      ret
                                  
                                  
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3167,28 +3169,28 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Write_packet_to_TWI_buffer:
-000635 2711                      	clr		temph
-000636 e6a0                      	ldi		XL,LOW(TWI_BUFFER_OUT)										;адрес буфера, из которого берутся данные для записи в датчик
-000637 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_OUT)
-000638 efcc                      	ldi		YL,LOW(UART_TEMP)											;адрес временного буфера
-000639 e0d0                      	ldi		YH,HIGH(UART_TEMP)
-00063a ed00                      	ldi		templ,(DS1307_ADDRESS<<1)|write								;первый байт - команда чтение/запись + адрес датчика
-00063b 930d                      	st		X+,templ													;второй байт - начальный адрес в памяти датчика
-00063c 2700                      	clr		templ														;последующие байты - байты данных для записи в датчик
-00063d 930d                      	st		X+,templ
-                                 write_next_byte_to_twi_buffer:
-00063e 9109                      	ld		templ,Y+
+000637 2711                      	clr		temph
+000638 e6a0                      	ldi		XL,LOW(TWI_BUFFER_OUT)										;адрес буфера, из которого берутся данные для записи в датчик
+000639 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_OUT)
+00063a efcc                      	ldi		YL,LOW(UART_TEMP)											;адрес временного буфера
+00063b e0d0                      	ldi		YH,HIGH(UART_TEMP)
+00063c ed00                      	ldi		templ,(DS1307_ADDRESS<<1)|write								;первый байт - команда чтение/запись + адрес датчика
+00063d 930d                      	st		X+,templ													;второй байт - начальный адрес в памяти датчика
+00063e 2700                      	clr		templ														;последующие байты - байты данных для записи в датчик
 00063f 930d                      	st		X+,templ
-000640 9513                      	inc		temph
-000641 3017                      	cpi		temph,7
-000642 f7d9                      	brne	write_next_byte_to_twi_buffer	
-000643 e069                      	ldi		twi_packet_size,9
-000644 2700                      	clr		templ
-000645 2ef0                      	mov		byte_address,templ
-000646 940e 0065                 	call	Start
-000648 940e 00d6                 	call	Wait_TWI_finish	
+                                 write_next_byte_to_twi_buffer:
+000640 9109                      	ld		templ,Y+
+000641 930d                      	st		X+,templ
+000642 9513                      	inc		temph
+000643 3017                      	cpi		temph,7
+000644 f7d9                      	brne	write_next_byte_to_twi_buffer	
+000645 e069                      	ldi		twi_packet_size,9
+000646 2700                      	clr		templ
+000647 2ef0                      	mov		byte_address,templ
+000648 940e 0065                 	call	Start
+00064a 940e 00d6                 	call	Wait_TWI_finish	
                                  
-00064a 9508                      ret	
+00064c 9508                      ret	
                                  
                                  .dseg	
                                  
@@ -3215,79 +3217,79 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  
                                  Set_brightness:
                                   //измерить напряжение
-00064b 9a36                      	sbi		ADCSRA,ADSC
+00064d 9a36                      	sbi		ADCSRA,ADSC
                                   wait_conv:
-00064c 9936                      	sbic	ADCSRA,ADSC
-00064d 940c 064c                 	jmp		wait_conv
-00064f b104                      	in		templ,ADCL
-000650 b115                      	in		temph,ADCH
+00064e 9936                      	sbic	ADCSRA,ADSC
+00064f 940c 064e                 	jmp		wait_conv
+000651 b104                      	in		templ,ADCL
+000652 b115                      	in		temph,ADCH
                                  
                                  /*	ldi		templ,0xFF
                                  	sub		templ,temph*/
-000651 3f1f                      	cpi		temph,0xFF
-000652 f409                      	brne	not_abs_dark
-000653 ef1e                      	ldi		temph,0xFE
+000653 3f1f                      	cpi		temph,0xFF
+000654 f409                      	brne	not_abs_dark
+000655 ef1e                      	ldi		temph,0xFE
                                  not_abs_dark:
-000654 940e 0657                 	call	Average_measure
-000656 9508                      ret
+000656 940e 0659                 	call	Average_measure
+000658 9508                      ret
                                  
                                  
                                  Average_measure:
-000657 e0a3                      	ldi		XL,LOW(ADC_NUM)							;считать номер очередного байта с измеренным значением АЦП
-000658 e0b1                      	ldi		XH,HIGH(ADC_NUM)
-000659 910c                      	ld		templ,X
+000659 e0a3                      	ldi		XL,LOW(ADC_NUM)							;считать номер очередного байта с измеренным значением АЦП
+00065a e0b1                      	ldi		XH,HIGH(ADC_NUM)
+00065b 910c                      	ld		templ,X
                                  	
-00065a 2722                      	clr		temp_2
-00065b e0c4                      	ldi		YL,LOW(ADC_RES)							;записать измеренное значение в буфер
-00065c e0d1                      	ldi		YH,HIGH(ADC_RES)
-00065d 0fc0                      	add		YL,templ
-00065e 1fd2                      	adc		YH,temp_2
-00065f 8318                      	st		Y,temph
+00065c 2722                      	clr		temp_2
+00065d e0c4                      	ldi		YL,LOW(ADC_RES)							;записать измеренное значение в буфер
+00065e e0d1                      	ldi		YH,HIGH(ADC_RES)
+00065f 0fc0                      	add		YL,templ
+000660 1fd2                      	adc		YH,temp_2
+000661 8318                      	st		Y,temph
                                  
-000660 9503                      	inc		templ									;если номер записываемого байта достигло 32 провести операцию усреднения считанных данных и обнулить номер
-000661 3200                      	cpi		templ,32
-000662 f018                      	brlo	adc_res_num_low
-000663 2700                      	clr		templ
-000664 940e 0668                 	call	Calculate_average
+000662 9503                      	inc		templ									;если номер записываемого байта достигло 32 провести операцию усреднения считанных данных и обнулить номер
+000663 3200                      	cpi		templ,32
+000664 f018                      	brlo	adc_res_num_low
+000665 2700                      	clr		templ
+000666 940e 066a                 	call	Calculate_average
                                  adc_res_num_low:
-000666 930c                      	st		X,templ
+000668 930c                      	st		X,templ
                                  	
-000667 9508                      ret
+000669 9508                      ret
                                  
                                  
                                  Calculate_average:
-000668 930f                      	push	templ
+00066a 930f                      	push	templ
                                  
-000669 2722                      	clr		temp_2
-00066a 2733                      	clr		temp_3
-00066b 2700                      	clr		templ
-00066c 2777                      	clr		count
-00066d e0c4                      	ldi		YL,LOW(ADC_RES)
-00066e e0d1                      	ldi		YH,HIGH(ADC_RES)
+00066b 2722                      	clr		temp_2
+00066c 2733                      	clr		temp_3
+00066d 2700                      	clr		templ
+00066e 2777                      	clr		count
+00066f e0c4                      	ldi		YL,LOW(ADC_RES)
+000670 e0d1                      	ldi		YH,HIGH(ADC_RES)
                                  
                                  aver_calc_next_byte:
-00066f 9119                      	ld		temph,Y+
-000670 0f21                      	add		temp_2,temph								;в temp_3:temp_2 сумма всех записанных в буффер байтов
-000671 1f30                      	adc		temp_3,templ
-000672 9573                      	inc		count
-000673 3270                      	cpi		count,32
-000674 f3d0                      	brlo	aver_calc_next_byte
+000671 9119                      	ld		temph,Y+
+000672 0f21                      	add		temp_2,temph								;в temp_3:temp_2 сумма всех записанных в буффер байтов
+000673 1f30                      	adc		temp_3,templ
+000674 9573                      	inc		count
+000675 3270                      	cpi		count,32
+000676 f3d0                      	brlo	aver_calc_next_byte
                                  
-000675 0f22                      	lsl		temp_2										;умножить на 8 (сдвинуть влево 3 бита) двухбайтовое число
-000676 1f33                      	rol		temp_3
-000677 0f22                      	lsl		temp_2										
+000677 0f22                      	lsl		temp_2										;умножить на 8 (сдвинуть влево 3 бита) двухбайтовое число
 000678 1f33                      	rol		temp_3
 000679 0f22                      	lsl		temp_2										
-00067a 1f33                      	rol		temp_3										;temp_3 после сдвига содержит среднее однобайтовое значение
+00067a 1f33                      	rol		temp_3
+00067b 0f22                      	lsl		temp_2										
+00067c 1f33                      	rol		temp_3										;temp_3 после сдвига содержит среднее однобайтовое значение
                                  
-00067b 2f13                      	mov		temph,temp_3
-00067c bd13                      	out		OCR2,temph
+00067d 2f13                      	mov		temph,temp_3
+00067e bd13                      	out		OCR2,temph
                                  
                                  /*	mov		templ,temph
                                  	call	Send_UART*/
                                  
-00067d 910f                      	pop		templ
-00067e 9508                      ret	
+00067f 910f                      	pop		templ
+000680 9508                      ret	
                                  
                                  .dseg
                                  
@@ -3317,78 +3319,78 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  Correct_time:
                                  
                                  	//считывание текущего времени - сначала часы
-00067f e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
-000680 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
-000681 9612                      	adiw	XL,2
-000682 910c                      	ld		templ,X
+000681 e7a0                      	ldi		XL,LOW(TWI_BUFFER_IN)
+000682 e0b0                      	ldi		XH,HIGH(TWI_BUFFER_IN)
+000683 9612                      	adiw	XL,2
+000684 910c                      	ld		templ,X
                                  	//проверка значения часов, минут и секунд (корректировка производится ежедневно в 01:00:00)
-000683 3001                      	cpi		templ, 1
-000684 f519                      	brne	exit_correct_time_proc
-000685 910e                      	ld		templ,-X													;минуты
-000686 3000                      	cpi		templ,0
-000687 f501                      	brne	exit_correct_time_proc
-000688 910e                      	ld		templ,-X													;секунды
-000689 3000                      	cpi		templ,0
-00068a f469                      	brne	check_stop_correction_time	
-00068b 940e 06b0                 	call	Read_time_inaccuracy_from_RAM
+000685 3001                      	cpi		templ, 1
+000686 f519                      	brne	exit_correct_time_proc
+000687 910e                      	ld		templ,-X													;минуты
+000688 3000                      	cpi		templ,0
+000689 f501                      	brne	exit_correct_time_proc
+00068a 910e                      	ld		templ,-X													;секунды
+00068b 3000                      	cpi		templ,0
+00068c f469                      	brne	check_stop_correction_time	
+00068d 940e 06b2                 	call	Read_time_inaccuracy_from_RAM
                                  	//проверка значения ошибки часов - если значение отрицательное (старший бит = 1) - отстают, иначе - спешат
-00068d ff17                      	sbrs	temph,7														
-00068e c007                      	rjmp	clock_ahead
+00068f ff17                      	sbrs	temph,7														
+000690 c007                      	rjmp	clock_ahead
                                  	//если отстают - записать в датчик значение секунд и выйти
-00068f 9511                      	neg		temph														;модуль отрицательного числа
-000690 940e 02a2                 	call	HEX_TO_BCD													;перевести в формат bcd для записи в датчик
-000692 24ff                      	clr		byte_address
-000693 940e 0286                 	call	Write_byte_to_DS1307
-000695 c012                      	rjmp	exit_correct_time_proc
+000691 9511                      	neg		temph														;модуль отрицательного числа
+000692 940e 02a2                 	call	HEX_TO_BCD													;перевести в формат bcd для записи в датчик
+000694 24ff                      	clr		byte_address
+000695 940e 0286                 	call	Write_byte_to_DS1307
+000697 c012                      	rjmp	exit_correct_time_proc
                                  
                                  	//если часы спешат
                                  clock_ahead:
-000696 6042                      	sbr		state_flag,(1<<WWSM)										;установка флага, который сигнализирует, что будет производится коррекция времени
-000697 c010                      	rjmp	exit_correct_time_proc
+000698 6042                      	sbr		state_flag,(1<<WWSM)										;установка флага, который сигнализирует, что будет производится коррекция времени
+000699 c010                      	rjmp	exit_correct_time_proc
                                  
                                  //для случая, если часы спешат корректировка времени будет происходить в 1 час 00 минут, а значение секунд = значение поправки + 1
                                  //будет произведён сброс до значения = 1:00:01 и сброс флага WWSM
                                  check_stop_correction_time:
-000698 ff41                      	sbrs	state_flag,WWSM
-000699 c00e                      	rjmp	exit_correct_time_proc
-00069a 2f10                      	mov		temph,templ
-00069b 940e 0297                 	call	BCD_TO_HEX
-00069d 2f01                      	mov		templ,temph													;перевод значения секунд из BCD формата
-00069e 940e 06b0                 	call	Read_time_inaccuracy_from_RAM								;значение поправки - в temph
-0006a0 9513                      	inc		temph
-0006a1 1710                      	cp		temph,templ													;проверка на равенство текущего значения секунд и значения поправки + 1
-0006a2 f429                      	brne	exit_correct_time_proc
-0006a3 7f4d                      	cbr		state_flag,(1<<WWSM)										;сброс флага
-0006a4 e011                      	ldi		temph,1
-0006a5 24ff                      	clr		byte_address
-0006a6 940e 0286                 	call	Write_byte_to_DS1307										;запись в датчик значения секунд = 1
+00069a ff41                      	sbrs	state_flag,WWSM
+00069b c00e                      	rjmp	exit_correct_time_proc
+00069c 2f10                      	mov		temph,templ
+00069d 940e 0297                 	call	BCD_TO_HEX
+00069f 2f01                      	mov		templ,temph													;перевод значения секунд из BCD формата
+0006a0 940e 06b2                 	call	Read_time_inaccuracy_from_RAM								;значение поправки - в temph
+0006a2 9513                      	inc		temph
+0006a3 1710                      	cp		temph,templ													;проверка на равенство текущего значения секунд и значения поправки + 1
+0006a4 f429                      	brne	exit_correct_time_proc
+0006a5 7f4d                      	cbr		state_flag,(1<<WWSM)										;сброс флага
+0006a6 e011                      	ldi		temph,1
+0006a7 24ff                      	clr		byte_address
+0006a8 940e 0286                 	call	Write_byte_to_DS1307										;запись в датчик значения секунд = 1
                                  
                                  exit_correct_time_proc:
-0006a8 9508                      ret
+0006aa 9508                      ret
                                  
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////							2
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Read_write_time_inaccuracy:	
-0006a9 e6e8                      	ldi		ZL,LOW(2*TIME_INACCURACY_SEC_PER_DAY_CONST)					;адрес хранения значения ухода времени во флеш-памяти
-0006aa e0fd                      	ldi		ZH,HIGH(2*TIME_INACCURACY_SEC_PER_DAY_CONST)
-0006ab 9104                      	lpm		templ,Z
+0006ab e6ec                      	ldi		ZL,LOW(2*TIME_INACCURACY_SEC_PER_DAY_CONST)					;адрес хранения значения ухода времени во флеш-памяти
+0006ac e0fd                      	ldi		ZH,HIGH(2*TIME_INACCURACY_SEC_PER_DAY_CONST)
+0006ad 9104                      	lpm		templ,Z
                                  	
-0006ac e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
-0006ad e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
-0006ae 930c                      	st		X,templ
-0006af 9508                      ret
+0006ae e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
+0006af e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
+0006b0 930c                      	st		X,templ
+0006b1 9508                      ret
                                  
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////							3
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Read_time_inaccuracy_from_RAM:
-0006b0 e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
-0006b1 e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
-0006b2 911c                      	ld		temph,X
-0006b3 9508                      ret
+0006b2 e2a4                      	ldi		XL,LOW(TIME_INACCURACY_SEC_PER_DAY_TEMP)					;адрес хранения значения ухода времени в оперативной памяти
+0006b3 e0b1                      	ldi		XH,HIGH(TIME_INACCURACY_SEC_PER_DAY_TEMP)
+0006b4 911c                      	ld		temph,X
+0006b5 9508                      ret
                                  
                                  .dseg 
                                  
@@ -3397,7 +3399,7 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  .cseg
                                  
                                  TIME_INACCURACY_SEC_PER_DAY_CONST:
-0006b4 0006                      		.db		0x06,	0x00
+0006b6 0006                      		.db		0x06,	0x00
                                  .include	"EEPROMFunctions.asm"
                                  
                                  Основные процедуры для работы с eeprom
@@ -3423,6 +3425,10 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  3. Запись параметра в ОЗУ по адресу TIMER_PARAMETERS_TEMP + templ. В templ - относительный адрес, в temph - байт для записи, temp_2 - портится.
                                  
                                  4. Перезапись из ОЗУ по адресу TIMER_PARAMETERS_TEMP в регистры с параметрами таймера.
+                                 
+                                 5. Запись параметров таймера в eeprom с двойным резервированием.
+                                 
+                                 6. Запись байта в eeprom. В XH:XL - адрес записываемого байта. В YL - записываемый байт.
                                  */
                                  
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3430,43 +3436,43 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Read_timer_parameters_from_eeprom:
-0006b5 e000                      	ldi		templ,0
+0006b7 e000                      	ldi		templ,0
                                  	
                                  next_param_from_eeprom:
-0006b6 2fa0                      	mov		XL,templ										;считывание первого байта
-0006b7 27bb                      	clr		XH
-0006b8 940e 06d6                 	call	Read_byte_from_eeprom
-0006ba 2f1c                      	mov		temph,YL
-0006bb 5ca0                      	subi	XL,-EEPROM_PAGE_SIZE								;считывание второго байта
-0006bc 940e 06d6                 	call	Read_byte_from_eeprom
-0006be 2f2c                      	mov		temp_2,YL
-0006bf 5ca0                      	subi	XL,-EEPROM_PAGE_SIZE								;считывание третьего байта
-0006c0 940e 06d6                 	call	Read_byte_from_eeprom
-0006c2 2f3c                      	mov		temp_3,YL
+0006b8 2fa0                      	mov		XL,templ										;считывание первого байта
+0006b9 27bb                      	clr		XH
+0006ba 940e 06d8                 	call	Read_byte_from_eeprom
+0006bc 2f1c                      	mov		temph,YL
+0006bd 5ca0                      	subi	XL,-EEPROM_PAGE_SIZE								;считывание второго байта
+0006be 940e 06d8                 	call	Read_byte_from_eeprom
+0006c0 2f2c                      	mov		temp_2,YL
+0006c1 5ca0                      	subi	XL,-EEPROM_PAGE_SIZE								;считывание третьего байта
+0006c2 940e 06d8                 	call	Read_byte_from_eeprom
+0006c4 2f3c                      	mov		temp_3,YL
                                  
                                  	//проверка считанного байта - если битый или содержит неверное значение
-0006c3 1712                      	cp		temph,temp_2
-0006c4 f481                      	brne	exit_read_timer_parameters_from_eeprom
-0006c5 1723                      	cp		temp_2,temp_3
-0006c6 f471                      	brne	exit_read_timer_parameters_from_eeprom
-0006c7 ff00                      	sbrs	templ,0											;если нулевой бит=1, то были считаны секунды 
-0006c8 c003                      	rjmp	check_minutes_or_rounds							;если нулевой бит=1, то были считаны минуты или раунды
-0006c9 331c                      	cpi		temph,60										;секунд д.б. меньше 60
-0006ca f450                      	brsh	exit_read_timer_parameters_from_eeprom
-0006cb c002                      	rjmp	check_param_number
+0006c5 1712                      	cp		temph,temp_2
+0006c6 f481                      	brne	exit_read_timer_parameters_from_eeprom
+0006c7 1723                      	cp		temp_2,temp_3
+0006c8 f471                      	brne	exit_read_timer_parameters_from_eeprom
+0006c9 ff00                      	sbrs	templ,0											;если нулевой бит=1, то были считаны секунды 
+0006ca c003                      	rjmp	check_minutes_or_rounds							;если нулевой бит=1, то были считаны минуты или раунды
+0006cb 331c                      	cpi		temph,60										;секунд д.б. меньше 60
+0006cc f450                      	brsh	exit_read_timer_parameters_from_eeprom
+0006cd c002                      	rjmp	check_param_number
                                  check_minutes_or_rounds:
-0006cc 3614                      	cpi		temph,100										;минут или раундов д.б. меньше 100
-0006cd f438                      	brsh	exit_read_timer_parameters_from_eeprom
+0006ce 3614                      	cpi		temph,100										;минут или раундов д.б. меньше 100
+0006cf f438                      	brsh	exit_read_timer_parameters_from_eeprom
                                  			
                                  check_param_number:
-0006ce 940e 06dd                 	call	Write_timer_param_to_RAM						;записать прошедший проверку параметр в ОЗУ
-0006d0 9503                      	inc		templ											;следующий параметр
-0006d1 3005                      	cpi		templ,5
-0006d2 f318                      	brlo	next_param_from_eeprom							;или переписать из ОЗУ параметры в соответствующие регистры
-0006d3 940e 06e4                 	call	Write_timer_params_from_RAM_to_registers
+0006d0 940e 06df                 	call	Write_timer_param_to_RAM						;записать прошедший проверку параметр в ОЗУ
+0006d2 9503                      	inc		templ											;следующий параметр
+0006d3 3005                      	cpi		templ,5
+0006d4 f318                      	brlo	next_param_from_eeprom							;или переписать из ОЗУ параметры в соответствующие регистры
+0006d5 940e 06e6                 	call	Write_timer_params_from_RAM_to_registers
                                  			
                                  exit_read_timer_parameters_from_eeprom:
-0006d5 9508                      ret
+0006d7 9508                      ret
                                  
                                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////	2
@@ -3474,41 +3480,111 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  
                                  Read_byte_from_eeprom:
                                  
-0006d6 99e1                      	sbic	EECR,EEWE
-0006d7 cffe                      	rjmp	Read_byte_from_eeprom
-0006d8 bbbf                      	out		EEARH,XH
-0006d9 bbae                      	out		EEARL,XL
-0006da 9ae0                      	sbi		EECR,EERE
-0006db b3cd                      	in		YL,EEDR
+0006d8 99e1                      	sbic	EECR,EEWE
+0006d9 cffe                      	rjmp	Read_byte_from_eeprom
+0006da bbbf                      	out		EEARH,XH
+0006db bbae                      	out		EEARL,XL
+0006dc 9ae0                      	sbi		EECR,EERE
+0006dd b3cd                      	in		YL,EEDR
                                  
-0006dc 9508                      ret
+0006de 9508                      ret
                                  
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////							3
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Write_timer_param_to_RAM:
-0006dd 2722                      	clr		temp_2
-0006de e2e5                      	ldi		ZL,LOW(TIMER_PARAMETERS_TEMP)					;адрес хранения параметра таймера в оперативной памяти
-0006df e0f1                      	ldi		ZH,HIGH(TIMER_PARAMETERS_TEMP)
-0006e0 0fe0                      	add		ZL,templ
-0006e1 1ff2                      	adc		ZH,temp_2
-0006e2 8310                      	st		Z,temph
-0006e3 9508                      ret
+0006df 2722                      	clr		temp_2
+0006e0 e2e5                      	ldi		ZL,LOW(TIMER_PARAMETERS_TEMP)					;адрес хранения параметра таймера в оперативной памяти
+0006e1 e0f1                      	ldi		ZH,HIGH(TIMER_PARAMETERS_TEMP)
+0006e2 0fe0                      	add		ZL,templ
+0006e3 1ff2                      	adc		ZH,temp_2
+0006e4 8310                      	st		Z,temph
+0006e5 9508                      ret
                                  
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  //////////							4
                                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  
                                  Write_timer_params_from_RAM_to_registers:
-0006e4 e2e5                      	ldi		ZL,LOW(TIMER_PARAMETERS_TEMP)					;адрес хранения параметров таймера в оперативной памяти
-0006e5 e0f1                      	ldi		ZH,HIGH(TIMER_PARAMETERS_TEMP)
-0006e6 9041                      	ld		min_work,Z+
-0006e7 9031                      	ld		sec_work,Z+
-0006e8 9071                      	ld		min_rest,Z+
-0006e9 9061                      	ld		sec_rest,Z+
-0006ea 8050                      	ld		round_work,Z
-0006eb 9508                      ret
+0006e6 e2e5                      	ldi		ZL,LOW(TIMER_PARAMETERS_TEMP)					;адрес хранения параметров таймера в оперативной памяти
+0006e7 e0f1                      	ldi		ZH,HIGH(TIMER_PARAMETERS_TEMP)
+0006e8 9041                      	ld		min_work,Z+
+0006e9 9031                      	ld		sec_work,Z+
+0006ea 9071                      	ld		min_rest,Z+
+0006eb 9061                      	ld		sec_rest,Z+
+0006ec 8050                      	ld		round_work,Z
+0006ed 9508                      ret
+                                 
+                                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 //////////							5
+                                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 
+                                 Write_timer_parameters_to_eeprom:
+                                 	
+0006ee 27aa                      	clr		XL
+0006ef 27bb                      	clr		XH
+0006f0 2700                      	clr		templ
+                                 
+                                 write_timer_params_to_next_page:
+                                 
+0006f1 3010                      	cpi		temph,0
+0006f2 f031                      	breq	start_write_params_to_eeprom
+0006f3 951a                      	dec		temph
+0006f4 e420                      	ldi		temp_2,EEPROM_PAGE_SIZE
+0006f5 2733                      	clr		temp_3
+0006f6 0fa2                      	add		XL,temp_2
+0006f7 1fb3                      	adc		XH,temp_3
+0006f8 cff8                      	rjmp	write_timer_params_to_next_page
+                                 
+                                 start_write_params_to_eeprom:
+                                 
+                                 	//минуты работы
+0006f9 2dc4                      	mov		YL,min_work
+0006fa 940e 0713                 	call	Write_byte_to_eeprom	
+                                 	//секунды работы
+0006fc 9611                      	adiw	XL,1
+0006fd 2dc3                      	mov		YL,sec_work
+0006fe 940e 0713                 	call	Write_byte_to_eeprom
+                                 	//минуты отдыха
+000700 9611                      	adiw	XL,1
+000701 2dc7                      	mov		YL,min_rest
+000702 940e 0713                 	call	Write_byte_to_eeprom
+                                 	//секунды работы
+000704 9611                      	adiw	XL,1
+000705 2dc6                      	mov		YL,sec_rest
+000706 940e 0713                 	call	Write_byte_to_eeprom
+                                 	//количество раундов
+000708 9611                      	adiw	XL,1
+000709 2dc5                      	mov		YL,round_work
+00070a 940e 0713                 	call	Write_byte_to_eeprom
+                                 
+00070c 9503                      	inc		templ
+00070d 2f10                      	mov		temph,templ
+00070e 27aa                      	clr		XL
+00070f 27bb                      	clr		XH
+000710 3003                      	cpi		templ,3
+000711 f2f8                      	brlo	write_timer_params_to_next_page
+000712 9508                      ret
+                                 
+                                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 //////////							6
+                                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 
+                                 Write_byte_to_eeprom:
+                                 	
+000713 99e1                      	sbic	EECR,EEWE
+000714 cffe                      	rjmp	Write_byte_to_eeprom
+                                 
+000715 bbbf                      	out		EEARH, XH
+000716 bbae                      	out		EEARL, XL
+000717 bbcd                      	out		EEDR, YL
+                                 
+000718 9ae2                      	sbi		EECR,EEMWE
+                                 
+000719 9ae1                      	sbi		EECR,EEWE
+                                 	
+00071a 9508                      ret
                                  
                                  .dseg 
                                  
@@ -3517,27 +3593,27 @@ D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control
                                  
                                  program_begin:
                                  
-0006ec 940e 02c9                 call	Start_time
-0006ee 940e 06a9                 call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
+00071b 940e 02c9                 call	Start_time
+00071d 940e 06ab                 call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
                                  
                                  main:
                                  //после срабатывания таймера первой запускается процедура загрузки данных для вывода на индикатор
-0006f0 ff97                      	sbrs	enc_state,T2IF
-0006f1 940c 06f7                 	jmp		read_next_packet_main
-0006f3 940e 056a                 	call	Get_Next_Digit
-0006f5 940e 02f9                 	call	Encoder_proc
+00071f ff97                      	sbrs	enc_state,T2IF
+000720 940c 0726                 	jmp		read_next_packet_main
+000722 940e 056c                 	call	Get_Next_Digit
+000724 940e 02f9                 	call	Encoder_proc
                                  read_next_packet_main:
-0006f7 ff44                      	sbrs	state_flag,RPTF
-0006f8 940c 06f0                 	jmp		main
+000726 ff44                      	sbrs	state_flag,RPTF
+000727 940c 071f                 	jmp		main
                                  //определить режим работы настенных часов
-0006fa ff40                      	sbrs	state_flag,WWVM
-0006fb 940e 00da                 	call	Clock_mode_proc							//режим часов
-0006fd fd40                      	sbrc	state_flag,WWVM
-0006fe 940e 0171                 	call	Timer_mode_proc							//режим таймера
-000700 940e 05ff                 	call	UART_proc
-000702 940e 064b                 	call	Set_brightness
+000729 ff40                      	sbrs	state_flag,WWVM
+00072a 940e 00da                 	call	Clock_mode_proc							//режим часов
+00072c fd40                      	sbrc	state_flag,WWVM
+00072d 940e 0171                 	call	Timer_mode_proc							//режим таймера
+00072f 940e 0601                 	call	UART_proc
+000731 940e 064d                 	call	Set_brightness
                                  
-000704 940c 06f0                 jmp	main
+000733 940c 071f                 jmp	main
                                  
                                  
                                  
@@ -3559,29 +3635,29 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega16A" register use summary:
-x  :  58 y  :  42 z  :  12 r0 :  21 r1 :  13 r2 :  13 r3 :  12 r4 :  12 
-r5 :  14 r6 :  13 r7 :  12 r8 :   4 r9 :   2 r10:   4 r11:   2 r12:   8 
-r13:   5 r14:  29 r15:  19 r16: 366 r17: 143 r18:  68 r19:  37 r20:  72 
-r21:  10 r22:  10 r23:  33 r24:   6 r25:  27 r26:  51 r27:  46 r28:  40 
+x  :  58 y  :  42 z  :  12 r0 :  21 r1 :  13 r2 :  13 r3 :  13 r4 :  13 
+r5 :  15 r6 :  14 r7 :  13 r8 :   4 r9 :   2 r10:   4 r11:   2 r12:   8 
+r13:   5 r14:  29 r15:  19 r16: 370 r17: 146 r18:  70 r19:  39 r20:  72 
+r21:  10 r22:  10 r23:  33 r24:   6 r25:  27 r26:  59 r27:  50 r28:  46 
 r29:  36 r30:  22 r31:  21 
 Registers used: 35 out of 35 (100.0%)
 
 "ATmega16A" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :  22 add   :  25 adiw  :   5 and   :   0 
+.lds  :   0 .sts  :   0 adc   :  23 add   :  26 adiw  :   9 and   :   0 
 andi  :  19 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :  30 brge  :   3 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :  22 brlt  :   0 brmi  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :  31 brge  :   3 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :  23 brlt  :   0 brmi  :   0 
 brne  :  66 brpl  :   0 brsh  :  16 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  77 cbi   :  11 cbr   :  20 
-clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :  91 cls   :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  83 cbi   :  11 cbr   :  20 
+clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :  97 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :  47 cpc   :   0 
-cpi   :  84 cpse  :   0 dec   :  15 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :  16 inc   :  42 jmp   : 156 
-ld    :  37 ldd   :   0 ldi   : 239 lds   :   0 lpm   :  11 lsl   :  14 
-lsr   :   3 mov   :  49 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   1 nop   :   0 or    :   3 ori   :   2 out   :  48 pop   :  25 
-push  :  25 rcall :   0 ret   :  41 reti  :   5 rjmp  :  28 rol   :   7 
-ror   :   0 sbc   :   1 sbci  :   0 sbi   :  18 sbic  :   2 sbis  :   1 
+cpi   :  86 cpse  :   0 dec   :  16 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :  16 inc   :  43 jmp   : 156 
+ld    :  37 ldd   :   0 ldi   : 240 lds   :   0 lpm   :  11 lsl   :  14 
+lsr   :   3 mov   :  55 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   1 nop   :   0 or    :   3 ori   :   2 out   :  51 pop   :  25 
+push  :  25 rcall :   0 ret   :  43 reti  :   5 rjmp  :  30 rol   :   7 
+ror   :   0 sbc   :   1 sbci  :   0 sbi   :  20 sbic  :   3 sbis  :   1 
 sbiw  :   0 sbr   :  16 sbrc  :  36 sbrs  :  30 sec   :   0 seh   :   0 
 sei   :   2 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :  69 std   :   0 sts   :   0 
@@ -3591,7 +3667,7 @@ Instructions used: 49 out of 113 (43.4%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000e0c   3464     84   3548   16384  21.7%
+[.cseg] 0x000000 0x000e6a   3558     84   3642   16384  22.2%
 [.dseg] 0x000060 0x00012a      0    202    202    1024  19.7%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 

@@ -22,6 +22,10 @@
 3. Запись параметра в ОЗУ по адресу TIMER_PARAMETERS_TEMP + templ. В templ - относительный адрес, в temph - байт для записи, temp_2 - портится.
 
 4. Перезапись из ОЗУ по адресу TIMER_PARAMETERS_TEMP в регистры с параметрами таймера.
+
+5. Запись параметров таймера в eeprom с двойным резервированием.
+
+6. Запись байта в eeprom. В XH:XL - адрес записываемого байта. В YL - записываемый байт.
 */
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,6 +111,76 @@ Write_timer_params_from_RAM_to_registers:
 	ld		min_rest,Z+
 	ld		sec_rest,Z+
 	ld		round_work,Z
+ret
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////							5
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Write_timer_parameters_to_eeprom:
+	
+	clr		XL
+	clr		XH
+	clr		templ
+
+write_timer_params_to_next_page:
+
+	cpi		temph,0
+	breq	start_write_params_to_eeprom
+	dec		temph
+	ldi		temp_2,EEPROM_PAGE_SIZE
+	clr		temp_3
+	add		XL,temp_2
+	adc		XH,temp_3
+	rjmp	write_timer_params_to_next_page
+
+start_write_params_to_eeprom:
+
+	//минуты работы
+	mov		YL,min_work
+	call	Write_byte_to_eeprom	
+	//секунды работы
+	adiw	XL,1
+	mov		YL,sec_work
+	call	Write_byte_to_eeprom
+	//минуты отдыха
+	adiw	XL,1
+	mov		YL,min_rest
+	call	Write_byte_to_eeprom
+	//секунды работы
+	adiw	XL,1
+	mov		YL,sec_rest
+	call	Write_byte_to_eeprom
+	//количество раундов
+	adiw	XL,1
+	mov		YL,round_work
+	call	Write_byte_to_eeprom
+
+	inc		templ
+	mov		temph,templ
+	clr		XL
+	clr		XH
+	cpi		templ,3
+	brlo	write_timer_params_to_next_page
+ret
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////							6
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Write_byte_to_eeprom:
+	
+	sbic	EECR,EEWE
+	rjmp	Write_byte_to_eeprom
+
+	out		EEARH, XH
+	out		EEARL, XL
+	out		EEDR, YL
+
+	sbi		EECR,EEMWE
+
+	sbi		EECR,EEWE
+	
 ret
 
 .dseg 
