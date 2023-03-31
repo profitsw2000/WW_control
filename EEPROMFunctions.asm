@@ -7,14 +7,21 @@
 Если равны: 
 - считанное из eeprom значение записвается в ОЗУ;
 - считывается и проверяется следующий параметр;
-- при успешном окончании данные из ОЗУ по адресу TIMER_PARAMETERS_TEMP переписываются в соответствующие регистры
+- при успешном окончании данные из ОЗУ по адресу TIMER_PARAMETERS_TEMP переписываются в соответствующие регистры,
 если не равны или содержат неверное значение (например значение секунд > 59):
 -выход из процедуры без записи в соответствующие регистры. Таким образом, параметры таймера останутся по умолчанию.
-
+Порядок расположения параметров в памяти:
+0 - min_work,
+1 - sec_work,
+2 - min_rest,
+3 - sec_rest,
+4 - round_work
 
 2. Чтение байта двнных из eeprom. В XH:XL - адрес считываемого байта. В YL - считанный байт
 
-3. 
+3. Запись параметра в ОЗУ по адресу TIMER_PARAMETERS_TEMP + templ. В templ - относительный адрес, в temph - байт для записи, temp_2 - портится.
+
+4. Перезапись из ОЗУ по адресу TIMER_PARAMETERS_TEMP в регистры с параметрами таймера.
 */
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,17 +29,17 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Read_timer_parameters_from_eeprom:
-	ldi		templ,FIRST_PAGE_BEGIN
+	ldi		templ,0
 	
 next_param_from_eeprom:
 	mov		XL,templ										;считывание первого байта
 	clr		XH
 	call	Read_byte_from_eeprom
 	mov		temph,YL
-	adiw	XL,SECOND_PAGE_BEGIN							;считывание второго байта
+	subi	XL,-EEPROM_PAGE_SIZE								;считывание второго байта
 	call	Read_byte_from_eeprom
 	mov		temp_2,YL
-	adiw	XL,THIRD_PAGE_BEGIN								;считывание третьего байта
+	subi	XL,-EEPROM_PAGE_SIZE								;считывание третьего байта
 	call	Read_byte_from_eeprom
 	mov		temp_3,YL
 
@@ -51,7 +58,11 @@ check_minutes_or_rounds:
 	brsh	exit_read_timer_parameters_from_eeprom
 			
 check_param_number:
-	
+	call	Write_timer_param_to_RAM						;записать прошедший проверку параметр в ОЗУ
+	inc		templ											;следующий параметр
+	cpi		templ,5
+	brlo	next_param_from_eeprom							;или переписать из ОЗУ параметры в соответствующие регистры
+	call	Write_timer_params_from_RAM_to_registers
 			
 exit_read_timer_parameters_from_eeprom:
 ret
@@ -64,16 +75,39 @@ Read_byte_from_eeprom:
 
 	sbic	EECR,EEWE
 	rjmp	Read_byte_from_eeprom
-
 	out		EEARH,XH
 	out		EEARL,XL
-
 	sbi		EECR,EERE
-
 	in		YL,EEDR
 
 ret
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////							3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Write_timer_param_to_RAM:
+	clr		temp_2
+	ldi		ZL,LOW(TIMER_PARAMETERS_TEMP)					;адрес хранения параметра таймера в оперативной памяти
+	ldi		ZH,HIGH(TIMER_PARAMETERS_TEMP)
+	add		ZL,templ
+	adc		ZH,temp_2
+	st		Z,temph
+ret
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////							4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Write_timer_params_from_RAM_to_registers:
+	ldi		ZL,LOW(TIMER_PARAMETERS_TEMP)					;адрес хранения параметров таймера в оперативной памяти
+	ldi		ZH,HIGH(TIMER_PARAMETERS_TEMP)
+	ld		min_work,Z+
+	ld		sec_work,Z+
+	ld		min_rest,Z+
+	ld		sec_rest,Z+
+	ld		round_work,Z
+ret
 
 .dseg 
 

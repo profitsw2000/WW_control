@@ -76,10 +76,7 @@
 .equ	SDI_DATA				=	5
 
 //адреса памяти в eeprom
-.equ	FIRST_PAGE_BEGIN		=	0
-.equ	SECOND_PAGE_BEGIN		=	16
-.equ	THIRD_PAGE_BEGIN		=	32
-
+.equ	EEPROM_PAGE_SIZE		=	64
 
 .org	0
 jmp		reset
