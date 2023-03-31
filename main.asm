@@ -2,7 +2,7 @@
 ; WW_control.asm
 ;
 /*
-Программа управления настенными часами.
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.
 */
 ; Created: 30.06.2019 11:50:16
 ; Author : Asus
@@ -75,7 +75,8 @@
 .equ	SDI_TIME				=	2
 .equ	SDI_DATA				=	5
 
-
+//eeprom
+.equ	EEPROM_PAGE_SIZE		=	64
 
 .org	0
 jmp		reset
@@ -92,24 +93,24 @@ jmp		TWI_int
 
 
 reset:
-//настройка стека 
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 
 ldi		templ,LOW(RAMEND)
 ldi		temph,HIGH(RAMEND)
 out		SPL,templ
 out		SPH,temph
-//настройка таймера 2
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2
 ldi		templ,(1<<COM21) | (1<<COM20) | (1<<WGM21) | (1<<WGM20) | PRESCALER_2_CLK
 out		TCCR2,templ
 ldi		templ,3
 out		OCR2,templ
 ldi		templ,(1<<TOIE2)
 out		TIMSK,templ
-//настройка TWI
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ TWI
 ldi		templ,TWI_BAUD
 out		TWBR,templ
 clr		templ
 out		TWSR,templ
-//настройка UART
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ UART
 ldi		templ,(1<<RXCIE) | (1<<RXEN) | (1<<TXEN)// | (1<<TXCIE)
 out		UCSRB,templ
 ldi		templ,(1<<URSEL) | (1<<UCSZ1) | (1<<UCSZ0)
@@ -118,12 +119,12 @@ ldi		templ,LOW(USART_REG)
 ldi		temph,HIGH(USART_REG)
 out		UBRRH,temph
 out		UBRRL,templ
- //настройка АЦП, предделитель - 128, запуск - вручную
+ //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - 128, пїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
  ldi	templ,(1<<REFS0) | (1<<ADLAR)
  out	ADMUX,templ
  ldi	templ,(1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0)
  out	ADCSRA,templ
-//настройка портов ВВ
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
 sbi		DDRB,0
 sbi		PORTB,0
 sbi		DDRB,3
@@ -136,7 +137,7 @@ ldi		templ,0xFC
 out		DDR_ANODE,templ
 ldi		templ,(1<<OE) | (1<<CLK) | (1<<LE) | (1<<SDI_TIME) | (1<<SDI_DATA)
 out		DDR_CATHODE,templ
-//глобальное включение прерываний
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 sei
 clr		set_segm
 clr		state_flag
@@ -154,11 +155,12 @@ ldi		templ,1
 mov		min_rest,templ
 ldi		templ,12
 mov		round_work,templ
+call	Read_timer_parameters_from_eeprom				;пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 clr		templ
-ldi		XL,LOW(RX_HEAD)							;указатель головы
+ldi		XL,LOW(RX_HEAD)							;пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 ldi		XH,HIGH(RX_HEAD)
 st		X,templ	
-ldi		YL,LOW(RX_TAIL)							;указатель хвоста
+ldi		YL,LOW(RX_TAIL)							;пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 ldi		YH,HIGH(RX_TAIL)
 st		Y,templ
 
@@ -171,14 +173,15 @@ jmp		program_begin
 .include	"UARTFunctions.asm"
 .include	"ADC.asm"
 .include	"TimeCorrect.asm"
+.include	"EEPROMFunctions.asm"
 
 program_begin:
 
 call	Start_time
-call	Read_write_time_inaccuracy						;считать значение ухода времени в секундах за сутки из флеш-памяти и перезаписать в оперативную память
+call	Read_write_time_inaccuracy						;пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
 main:
-//после срабатывания таймера первой запускается процедура загрузки данных для вывода на индикатор
+//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	sbrs	enc_state,T2IF
 	jmp		read_next_packet_main
 	call	Get_Next_Digit
@@ -186,11 +189,11 @@ main:
 read_next_packet_main:
 	sbrs	state_flag,RPTF
 	jmp		main
-//определить режим работы настенных часов
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	sbrs	state_flag,WWVM
-	call	Clock_mode_proc							//режим часов
+	call	Clock_mode_proc							//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	sbrc	state_flag,WWVM
-	call	Timer_mode_proc							//режим таймера
+	call	Timer_mode_proc							//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	call	UART_proc
 	call	Set_brightness
 
