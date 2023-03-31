@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  D:\PROJECTS_HFSS\PROJECTS_HFSS\Atmel Studio\Asm\Wall_watch_ver_2\Main\WW_control\main.asm Fri Mar 31 16:46:59 2023
+AVRASM ver. 2.2.8  C:\PROJECTS\AVRStudio\Asm\Wall_watch_ver_2\WW_control\WW_control\main.asm Fri Mar 31 19:21:36 2023
 
 
 EQU  SIGNATURE_000 0000001e
@@ -677,7 +677,7 @@ CSEG TWI_int      0000006b
 CSEG Read_timer_parameters_from_eeprom 000006b7
 DSEG RX_HEAD      000000ba
 DSEG RX_TAIL      000000bb
-CSEG program_begin 0000071b
+CSEG program_begin 0000071c
 EQU  DS1307_ADDRESS 00000068
 EQU  write        00000000
 EQU  read         00000001
@@ -931,8 +931,8 @@ CSEG check_param_number 000006d0
 CSEG Write_timer_param_to_RAM 000006df
 CSEG Write_timer_params_from_RAM_to_registers 000006e6
 DSEG TIMER_PARAMETERS_TEMP 00000125
-CSEG write_timer_params_to_next_page 000006f1
-CSEG start_write_params_to_eeprom 000006f9
-CSEG Write_byte_to_eeprom 00000713
-CSEG main         0000071f
-CSEG read_next_packet_main 00000726
+CSEG write_timer_params_to_next_page 000006f2
+CSEG start_write_params_to_eeprom 000006fa
+CSEG Write_byte_to_eeprom 00000714
+CSEG main         00000720
+CSEG read_next_packet_main 00000727

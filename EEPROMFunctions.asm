@@ -122,6 +122,7 @@ Write_timer_parameters_to_eeprom:
 	clr		XL
 	clr		XH
 	clr		templ
+	clr		temph
 
 write_timer_params_to_next_page:
 
