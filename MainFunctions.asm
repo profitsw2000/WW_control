@@ -697,7 +697,9 @@ Increment_timer_mode_counter:
 	clr		temp_3
 	add		templ,temp_2
 	adc		temph,temp_3
-
+//записать
+	st		X,temph
+	st		-X,templ
 //проверить на достижение максимального значения счетчика незапущенного бокс. таймера
 	cpi		temph,HIGH(BT_MAX_TIME)
 	brlo	exit_increment_timer_mode_counter
