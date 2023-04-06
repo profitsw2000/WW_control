@@ -379,7 +379,7 @@ check_timer_set_mode:
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 timer_pause:
-	//call	Increment_timer_mode_counter					;обновить счетчик времени незапущенного таймера
+	call	Increment_timer_mode_counter					;обновить счетчик времени незапущенного таймера
 	call	Sound_OFF
 	sbrs	state_flag,BTRT
 	jmp		fill_buffer_var_1
