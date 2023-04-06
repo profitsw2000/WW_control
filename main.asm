@@ -65,6 +65,7 @@
 .equ	USART_REG				=	(F_CPU/(16*BAUD_RATE))-1
 .equ	PRESCALER_2_CLK			=	(LOG2((F_CPU)/(256*F_TIMER2_CLK))) - 2
 .equ	PRESCALER_2_BT			=	(LOG2((F_CPU)/(256*F_TIMER2_BT))) - 2
+.equ	BT_MAX_TIME				=	600												//максимальное время нахождения в режиме выключенного бокс. таймера
 .equ	PORT_ANODE				=	PORTC
 .equ	PORT_CATHODE			=	PORTA
 .equ	DDR_ANODE				=	DDRC
@@ -179,6 +180,7 @@ program_begin:
 
 call	Start_time
 call	Read_write_time_inaccuracy						;������� �������� ����� ������� � �������� �� ����� �� ����-������ � ������������ � ����������� ������
+call	Clear_timer_mode_counter						;обнулить счетчик времени незапущенного таймера
 
 main:
 //����� ������������ ������� ������ ����������� ��������� �������� ������ ��� ������ �� ���������
