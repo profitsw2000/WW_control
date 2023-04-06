@@ -358,7 +358,7 @@ set_sound_400Hz_on:
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 timer_is_off:
-	//call	Increment_timer_mode_counter					;обновить счетчик времени незапущенного таймера
+	call	Increment_timer_mode_counter					;обновить счетчик времени незапущенного таймера
 	sbrc	state_flag,BTRT
 	jmp		timer_just_stopped	
 	call	Sound_OFF
